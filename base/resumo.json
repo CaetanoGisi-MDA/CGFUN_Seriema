@@ -1,0 +1,89 @@
+{
+ "gerado_em": "2026-07-25",
+ "n_territorios": 703,
+ "por_uf": {
+  "MA": 112,
+  "PA": 99,
+  "BA": 71,
+  "MG": 61,
+  "RS": 35,
+  "SP": 31,
+  "AP": 29,
+  "SE": 28,
+  "RJ": 26,
+  "PE": 24,
+  "PI": 21,
+  "CE": 19,
+  "PR": 19,
+  "PB": 17,
+  "GO": 16,
+  "ES": 15,
+  "MT": 14,
+  "MS": 13,
+  "TO": 13,
+  "SEM_INFO": 10,
+  "RN": 9,
+  "SC": 9,
+  "RO": 6,
+  "AL": 3,
+  "AM": 3
+ },
+ "por_fase": {
+  "EM_ELABORACAO": 238,
+  "DECRETO": 120,
+  "RTID": 108,
+  "TITULADO": 106,
+  "PORTARIA": 83,
+  "TITULO_PARCIAL": 38,
+  "SEM_INFO": 8,
+  "CCDRU": 1,
+  "TITULO_ANULADO": 1
+ },
+ "por_esfera": {
+  "FEDERAL": 617,
+  "ESTADUAL": 76,
+  "SEM_INFO": 10
+ },
+ "por_orgao": {
+  "INCRA": 607,
+  "ITERPA": 42,
+  "ITERMA": 31,
+  "—": 11,
+  "ITESP": 3,
+  "FCP": 2,
+  "CDA / FCP": 1,
+  "SPU/INCRA": 1,
+  "SPU/INVTS/INCRA": 1,
+  "CEMIG": 1,
+  "INCRA/INTERPI": 1,
+  "INTERPI/INCRA": 1
+ },
+ "com_poligono": 429,
+ "com_coordenada": 673,
+ "com_certificacao_fcp": 634,
+ "com_localidades_ibge": 643,
+ "com_protocolo": 64,
+ "area_total_ha": 2934162.56,
+ "familias_total": 109505,
+ "moradores_fcp_total": 37599,
+ "localidades_ibge_total": 1475,
+ "certidoes_total": 757,
+ "vinculos": {
+  "poligono": {
+   "confirmado": 301,
+   "nao_localizado": 274,
+   "proprio": 91,
+   "provavel": 37
+  },
+  "fcp": {
+   "confirmado": 563,
+   "nao_localizado": 69,
+   "provavel": 71
+  },
+  "ibge": {
+   "confirmado": 616,
+   "nao_localizado": 60,
+   "provavel": 27
+  }
+ }
+}

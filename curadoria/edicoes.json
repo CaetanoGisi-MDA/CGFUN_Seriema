@@ -1,0 +1,6 @@
+{
+ "versao": 1,
+ "atualizado_em": null,
+ "nota": "Camada de curadoria da CFU. O pipeline nunca toca neste arquivo. As edicoes aqui prevalecem sobre base/ na leitura.",
+ "edicoes": []
+}
