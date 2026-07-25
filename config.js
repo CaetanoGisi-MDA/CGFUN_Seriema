@@ -31,8 +31,8 @@ window.SERIEMA_CONFIG = {
 
   /* ---- repositório de curadoria ------------------------------------ */
   github: {
-    dono: 'SEU-USUARIO',
-    repo: 'observatorio-seriema',
+    dono: 'CaetanoGisi-MDA',
+    repo: 'CGFUN_Seriema',
     branch: 'main',
     caminhoCuradoria: 'curadoria/edicoes.json',
     // false = grava direto no branch. true = abre proposta de alteração
