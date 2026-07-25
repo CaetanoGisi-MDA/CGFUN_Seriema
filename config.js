@@ -13,7 +13,7 @@ window.SERIEMA_CONFIG = {
      apenas no navegador dela.                                        */
   llm: {
     endpoint: 'https://api.deepseek.com/chat/completions',
-    modelo: 'deepseek-chat',
+    modelo: 'deepseek/deepseek-v4-flash',
     // Se você montar um proxy institucional que guarda a chave no servidor,
     // aponte o endpoint para ele e ligue a linha abaixo.
     usarProxy: false,
