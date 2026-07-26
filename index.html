@@ -32,9 +32,16 @@
       </div>
     </div>
     <div class="contagem">
-      <div><b id="c-terr">—</b><span>territórios</span></div>
-      <div><b id="c-tit">—</b><span>titulados</span></div>
-      <div><b id="c-area">—</b><span>hectares</span></div>
+      <div class="bloco-n">
+        <span class="rot">Territórios titulados</span>
+        <div class="par"><b id="c-tit">—</b><b id="c-tit-ha">—</b></div>
+        <div class="par"><span>territórios</span><span>hectares<sup>*</sup></span></div>
+      </div>
+      <div class="bloco-n">
+        <span class="rot">Processos territoriais em curso</span>
+        <div class="par"><b id="c-curso">—</b><b id="c-curso-ha">—</b></div>
+        <div class="par"><span>processos</span><span>hectares<sup>*</sup></span></div>
+      </div>
       <div class="corte" id="c-corte">dados de —</div>
     </div>
   </header>
@@ -42,7 +49,15 @@
   <main>
     <section id="mapa">
       <div class="camadas">
-        <div class="titulo">Camadas — fase do processo</div>
+        <button class="recolher" id="bt-recolher" aria-expanded="true" title="Recolher painel de camadas">−</button>
+      <div class="titulo">Universo</div>
+      <div class="universo" id="universo">
+        <button data-u="federal"    aria-pressed="true">Federal <span class="n"></span></button>
+        <button data-u="estadual"   aria-pressed="false">Estadual <span class="n"></span></button>
+        <button data-u="certidoes"  aria-pressed="false">Certificadas s/ processo <span class="n"></span></button>
+        <button data-u="todos"      aria-pressed="false">Todos <span class="n"></span></button>
+      </div>
+      <div class="titulo" style="margin-top:8px">Camadas — fase do processo</div>
         <div class="chips" id="chips-fase"></div>
         <div class="titulo" style="margin-top:8px">Filtros</div>
         <div class="chips" id="chips-extra">
@@ -64,6 +79,7 @@
       <div class="buscabar" id="buscabar">
         <input id="busca" type="search" placeholder="Buscar por nome, município ou nº de processo" autocomplete="off">
         <select id="filtro-uf"><option value="">UF</option></select>
+        <span class="contador" id="contador">—</span>
       </div>
 
       <!-- ABA LISTA -->

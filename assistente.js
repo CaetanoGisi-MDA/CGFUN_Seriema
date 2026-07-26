@@ -17,6 +17,56 @@ let ocupado = false;
 const K_LLM = 'seriema.chave.llm';
 const K_BUSCA = 'seriema.chave.busca';
 const K_GH = 'seriema.chave.github';
+const K_END = 'seriema.endpoint';
+const K_MOD = 'seriema.modelo';
+
+function endpointAtual() { return S.cofre.get(K_END) || CFG.llm.endpoint; }
+function modeloAtual()   { return S.cofre.get(K_MOD) || CFG.llm.modelo; }
+
+/* Configuração do serviço de linguagem: endpoint e modelo editáveis, para que
+   cada pessoa use o serviço que preferir sem tocar no código. */
+function dialogoServico() {
+  return new Promise(resolve => {
+    const v = document.createElement('div');
+    v.className = 'veu';
+    v.innerHTML = `<div class="dialogo">
+      <h3>Serviço de linguagem</h3>
+      <p>O painel conversa com qualquer serviço que use a interface padrão de mensagens
+         (compatível com OpenAI). Endereço e modelo são editáveis — troque para usar outro provedor.</p>
+      <label for="d-end">Endereço da API</label>
+      <input id="d-end" type="text" spellcheck="false" value="${S.esc(endpointAtual())}">
+      <label for="d-mod">Modelo</label>
+      <input id="d-mod" type="text" spellcheck="false" value="${S.esc(modeloAtual())}">
+      <label for="d-key">Chave</label>
+      <input id="d-key" type="password" autocomplete="off" spellcheck="false"
+             placeholder="${S.cofre.get(K_LLM) ? 'já guardada — deixe em branco para manter' : 'cole aqui'}">
+      <div class="aviso">Nada disso vai para o repositório: fica só no seu navegador.
+        ${S.cofre.persistente ? 'Será lembrado neste computador.'
+          : '<b>Neste ambiente o armazenamento local está bloqueado</b>, então valerá só nesta sessão.'}</div>
+      <div class="acoes">
+        ${S.cofre.get(K_LLM) ? '<button class="bt vazado" data-esq>Esquecer chave</button>' : ''}
+        <button class="bt vazado" data-x>Cancelar</button>
+        <button class="bt" data-ok>Salvar</button>
+      </div></div>`;
+    document.body.appendChild(v);
+    const fim = ok => { v.remove(); resolve(ok); };
+    v.querySelector('#d-key').focus();
+    v.querySelector('[data-x]').onclick = () => fim(false);
+    const esq = v.querySelector('[data-esq]');
+    if (esq) esq.onclick = () => { S.cofre.del(K_LLM); fim(false); };
+    v.querySelector('[data-ok]').onclick = () => {
+      const end = v.querySelector('#d-end').value.trim();
+      const mod = v.querySelector('#d-mod').value.trim();
+      const key = v.querySelector('#d-key').value.trim();
+      if (end) S.cofre.set(K_END, end);
+      if (mod) S.cofre.set(K_MOD, mod);
+      if (key) S.cofre.set(K_LLM, key);
+      if (!S.cofre.get(K_LLM)) { v.querySelector('#d-key').focus(); return; }
+      fim(true);
+    };
+    v.onclick = e => { if (e.target === v) fim(false); };
+  });
+}
 
 function temChave(k) { return !!S.cofre.get(k); }
 
@@ -390,8 +440,10 @@ async function chamar(mensagens) {
   const chave = S.cofre.get(K_LLM);
   const cab = { 'Content-Type': 'application/json' };
   if (!CFG.llm.usarProxy && chave) cab.Authorization = 'Bearer ' + chave;
-  const r = await fetch(CFG.llm.endpoint, { method: 'POST', headers: cab,
-    body: JSON.stringify({ model: CFG.llm.modelo, messages: mensagens, tools: FERRAMENTAS,
+  cab['HTTP-Referer'] = location.origin;
+  cab['X-Title'] = 'Observatorio Seriema';
+  const r = await fetch(endpointAtual(), { method: 'POST', headers: cab,
+    body: JSON.stringify({ model: modeloAtual(), messages: mensagens, tools: FERRAMENTAS,
       tool_choice: 'auto', temperature: CFG.llm.temperatura, max_tokens: CFG.llm.maxTokens }) });
   if (!r.ok) {
     const t = await r.text();
@@ -406,10 +458,8 @@ async function enviar() {
   const cx = $('#ia-txt'), texto = cx.value.trim();
   if (!texto) return;
   if (!CFG.llm.usarProxy && !temChave(K_LLM)) {
-    const k = await pedirChave(K_LLM, 'Chave do modelo',
-      'Cole a chave do serviço de linguagem que você usa. O painel fala com ele pela interface padrão de mensagens.',
-      'Trocar de serviço é editar três campos em <span class="mono">config.js</span>.');
-    if (!k) return;
+    const ok = await dialogoServico();
+    if (!ok) return;
   }
   cx.value = ''; cx.style.height = 'auto';
   falar('p', texto);
@@ -473,6 +523,11 @@ Exemplos:
   if (!persist) falar('sis', 'Neste ambiente o navegador bloqueia o armazenamento local: a chave será pedida a cada sessão. No GitHub Pages ela é lembrada.');
 
   $('#ia-enviar').onclick = enviar;
+  const barra = document.createElement('div');
+  barra.style.cssText = 'display:flex;gap:6px;padding:6px 10px 0;justify-content:flex-end';
+  barra.innerHTML = '<button class="bt p vazado" id="bt-config">Serviço e chave</button>';
+  $('#ia-txt').closest('.ia-entrada').before(barra);
+  $('#bt-config').onclick = dialogoServico;
   const cx = $('#ia-txt');
   cx.onkeydown = e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); enviar(); } };
   cx.oninput = () => { cx.style.height = 'auto'; cx.style.height = Math.min(cx.scrollHeight, 120) + 'px'; };

@@ -192,6 +192,12 @@ def fase_pdf(r):
     if has(r.portaria_dt): return 'PORTARIA'
     if has(r.rtid1_dt): return 'RTID'
     return 'EM_ELABORACAO'
+# "Não precisa" é informação, não ausência: marca etapa DISPENSADA para aquele
+# território (área já pública, titulação por acordo, decisão judicial etc.).
+def _disp(v):
+    return bool(re.search(r'n[aã]o\s+precisa', strip_ac(str(v)), re.I))
+for _c, _rot in [('rtid2','rtid_edital_2'), ('portaria','portaria'), ('decreto','decreto')]:
+    pdf_df['disp_' + _rot] = pdf_df[_c].map(_disp)
 pdf_df['fase_pdf'] = pdf_df.apply(fase_pdf, axis=1)
 pdf_df['titulo_txt'] = pdf_df.titulo.str.strip()
 pdf_df['em_elaboracao'] = pdf_df.apply(
@@ -228,6 +234,23 @@ ib['fk'] = ib.p_fcp.map(lambda s: proc_digits(s) if len(proc_digits(s)) >= 15 el
 ib['lat'] = pd.to_numeric(ib.lat, errors='coerce')
 ib['lon'] = pd.to_numeric(ib.lon, errors='coerce')
 ib['nome_norm_tq'] = ib.nm_tq.map(norm_nome)
+# --- correção: processos com prefixo central (54000) não têm UF pelo prefixo.
+# Deriva a UF pelo nome do município, usando a tabela do IBGE.
+_mun2uf = {}
+for _, _r in ib[['nm_munic', 'uf']].drop_duplicates().iterrows():
+    _mun2uf.setdefault(strip_ac(_r.nm_munic).upper().strip(), set()).add(_r.uf)
+def _uf_por_municipio(txt):
+    for parte in re.split(r'\s+e\s+|,|/', str(txt or '')):
+        k = strip_ac(parte).upper().strip()
+        if k in _mun2uf and len(_mun2uf[k]) == 1:
+            return next(iter(_mun2uf[k]))
+    return None
+_faltando = pdf_df.uf.isna()
+if _faltando.any():
+    pdf_df.loc[_faltando, 'uf'] = pdf_df.loc[_faltando, 'municipio'].map(_uf_por_municipio)
+    print(f'[!] UF derivada pelo município para {int(_faltando.sum())} processos '
+          f'(prefixo central 54000); ainda sem UF: {int(pdf_df.uf.isna().sum())}')
+
 print(f'[4] localidades IBGE ............. {len(ib):>5}  ({ib.cd_tq.notna().sum()} ligadas a TQ delimitado, '
       f'{ib.fk.ne("").sum()} com processo FCP)')
 

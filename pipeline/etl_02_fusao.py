@@ -53,6 +53,8 @@ for _, r in pdfd.iterrows():
             'portaria': r.portaria_dt, 'retificacao_portaria': r.ret_portaria_dt,
             'decreto': r.decreto_dt,
             'titulo_txt': nn(r.titulo_txt),
+            'dispensas': {k: bool(getattr(r, 'disp_' + k, False))
+                          for k in ('rtid_edital_2', 'portaria', 'decreto')},
         },
         'fontes': ['INCRA/PDF-andamento'],
         '_pdf': True, '_poly': False,

@@ -1,12 +1,12 @@
 {
  "gerado_em": "2026-07-26",
- "n_territorios": 703,
+ "n_territorios": 692,
  "por_uf": {
   "MA": 112,
   "PA": 99,
-  "BA": 71,
-  "MG": 61,
-  "RS": 35,
+  "BA": 75,
+  "MG": 62,
+  "RS": 37,
   "SP": 31,
   "AP": 29,
   "SE": 28,
@@ -21,12 +21,11 @@
   "MT": 14,
   "MS": 13,
   "TO": 13,
-  "SEM_INFO": 10,
   "RN": 9,
   "SC": 9,
   "RO": 6,
-  "AL": 3,
-  "AM": 3
+  "AL": 4,
+  "AM": 4
  },
  "por_fase": {
   "EM_ELABORACAO": 235,
@@ -35,18 +34,18 @@
   "RTID": 104,
   "PORTARIA": 83,
   "TITULO_PARCIAL": 37,
-  "SEM_INFO": 8,
+  "SEM_INFO": 7,
   "CCDRU": 2,
   "IDENTIFICACAO": 1,
   "TITULO_ANULADO": 1
  },
  "por_esfera": {
-  "FEDERAL": 617,
+  "FEDERAL": 616,
   "ESTADUAL": 76,
   "SEM_INFO": 10
  },
  "por_orgao": {
-  "INCRA": 607,
+  "INCRA": 606,
   "ITERPA": 42,
   "ITERMA": 31,
   "—": 11,
@@ -60,31 +59,115 @@
   "INTERPI/INCRA": 1
  },
  "com_poligono": 429,
- "com_coordenada": 673,
- "com_certificacao_fcp": 634,
- "com_localidades_ibge": 643,
+ "com_coordenada": 674,
+ "com_certificacao_fcp": 636,
+ "com_localidades_ibge": 645,
  "com_protocolo": 64,
- "area_total_ha": 2934162.56,
+ "area_total_ha": 2934149.85,
  "familias_total": 109505,
- "moradores_fcp_total": 37599,
- "localidades_ibge_total": 1475,
- "certidoes_total": 757,
+ "moradores_fcp_total": 37679,
+ "localidades_ibge_total": 1478,
+ "certidoes_total": 760,
  "vinculos": {
   "poligono": {
    "confirmado": 301,
-   "nao_localizado": 274,
-   "proprio": 91,
-   "provavel": 37
+   "nao_localizado": 273,
+   "proprio": 90,
+   "provavel": 38
   },
   "fcp": {
    "confirmado": 563,
-   "nao_localizado": 69,
-   "provavel": 71
+   "nao_localizado": 66,
+   "provavel": 73
   },
   "ibge": {
-   "confirmado": 616,
-   "nao_localizado": 60,
+   "confirmado": 618,
+   "nao_localizado": 57,
    "provavel": 27
   }
+ },
+ "por_regime": {
+  "federal-4887": 614,
+  "estadual": 70,
+  "federal-pre2003": 7,
+  "indefinido": 1
+ },
+ "registros_totais": 702,
+ "fragmentos": 5,
+ "duplicatas": 5,
+ "certidoes_sem_processo": {
+  "n": 1570,
+  "comunidades": 1975,
+  "moradores": 48914,
+  "por_uf": {
+   "BA": 380,
+   "MA": 380,
+   "MG": 237,
+   "PA": 166,
+   "AL": 62,
+   "PE": 60,
+   "PI": 46,
+   "RS": 44,
+   "CE": 40,
+   "ES": 29,
+   "RJ": 19,
+   "GO": 19,
+   "RN": 18,
+   "TO": 14,
+   "AM": 13,
+   "PB": 11,
+   "PR": 7,
+   "AP": 6,
+   "SP": 5,
+   "MT": 5,
+   "MS": 4,
+   "SC": 3,
+   "RO": 1,
+   "SE": 1
+  },
+  "por_precisao": {
+   "censo": 1074,
+   "aproximada": 496
+  },
+  "por_ano": {
+   "2004": 12,
+   "2005": 49,
+   "2006": 84,
+   "2007": 33,
+   "2008": 41,
+   "2009": 32,
+   "2010": 45,
+   "2011": 42,
+   "2012": 44,
+   "2013": 119,
+   "2014": 56,
+   "2015": 32,
+   "2016": 101,
+   "2017": 64,
+   "2018": 127,
+   "2019": 53,
+   "2020": 24,
+   "2021": 33,
+   "2022": 52,
+   "2023": 95,
+   "2024": 143,
+   "2025": 148,
+   "2026": 141
+  }
+ },
+ "por_fase_federal": {
+  "EM_ELABORACAO": 235,
+  "DECRETO": 121,
+  "RTID": 104,
+  "PORTARIA": 82,
+  "TITULADO": 40,
+  "TITULO_PARCIAL": 36,
+  "CCDRU": 1,
+  "SEM_INFO": 1,
+  "IDENTIFICACAO": 1
+ },
+ "por_fase_estadual": {
+  "TITULADO": 69,
+  "TITULO_ANULADO": 1
  }
 }
