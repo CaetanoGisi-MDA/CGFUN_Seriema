@@ -308,9 +308,13 @@ function enxugarFicha(f) {
 
 async function buscarWeb(consulta) {
   if (!CFG.busca.ativa) return { erro: 'busca na web desativada na configuração' };
-  if (!S.cofre.get(K_BUSCA)) {
+  // Abre a caixa não só quando falta chave, mas também quando a tentativa
+  // anterior falhou por autenticação — sem isso, uma chave errada nunca
+  // mais dava chance de correção: só virava texto de erro no chat.
+  if (!S.cofre.get(K_BUSCA) || S.cofre.get('seriema.busca.falhouAuth') === '1') {
     const ok = await dialogoBusca();
     if (!ok) return { erro: 'busca cancelada pela pessoa' };
+    S.cofre.del('seriema.busca.falhouAuth');
   }
   const chave = S.cofre.get(K_BUSCA);
   const prov = PROVEDORES_BUSCA[buscaProvedor()] || PROVEDORES_BUSCA.firecrawl;
@@ -327,8 +331,11 @@ async function buscarWeb(consulta) {
     }
     if (!r.ok) {
       const t = await r.text();
+      if (r.status === 401 || r.status === 403) S.cofre.set('seriema.busca.falhouAuth', '1');
       return { erro: `o serviço de busca (${prov.rotulo}) respondeu ${r.status}. ` +
-                     `Endereço: ${url}. ${t.slice(0, 160)}` };
+                     `Endereço: ${url}. ${t.slice(0, 160)}` +
+                     (r.status === 401 || r.status === 403
+                       ? ' A chave será pedida de novo na próxima tentativa.' : '') };
     }
     const d = await r.json();
     const lista = prov.lê(d) || [];
@@ -604,6 +611,13 @@ async function enviar() {
             : tc.function.name === 'buscar_web' ? 'internet' : tc.function.name);
           historico.push({ role: 'tool', tool_call_id: tc.id, content: JSON.stringify(res).slice(0, 24000) });
           p.remove();
+          if (tc.function.name === 'buscar_web' && res.erro) {
+            const m = falar('sis', 'A busca na web falhou: ' + res.erro);
+            const b = document.createElement('button');
+            b.className = 'bt p vazado'; b.textContent = 'Ajustar busca e chave';
+            b.style.marginTop = '6px'; b.onclick = dialogoBusca;
+            m.appendChild(document.createElement('br')); m.appendChild(b);
+          }
         }
         p = passo('redigindo…');
         continue;
