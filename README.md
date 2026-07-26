@@ -37,6 +37,121 @@ O painel funde as duas ao carregar, com a curadoria prevalecendo. A função de 
 
 ---
 
+## Metodologia
+
+Este capítulo explica de onde vem cada informação, como as fontes foram cruzadas e quais decisões foram tomadas — inclusive as que ainda estão pendentes. Foi escrito para ser lido por alguém que chegue ao projeto sem contexto nenhum.
+
+### O problema que a base resolve
+
+Não existe, no Estado brasileiro, um cadastro único de territórios quilombolas. Existem quatro registros parciais, mantidos por instituições diferentes, com finalidades diferentes, que não conversam entre si:
+
+- o **INCRA** mantém a tramitação dos processos de regularização e, separadamente, uma base cartográfica
+- a **Fundação Cultural Palmares** mantém o cadastro de certificação das comunidades
+- o **IBGE** mapeou, no Censo 2022, onde as comunidades efetivamente estão
+- **órgãos estaduais de terra** titulam territórios por rito próprio, fora do fluxo federal
+
+A mesma comunidade aparece nos quatro com nomes diferentes, grafias diferentes e nenhum identificador comum. O trabalho desta base é reconciliá-los sem inventar vínculos que não existem.
+
+### As quatro fontes e o que cada uma aporta
+
+| Fonte | Formato | Registros | O que só ela tem |
+|---|---|---|---|
+| **INCRA — Acervo Fundiário** | shapefile | 439 polígonos | geometria, área medida, esfera (federal/estadual), órgão responsável |
+| **INCRA — Andamento dos processos** | PDF | 613 processos | a trilha administrativa completa, com datas de cada ato |
+| **FCP — Comunidades certificadas** | planilha | 3.434 certidões | certificação, nº de moradores e **a ponte para o nº de processo do INCRA** |
+| **IBGE — Localidades quilombolas 2022** | CSV | 8.441 localidades | coordenadas reais, e **três chaves de ligação por código** |
+
+Uma quinta fonte, sem download, alimenta o campo de protocolos de consulta prévia: o **Observatório de Protocolos Comunitários (OPCPLI/CEPEDIS-UFGD)**, complementado por ISA e Terra de Direitos.
+
+### O cruzamento é por código, não por nome
+
+Esta é a decisão metodológica central. Casar registros por semelhança de nome produz erros silenciosos: existem territórios homônimos em municípios diferentes (Baú em Araçuaí e no Serro; Jatobá em Patu/RN e Cabrobó/PE) e o mesmo território escrito de cinco formas.
+
+O cruzamento usa, em ordem de prioridade:
+
+1. **Número de processo do INCRA**, normalizado a 17 dígitos — liga o shapefile, o PDF e a planilha da FCP
+2. **Número de processo da Palmares** — presente tanto na planilha da FCP quanto no CSV do IBGE, liga a certificação às localidades do Censo
+3. **Nome normalizado + UF** — só quando não há código, e sempre marcado como vínculo fraco
+
+Cada ficha exibe o **selo de confiança** de cada vínculo:
+
+- **Confirmado** — número de processo idêntico entre as fontes
+- **Provável** — nome e UF idênticos após normalização (remoção de acentos, prefixos como "TQ", abreviações)
+- **Não localizado** — não há correspondência
+
+Resultado do cruzamento: 563 territórios com certificação confirmada por código, 616 com localidades do IBGE confirmadas por código, 301 com polígono confirmado. O painel nunca apresenta um vínculo provável como se fosse certo.
+
+### Os três universos
+
+Territórios quilombolas não seguem um único rito jurídico. Tratá-los como se seguissem é a principal fonte de confusão nas contagens públicas — e explica por que números divulgados variam de 54 a 200 conforme a fonte.
+
+**1. Federal, rito do Decreto 4.887/2003** — o núcleo. São os 613 processos do quadro de andamento do INCRA. Percorrem uma sequência definida:
+
+> **Certificação (FCP)** → **RTID** (identificação e delimitação, publicada em edital) → **Portaria de reconhecimento** (declara os limites) → **Decreto de desapropriação** (autoriza retirar imóveis privados de dentro) → **Título** (propriedade coletiva à associação da comunidade)
+
+**2. Federal anterior a 2003** — cerca de 8 territórios titulados pela própria Fundação Cultural Palmares, quando a competência ainda era dela. Reconhecíveis pelo prefixo `01420` ou por formatos antigos de processo. Curiaú (AP) e Campinho (RJ) são exemplos. Não têm RTID nem portaria porque o rito era outro — não estão incompletos.
+
+**3. Estadual** — cerca de 76 territórios titulados por ITERPA (PA), ITERMA (MA), ITESP (SP), INTERPI (PI) e CDA (BA). Rito próprio de cada estado, sem correspondência com as etapas federais. Entram na base pelo valor informativo, mas o painel não exibe trilha federal para eles.
+
+O regime é inferido automaticamente pelo **formato do número de processo** somado ao campo de esfera e órgão responsável.
+
+### A trilha e seus três estados
+
+Cada etapa pode estar em uma de três situações — e confundi-las distorce a leitura:
+
+- **Cumprida** — há data registrada
+- **Pendente** — a etapa é exigida e ainda não ocorreu
+- **Dispensada** — a etapa **não se aplica** àquele território
+
+A dispensa é comum e documentada pelo próprio INCRA, que escreve "Não precisa" na coluna correspondente. Ocorre 34 vezes na coluna de decreto, 13 na de portaria e 10 no segundo edital de RTID. O caso típico: quando o território está integralmente em terra pública, não há imóvel privado a desapropriar, e o decreto é dispensável. Um território dispensado de decreto está **mais adiantado**, não menos.
+
+Casos que fogem do padrão recebem nota explicativa breve na ficha: título parcial, concessão de direito real de uso (CCDRU), etapa dispensada, divergência entre fontes.
+
+### Quando as fontes oficiais discordam
+
+O shapefile e o PDF do INCRA às vezes classificam o mesmo processo de forma diferente. Para o universo federal, **prevalece o PDF**, por dois motivos verificados:
+
+- é mais atual (edição de junho de 2026)
+- distingue titulação **integral** de **parcial**, enquanto o campo do shapefile colapsa as duas
+
+O caso que estabeleceu a regra: Invernada Paiol de Telha (PR) aparece como `TITULADO` no shapefile, mas o PDF registra "Parcial" — e a informação pública confirma que os títulos emitidos foram parciais.
+
+Divergências remanescentes não são resolvidas em silêncio: aparecem sinalizadas na ficha, para decisão humana.
+
+### Georreferenciamento
+
+Dos 703 territórios, **673 têm coordenada**:
+
+- **429** pelo centroide do polígono oficial do INCRA
+- **244** pela média das localidades do Censo 2022 vinculadas ao território
+- **30** sem coordenada — permanecem na base, ausentes do mapa
+
+A origem do ponto é declarada em cada ficha. O painel exibe **pontos, não perímetros**, e a agregação nunca desce abaixo do que a fonte já publica.
+
+### Achados da auditoria de julho de 2026
+
+Uma vistoria completa da base identificou problemas pontuais, todos nominais e rastreáveis. Registrados aqui por honestidade metodológica e porque orientam a curadoria:
+
+| Achado | Extensão | Natureza |
+|---|---|---|
+| Pares de registros duplicados | 5 pares | erro de dígito no nº de processo na origem |
+| "Não precisa" tratado como etapa vazia | 34 casos | erro de processamento |
+| Datas perdidas na extração do PDF | 1 processo, 3 datas | falha pontual de leitura de tabela |
+| Processo possivelmente ausente do quadro federal | 1 caso | a confirmar junto ao INCRA |
+
+As duplicatas merecem menção por serem instrutivas. Lagoa das Pedras (CE) aparece duas vezes com processos `...000663` e `...000664` — mesmo nome, mesma área ao quarto decimal, mesmo decreto. Estiva dos Mafras (MA) tem `54203` no shapefile e `54230` no PDF, uma transposição de dígitos. Mocambo (SE) tem prefixo de superintendência divergente. Área idêntica em UF igual é indício forte de duplicação, mas a fusão **não é automática**: cada par vai para conferência humana pela camada de curadoria.
+
+A auditoria também estabeleceu um resultado positivo relevante: dos 91 territórios presentes apenas na base cartográfica, só **10 são federais**, e destes apenas 4 têm processo em formato moderno — sendo 3 duplicatas comprovadas. **O quadro federal de andamento é, portanto, uma fonte completa**, não uma amostra. É o que permite fechar o núcleo federal com confiança.
+
+### O que a base não cobre
+
+- Comunidades **apenas certificadas** pela FCP, sem processo aberto no INCRA, não aparecem como território. São milhares.
+- **Povos e comunidades tradicionais não quilombolas** dependem de acordo de compartilhamento com o MPF e não integram esta versão.
+- Ausência de protocolo de consulta significa **não localizado nas fontes públicas consultadas** — nunca "não existe".
+- Territórios estaduais têm dados menos completos por limitação das fontes, não por opção.
+
+---
+
 ## Atualizar os dados
 
 > **Sobre os links abaixo:** foram verificados em **25 de julho de 2026**. Portais de governo mudam de endereço com alguma frequência. Se algum não abrir, procure pelo nome da instituição e do produto — os nomes dos arquivos são mais estáveis que as URLs. Cada item abaixo diz também *o que* procurar, não só onde.

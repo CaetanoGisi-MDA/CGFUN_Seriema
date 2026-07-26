@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-07-25",
+ "gerado_em": "2026-07-26",
  "n_territorios": 703,
  "por_uf": {
   "MA": 112,
@@ -29,14 +29,15 @@
   "AM": 3
  },
  "por_fase": {
-  "EM_ELABORACAO": 238,
-  "DECRETO": 120,
-  "RTID": 108,
-  "TITULADO": 106,
+  "EM_ELABORACAO": 235,
+  "DECRETO": 121,
+  "TITULADO": 111,
+  "RTID": 104,
   "PORTARIA": 83,
-  "TITULO_PARCIAL": 38,
+  "TITULO_PARCIAL": 37,
   "SEM_INFO": 8,
-  "CCDRU": 1,
+  "CCDRU": 2,
+  "IDENTIFICACAO": 1,
   "TITULO_ANULADO": 1
  },
  "por_esfera": {

@@ -13,7 +13,7 @@ window.SERIEMA_CONFIG = {
      apenas no navegador dela.                                        */
   llm: {
     endpoint: 'https://api.deepseek.com/chat/completions',
-    modelo: 'deepseek/deepseek-v4-flash',
+    modelo: 'deepseek-chat',
     // Se você montar um proxy institucional que guarda a chave no servidor,
     // aponte o endpoint para ele e ligue a linha abaixo.
     usarProxy: false,
@@ -31,8 +31,8 @@ window.SERIEMA_CONFIG = {
 
   /* ---- repositório de curadoria ------------------------------------ */
   github: {
-    dono: 'CaetanoGisi-MDA',
-    repo: 'CGFUN_Seriema',
+    dono: 'SEU-USUARIO',
+    repo: 'observatorio-seriema',
     branch: 'main',
     caminhoCuradoria: 'curadoria/edicoes.json',
     // false = grava direto no branch. true = abre proposta de alteração

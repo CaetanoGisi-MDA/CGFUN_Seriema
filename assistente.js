@@ -390,8 +390,6 @@ async function chamar(mensagens) {
   const chave = S.cofre.get(K_LLM);
   const cab = { 'Content-Type': 'application/json' };
   if (!CFG.llm.usarProxy && chave) cab.Authorization = 'Bearer ' + chave;
-  cab['HTTP-Referer'] = location.origin;
-  cab['X-OpenRouter-Title'] = 'Observatorio Seriema';
   const r = await fetch(CFG.llm.endpoint, { method: 'POST', headers: cab,
     body: JSON.stringify({ model: CFG.llm.modelo, messages: mensagens, tools: FERRAMENTAS,
       tool_choice: 'auto', temperature: CFG.llm.temperatura, max_tokens: CFG.llm.maxTokens }) });

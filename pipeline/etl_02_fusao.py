@@ -24,6 +24,9 @@ for df in (pdfd, fcp):
 def nn(x):  # normaliza p/ chave nome+uf
     return x if isinstance(x, str) and x else None
 
+FASE_ORD = {'EM_ELABORACAO':0,'IDENTIFICACAO':1,'RTID':2,'PORTARIA':3,'DECRETO':4,'CCDRU':4,
+            'TITULO_PARCIAL':5,'TITULADO':6,'TITULO_ANULADO':6,None:-1}
+
 # =====================================================================
 # 1. UNIVERSO DE TERRITÓRIOS  =  processos do PDF  ∪  polígonos
 # =====================================================================
@@ -101,7 +104,13 @@ for _, r in poly.iterrows():
     if r.responsavel and r.responsavel != 'INCRA': t['responsavel'] = r.responsavel
     if t['tramite'].get('decreto') is None: t['tramite']['decreto'] = r.dt_decreto_shp
     if r.dt_titulacao_shp: t['tramite']['titulacao'] = r.dt_titulacao_shp
-    if not t.get('fase'): t['fase'] = r.fase_shp
+    # CORREÇÃO (achada em produção): antes, a fase do PDF sempre vencia, mesmo
+    # quando o shapefile trazia uma classificação institucional mais avançada
+    # para o MESMO processo — isso deixava territórios titulados aparecendo
+    # como "em elaboração". Agora vence a fase mais avançada entre as duas
+    # fontes, nunca uma retrocede a outra.
+    if FASE_ORD.get(r.fase_shp, -1) > FASE_ORD.get(t.get('fase'), -1):
+        t['fase'] = r.fase_shp
     geoms[k] = r.geometry
 
 print(f'universo de territórios ......... {len(terr)}')
