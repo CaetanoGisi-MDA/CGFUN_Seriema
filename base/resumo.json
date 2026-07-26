@@ -1,25 +1,25 @@
 {
  "gerado_em": "2026-07-26",
- "n_territorios": 692,
+ "n_territorios": 799,
  "por_uf": {
-  "MA": 112,
-  "PA": 99,
-  "BA": 75,
+  "MA": 143,
+  "PA": 141,
+  "BA": 90,
   "MG": 62,
   "RS": 37,
-  "SP": 31,
+  "SP": 30,
   "AP": 29,
-  "SE": 28,
-  "RJ": 26,
+  "PI": 29,
+  "SE": 29,
+  "RJ": 27,
   "PE": 24,
-  "PI": 21,
-  "CE": 19,
   "PR": 19,
-  "PB": 17,
+  "CE": 18,
   "GO": 16,
+  "PB": 16,
   "ES": 15,
+  "MS": 15,
   "MT": 14,
-  "MS": 13,
   "TO": 13,
   "RN": 9,
   "SC": 9,
@@ -28,14 +28,14 @@
   "AM": 4
  },
  "por_fase": {
-  "EM_ELABORACAO": 235,
-  "DECRETO": 121,
-  "TITULADO": 111,
-  "RTID": 104,
-  "PORTARIA": 83,
-  "TITULO_PARCIAL": 37,
-  "SEM_INFO": 7,
-  "CCDRU": 2,
+  "EM_ELABORACAO": 231,
+  "TITULADO": 215,
+  "DECRETO": 117,
+  "RTID": 103,
+  "PORTARIA": 80,
+  "TITULO_PARCIAL": 48,
+  "SEM_INFO": 2,
+  "CCDRU": 1,
   "IDENTIFICACAO": 1,
   "TITULO_ANULADO": 1
  },
@@ -87,12 +87,12 @@
   }
  },
  "por_regime": {
-  "federal-4887": 614,
-  "estadual": 70,
+  "federal-4887": 624,
+  "estadual": 166,
   "federal-pre2003": 7,
-  "indefinido": 1
+  "indefinido": 2
  },
- "registros_totais": 702,
+ "registros_totais": 809,
  "fragmentos": 5,
  "duplicatas": 5,
  "certidoes_sem_processo": {
@@ -169,5 +169,30 @@
  "por_fase_estadual": {
   "TITULADO": 69,
   "TITULO_ANULADO": 1
+ },
+ "divergencias": {
+  "fase_corrigida": 11,
+  "titulado_ausente_da_tabela": 27,
+  "fase_divergente": 5
+ },
+ "indicadores": {
+  "federal": {
+   "titulados": 97,
+   "area_titulada_ha": 366438.56,
+   "em_curso": 579,
+   "area_em_curso_ha": 2540463.7
+  },
+  "estadual": {
+   "titulados": 165,
+   "area_titulada_ha": 572236.92,
+   "em_curso": 3,
+   "area_em_curso_ha": 17284.5
+  },
+  "todos": {
+   "titulados": 263,
+   "area_titulada_ha": 938675.48,
+   "em_curso": 584,
+   "area_em_curso_ha": 2559878.53
+  }
  }
 }

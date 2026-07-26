@@ -468,6 +468,7 @@ function renderLista() {
           ${i.pol ? '<span class="marca-mini m-pol">POL</span>' : ''}
           ${i.reg === 'estadual' ? '<span class="marca-mini m-est">EST</span>' : ''}
           ${i.lat == null ? '<span class="marca-mini m-aprox">SEM LOCAL.</span>' : ''}
+          ${i.div ? '<span class="marca-mini m-div">!</span>' : ''}
         </span>
       </div>
       <div class="l2" style="margin-top:5px">
@@ -618,6 +619,11 @@ function renderFicha(f) {
 
   $('#painel-lista').innerHTML = `<div class="ficha">
     <button class="voltar" id="bt-voltar">← todos os territórios</button>
+    ${(f.divergencias || []).map(d => `<div class="divergencia ${d.tipo === 'fase_corrigida' ? 'corrigida' : ''}">
+        <b>${({fase_corrigida: 'Fase corrigida pela tabela oficial de títulos.',
+               fase_divergente: 'Divergência entre fontes — não resolvida.',
+               titulado_ausente_da_tabela: 'Titulado, mas ausente da tabela oficial de títulos.'
+              }[d.tipo] || 'Divergência.')}</b> ${esc(d.texto)}</div>`).join('')}
     ${f.nota_registro ? `<div class="nota-registro"><b>${
         f.situacao_registro === 'fragmento' ? 'Recorte cartográfico.' : 'Duplicata provável.'
       }</b> ${esc(f.nota_registro)}</div>` : ''}
@@ -657,6 +663,37 @@ function renderFicha(f) {
              sem_coordenada: 'sem coordenada' }[f.geo_origem] || '—')}</dd>
       </dl>
     </div>
+
+    ${f.titulacao ? `<div class="bloco">
+      <h3>Títulos expedidos</h3>
+      <dl class="kv">
+        <dt>Área do território</dt><dd>${num(f.titulacao.area_territorio_ha, 2)} ha</dd>
+        <dt>Área titulada</dt><dd>${f.titulacao.area_titulada_ha != null
+            ? num(f.titulacao.area_titulada_ha, 2) + ' ha' : '<i>não itemizada</i>'}</dd>
+        <dt>% do território</dt><dd>${f.titulacao.pct_titulado}%</dd>
+        <dt>Nº de títulos</dt><dd>${f.titulacao.n_titulos || '—'}</dd>
+      </dl>
+      <div class="selos mt6">
+        <span class="selo ${f.titulacao.vinculo === 'confirmado' ? 's-conf'
+                          : f.titulacao.vinculo === 'provavel' ? 's-prov' : 's-conf'}">
+          vínculo com a tabela: ${f.titulacao.vinculo === 'registro próprio' ? 'registro próprio da tabela'
+            : f.titulacao.vinculo === 'confirmado' ? 'confirmado' : 'provável'}</span>
+      </div>
+      ${f.titulacao.criterio_vinculo ? `<div class="nota mt6">Casamento por ${esc(f.titulacao.criterio_vinculo)}.
+        A tabela de títulos não traz número de processo, então o vínculo é sempre por nome —
+        nunca por código.${f.titulacao.nome_na_fonte && f.titulacao.nome_na_fonte !== f.nome
+          ? ` Nome na fonte: <i>${esc(f.titulacao.nome_na_fonte)}</i>.` : ''}</div>` : ''}
+      ${f.titulacao.titulos.length ? `<div class="pilha mt10">${f.titulacao.titulos.map(t => `
+        <div class="cartao"><div class="t">${esc(t.orgao.replace(/\*/g, ''))} — ${num(t.area_ha, 4)} ha</div>
+        <div class="m">${data(t.data)}${t.parceria_incra ? ' · em parceria com o INCRA/MDA' : ''}${
+          t.ccdru ? ' · concessão de direito real de uso' : ''}${
+          t.clausula_suspensiva ? ' · título com cláusula suspensiva' : ''}</div></div>`).join('')}</div>`
+       : `<div class="nota-registro"><b>Itemização pendente.</b> A fonte registra
+            ${f.titulacao.pct_titulado}% do território titulado, mas as linhas dos títulos
+            individuais não puderam ser lidas com segurança. A área titulada exata deste
+            território não consta — não foi estimada.</div>`}
+      <div class="nota mt6">Fonte: ${esc(f.titulacao.fonte)}, atualizada em ${data(f.titulacao.atualizacao_fonte)}.</div>
+    </div>` : ''}
 
     <div class="bloco">
       <h3>Protocolo de consulta prévia</h3>
@@ -801,6 +838,12 @@ function renderSobre() {
         O próprio INCRA adverte que os valores de edital, portaria e decreto se sobrepõem: um mesmo
         território é contado em cada etapa por que passou. A área usada é a <b>identificada e publicada
         no edital do RTID</b> — área pretendida, não área entregue.</div>
+      <div class="nota mt6"><sup style="color:var(--bico)">*</sup> <b>Cobertura estadual incompleta.</b>
+        Os dados de titulação estadual vêm da consolidação que o INCRA faz das informações
+        remetidas pelos órgãos de terra dos estados, e essa consolidação tem <b>defasagem
+        conhecida</b>: títulos estaduais expedidos nos últimos anos podem ainda não constar.
+        Os números do universo estadual — e do total, que o inclui — devem ser lidos como
+        <b>piso</b>, nunca como contagem final. O universo federal não tem essa limitação.</div>
       <div class="nota mt6"><b>Sobre os indicadores do topo.</b> Os territórios com
         <b>titulação parcial</b> aparecem nos dois blocos: em <i>titulados</i>, porque já receberam
         título; em <i>em curso</i>, porque parte da área segue pendente. A contagem de territórios,
@@ -882,7 +925,8 @@ function renderSobre() {
 
 function atualizarIndicadores() {
   const esf = E.universo === 'estadual' ? 'estadual'
-            : E.universo === 'certidoes' ? null : 'federal';
+            : E.universo === 'federal'  ? 'federal'
+            : null;   // 'todos' e 'certidoes' não filtram por esfera
   if (E.universo === 'certidoes') {
     const c = E.certidoes;
     $('#c-tit').textContent = '—'; $('#c-tit-ha').textContent = '—';
@@ -895,18 +939,28 @@ function atualizarIndicadores() {
     return;
   }
   const rot = E.universo === 'estadual' ? 'estaduais' : E.universo === 'todos' ? '' : 'federais';
-  document.querySelectorAll('.bloco-n .rot')[0].textContent = ('Territórios titulados ' + rot).trim();
-  document.querySelectorAll('.bloco-n .rot')[1].textContent = ('Processos em curso ' + rot).trim();
-  document.querySelectorAll('.bloco-n .par span')[2].textContent = 'processos';
+  // No universo estadual (e no total, que o inclui) a cobertura não é completa:
+  // depende do que o INCRA consolidou dos órgãos estaduais. O asterisco vai
+  // também no rótulo, não só nos hectares.
+  const incompleto = E.universo === 'estadual' || E.universo === 'todos';
+  const ast = incompleto ? '<sup>*</sup>' : '';
+  document.querySelectorAll('.bloco-n .rot')[0].innerHTML = ('Territórios titulados ' + rot).trim() + ast;
+  document.querySelectorAll('.bloco-n .rot')[1].innerHTML = ('Processos em curso ' + rot).trim() + ast;
+  document.querySelectorAll('.bloco-n .par span')[2].innerHTML = 'processos' + ast;
   document.querySelectorAll('.bloco-n .par span')[3].innerHTML = 'hectares<sup>*</sup>';
+  const av = $('#aviso-cobertura');
+  if (av) av.classList.toggle('oculto', !incompleto);
 
   const alvo = E.fichas.filter(f => f.situacao_registro === 'ativo'
     && (!esf || (esf === 'federal' ? (f.regime || '').startsWith('federal') : f.regime === 'estadual')));
   const integrais = alvo.filter(f => f.fase === 'TITULADO');
   const parciais  = alvo.filter(f => f.fase === 'TITULO_PARCIAL');
   const curso     = alvo.filter(f => f.fase !== 'TITULADO');
-  $('#c-tit').textContent      = num(integrais.length + parciais.length);
-  $('#c-tit-ha').textContent   = num(integrais.reduce((a, f) => a + (f.area_ha || 0), 0));
+  $('#c-tit').textContent = num(integrais.length + parciais.length);
+  // área EFETIVAMENTE titulada, conferida na tabela de títulos expedidos do INCRA
+  const areaTit = [...integrais, ...parciais]
+    .reduce((a, f) => a + (((f.titulacao || {}).area_titulada_ha) || 0), 0);
+  $('#c-tit-ha').textContent = num(areaTit);
   $('#c-curso').textContent    = num(curso.length);
   $('#c-curso-ha').textContent = num(curso.reduce((a, f) => a + (f.area_ha || 0), 0));
 }

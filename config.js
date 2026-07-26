@@ -1,27 +1,31 @@
 /* ============================================================
    Observatório Seriema — configuração
-   Edite este arquivo para trocar de provedor de modelo, ajustar
-   o repositório de curadoria ou ativar revisão por proposta.
+   Coordenação de Governança Fundiária · SETEQ / MDA
+
+   ESTE ARQUIVO É SEU. Ao atualizar o painel, substitua todos os
+   outros arquivos, mas preserve este — ele guarda o repositório,
+   o serviço de linguagem e as preferências desta instalação.
    ============================================================ */
 
 window.SERIEMA_CONFIG = {
 
-  /* ---- modelo de linguagem ------------------------------------------
+  /* ---- serviço de linguagem ----------------------------------------
      Interface compatível com OpenAI (/chat/completions).
-     Troque estes três campos para usar outro provedor.
-     A chave NÃO fica aqui: é digitada pela pessoa e guardada
-     apenas no navegador dela.                                        */
+     Endereço e modelo também são editáveis pela própria interface,
+     no botão "Serviço e chave" da aba Assistente.
+     A CHAVE NÃO FICA AQUI: é digitada pela pessoa e guardada apenas
+     no navegador dela.                                              */
   llm: {
-    endpoint: 'https://api.deepseek.com/chat/completions',
-    modelo: 'deepseek-chat',
-    // Se você montar um proxy institucional que guarda a chave no servidor,
-    // aponte o endpoint para ele e ligue a linha abaixo.
+    endpoint: 'https://openrouter.ai/api/v1/chat/completions',
+    modelo: 'deepseek/deepseek-v4-flash',
+    // true apenas se você apontar o endpoint para um proxy que
+    // guarde a chave no servidor.
     usarProxy: false,
     temperatura: 0.2,
     maxTokens: 1600,
   },
 
-  /* ---- busca na web (opcional, independente do provedor) ----------- */
+  /* ---- busca na web (opcional, independente do provedor do modelo) -- */
   busca: {
     ativa: true,
     provedor: 'tavily',                       // 'tavily' | 'serper' | 'brave'
@@ -29,18 +33,18 @@ window.SERIEMA_CONFIG = {
     maxResultados: 5,
   },
 
-  /* ---- repositório de curadoria ------------------------------------ */
+  /* ---- repositório de curadoria ------------------------------------- */
   github: {
-    dono: 'SEU-USUARIO',
-    repo: 'observatorio-seriema',
+    dono: 'CaetanoGisi-MDA',
+    repo: 'CGFUN_Seriema',
     branch: 'main',
     caminhoCuradoria: 'curadoria/edicoes.json',
-    // false = grava direto no branch. true = abre proposta de alteração
-    // para revisão antes de valer. Troque quando a equipe crescer.
+    // false = grava direto no branch principal.
+    // true  = abre proposta de alteração para revisão antes de valer.
     exigirRevisao: false,
   },
 
-  /* ---- dados -------------------------------------------------------- */
+  /* ---- dados --------------------------------------------------------- */
   dados: {
     base: 'base/',
     arquivos: {
@@ -50,10 +54,10 @@ window.SERIEMA_CONFIG = {
       protocolos: 'protocolos.json',
     },
     curadoria: 'curadoria/edicoes.json',
-    dataCorte: '25 de julho de 2026',
+    dataCorte: 'julho de 2026',
   },
 
-  /* ---- mapa --------------------------------------------------------- */
+  /* ---- mapa ---------------------------------------------------------- */
   mapa: {
     centro: [-52.5, -13.5],
     zoom: 3.4,
@@ -61,6 +65,8 @@ window.SERIEMA_CONFIG = {
     atribuicao: '© OpenStreetMap · © CARTO',
   },
 
-  /* ---- aviso de publicidade ---------------------------------------- */
+  /* ---- aviso de publicidade ------------------------------------------
+     true faz o painel avisar, antes de publicar edições, que tudo o
+     que for digitado ficará visível na internet.                      */
   repositorioPublico: true,
 };

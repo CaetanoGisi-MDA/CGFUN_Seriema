@@ -1,0 +1,5821 @@
+{
+ "fonte": {
+  "nome": "INCRA/DFQ — Títulos expedidos às comunidades quilombolas (1995 até a atualidade)",
+  "atualizacao_fonte": "2025-11-19",
+  "obtencao": "transcrição validada por totais; PDF indisponível no portal em julho/2026",
+  "confianca": "linha do território conferida contra 4 totais oficiais; itemização de títulos parcial",
+  "totais_declarados": {
+   "territorios": 245,
+   "titulos": 384,
+   "comunidades": 397,
+   "familias": 24250,
+   "area_territorios_ha": 1595781.2907,
+   "area_titulada_ha": 1162002.0645
+  }
+ },
+ "registros": [
+  {
+   "num_fonte": 1,
+   "territorio": "Boa Vista",
+   "municipio": "Oriximiná",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 112,
+   "area_territorio_ha": 1125.0341,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 1125.0341,
+     "data": "1995-11-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1125.0341,
+   "itemizacao_pendente": false,
+   "chave": "BOA VISTA|PA"
+  },
+  {
+   "num_fonte": 2,
+   "territorio": "Água Fria",
+   "municipio": "Oriximiná",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 15,
+   "area_territorio_ha": 557.1355,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 557.1355,
+     "data": "1996-11-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 557.1355,
+   "itemizacao_pendente": false,
+   "chave": "AGUA FRIA|PA"
+  },
+  {
+   "num_fonte": 3,
+   "territorio": "Pacoval de Alenquer",
+   "municipio": "Alenquer",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 115,
+   "area_territorio_ha": 7472.879,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 7472.879,
+     "data": "1996-11-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 7472.879,
+   "itemizacao_pendente": false,
+   "chave": "PACOVAL DE ALENQUER|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 4,
+   "territorio": "Trombetas",
+   "municipio": "Oriximiná",
+   "uf": "PA",
+   "n_comunidades": 7,
+   "familias": 138,
+   "area_territorio_ha": 80887.0941,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA**",
+     "area_ha": 57024.6216,
+     "data": "1997-11-20",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "INCRA",
+     "area_ha": 23862.4725,
+     "data": "1997-11-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 80887.0941,
+   "itemizacao_pendente": false,
+   "chave": "TROMBETAS|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 5,
+   "territorio": "Itamaoari",
+   "municipio": "Cachoeira do Piriá",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 33,
+   "area_territorio_ha": 5377.6028,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 5377.6028,
+     "data": "1998-09-07",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 5377.6028,
+   "itemizacao_pendente": false,
+   "chave": "ITAMAOARI|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 6,
+   "territorio": "Erepecuru",
+   "municipio": "Oriximiná e Óbidos",
+   "uf": "PA",
+   "n_comunidades": 7,
+   "familias": 154,
+   "area_territorio_ha": 231610.294,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 71150.8867,
+     "data": "1998-12-08",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "ITERPA**",
+     "area_ha": 160459.4072,
+     "data": "2000-05-12",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 231610.2939,
+   "itemizacao_pendente": false,
+   "chave": "EREPECURU|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 7,
+   "territorio": "Mangal e Barro Vermelho",
+   "municipio": "Sítio do Mato",
+   "uf": "BA",
+   "n_comunidades": 1,
+   "familias": 295,
+   "area_territorio_ha": 9195.5182,
+   "pct_titulado": 2.0,
+   "titulos": [
+    {
+     "orgao": "INTERBA/FCP",
+     "area_ha": 153.8043,
+     "data": "1999-01-30",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 153.8043,
+   "itemizacao_pendente": false,
+   "chave": "MANGAL E BARRO VERMELHO|BA"
+  },
+  {
+   "num_fonte": 8,
+   "territorio": "Campinho da Independência",
+   "municipio": "Paraty",
+   "uf": "RJ",
+   "n_comunidades": 1,
+   "familias": 59,
+   "area_territorio_ha": 287.9461,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "SEHAF",
+     "area_ha": 287.9461,
+     "data": "1999-03-19",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 287.9461,
+   "itemizacao_pendente": false,
+   "chave": "CAMPINHO DA INDEPENDENCIA|RJ",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 9,
+   "territorio": "Abacatal-Aurá",
+   "municipio": "Ananindeua",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 53,
+   "area_territorio_ha": 583.2838,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 317.9366,
+     "data": "1999-05-13",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "ITERPA**",
+     "area_ha": 265.3472,
+     "data": "2008-12-02",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 583.2838,
+   "itemizacao_pendente": false,
+   "chave": "ABACATAL AURA|PA"
+  },
+  {
+   "num_fonte": 10,
+   "territorio": "Eira dos Coqueiros",
+   "municipio": "Codó",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 35,
+   "area_territorio_ha": 1011.8271,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 1011.8271,
+     "data": "1999-08-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1011.8271,
+   "itemizacao_pendente": false,
+   "chave": "EIRA DOS COQUEIROS|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 11,
+   "territorio": "Mocorongo",
+   "municipio": "Codó",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 24,
+   "area_territorio_ha": 162.6254,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 162.6254,
+     "data": "1999-08-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 162.6254,
+   "itemizacao_pendente": false,
+   "chave": "MOCORONGO|MA"
+  },
+  {
+   "num_fonte": 12,
+   "territorio": "Santo Antonio dos Pretos",
+   "municipio": "Codó",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 102,
+   "area_territorio_ha": 2139.55,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 2139.55,
+     "data": "1999-08-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 2139.55,
+   "itemizacao_pendente": false,
+   "chave": "SANTO ANTONIO DOS PRETOS|MA"
+  },
+  {
+   "num_fonte": 13,
+   "territorio": "Curiau",
+   "municipio": "Macapá",
+   "uf": "AP",
+   "n_comunidades": 1,
+   "familias": 108,
+   "area_territorio_ha": 3321.8931,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "FCP",
+     "area_ha": 3321.8931,
+     "data": "1999-12-03",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 3321.8931,
+   "itemizacao_pendente": false,
+   "chave": "CURIAU|AP"
+  },
+  {
+   "num_fonte": 14,
+   "territorio": "Barra do Brumado",
+   "municipio": "Rio de Contas",
+   "uf": "BA",
+   "n_comunidades": 2,
+   "familias": 148,
+   "area_territorio_ha": 1339.2768,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "CDA/FCP",
+     "area_ha": 1339.2768,
+     "data": "1999-12-22",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1339.2768,
+   "itemizacao_pendente": false,
+   "chave": "BARRA DO BRUMADO|BA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 15,
+   "territorio": "Cabeceiras",
+   "municipio": "Óbidos",
+   "uf": "PA",
+   "n_comunidades": 6,
+   "familias": 445,
+   "area_territorio_ha": 17189.6939,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "FCP",
+     "area_ha": 17189.6939,
+     "data": "2000-05-08",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 17189.6939,
+   "itemizacao_pendente": false,
+   "chave": "CABECEIRAS|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 16,
+   "territorio": "Gurupá",
+   "municipio": "Gurupá",
+   "uf": "PA",
+   "n_comunidades": 8,
+   "familias": 300,
+   "area_territorio_ha": 83437.1287,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 83437.1287,
+     "data": "2000-07-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 83437.1287,
+   "itemizacao_pendente": false,
+   "chave": "GURUPA|PA"
+  },
+  {
+   "num_fonte": 17,
+   "territorio": "Maria Ribeira",
+   "municipio": "Gurupá",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 32,
+   "area_territorio_ha": 2031.8727,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 2031.8727,
+     "data": "2000-11-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 2031.8727,
+   "itemizacao_pendente": false,
+   "chave": "MARIA RIBEIRA|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 18,
+   "territorio": "Porto dos Pilões",
+   "municipio": "Iporanga",
+   "uf": "SP",
+   "n_comunidades": 1,
+   "familias": 51,
+   "area_territorio_ha": 5908.6824,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITESP*",
+     "area_ha": 5908.6824,
+     "data": "2001-01-15",
+     "parceria_incra": false,
+     "clausula_suspensiva": true,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 5908.6824,
+   "itemizacao_pendente": false,
+   "chave": "PORTO DOS PILOES|SP"
+  },
+  {
+   "num_fonte": 19,
+   "territorio": "São Pedro",
+   "municipio": "Eldorado e Iporanga",
+   "uf": "SP",
+   "n_comunidades": 1,
+   "familias": 39,
+   "area_territorio_ha": 4686.9803,
+   "pct_titulado": 97.0,
+   "titulos": [
+    {
+     "orgao": "ITESP*",
+     "area_ha": 4558.1986,
+     "data": "2001-01-15",
+     "parceria_incra": false,
+     "clausula_suspensiva": true,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 4558.1986,
+   "itemizacao_pendente": false,
+   "chave": "SAO PEDRO|SP"
+  },
+  {
+   "num_fonte": 20,
+   "territorio": "Maria Rosa",
+   "municipio": "Iporanga",
+   "uf": "SP",
+   "n_comunidades": 1,
+   "familias": 20,
+   "area_territorio_ha": 3375.6582,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITESP*",
+     "area_ha": 3375.6582,
+     "data": "2001-01-15",
+     "parceria_incra": false,
+     "clausula_suspensiva": true,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 3375.6582,
+   "itemizacao_pendente": false,
+   "chave": "MARIA ROSA|SP"
+  },
+  {
+   "num_fonte": 21,
+   "territorio": "Laranjituba e África",
+   "municipio": "Moju",
+   "uf": "PA",
+   "n_comunidades": 2,
+   "familias": 48,
+   "area_territorio_ha": 1226.2278,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 118.0441,
+     "data": "2001-12-04",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "ITERPA**",
+     "area_ha": 1108.1837,
+     "data": "2008-12-02",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1226.2278,
+   "itemizacao_pendente": false,
+   "chave": "LARANJITUBA E AFRICA|PA"
+  },
+  {
+   "num_fonte": 22,
+   "territorio": "Camiranga",
+   "municipio": "Cachoeira do Piriá",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 39,
+   "area_territorio_ha": 320.6121,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 320.6121,
+     "data": "2002-01-16",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 320.6121,
+   "itemizacao_pendente": false,
+   "chave": "CAMIRANGA|PA"
+  },
+  {
+   "num_fonte": 23,
+   "territorio": "Ilhas de Abaetetuba",
+   "municipio": "Abaetetuba",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 116,
+   "area_territorio_ha": 588.167,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 588.167,
+     "data": "2002-05-05",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 588.167,
+   "itemizacao_pendente": false,
+   "chave": "ILHAS DE ABAETETUBA|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 24,
+   "territorio": "Ilhas de Abaetetuba",
+   "municipio": "Abaetetuba",
+   "uf": "PA",
+   "n_comunidades": 9,
+   "familias": 701,
+   "area_territorio_ha": 9076.1909,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 9076.1909,
+     "data": "2002-06-05",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 9076.1909,
+   "itemizacao_pendente": false,
+   "chave": "ILHAS DE ABAETETUBA|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 25,
+   "territorio": "Bailique",
+   "municipio": "Oeiras do Pará e Baião",
+   "uf": "PA",
+   "n_comunidades": 4,
+   "familias": 112,
+   "area_territorio_ha": 7297.691,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 7297.691,
+     "data": "2002-07-19",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 7297.691,
+   "itemizacao_pendente": false,
+   "chave": "BAILIQUE|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 26,
+   "territorio": "Jurussaca",
+   "municipio": "Traquateua",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 45,
+   "area_territorio_ha": 200.9875,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 200.9875,
+     "data": "2002-09-14",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 200.9875,
+   "itemizacao_pendente": false,
+   "chave": "JURUSSACA|PA"
+  },
+  {
+   "num_fonte": 27,
+   "territorio": "Santa Rita de Barreiras",
+   "municipio": "São Miguel do Guamá",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 35,
+   "area_territorio_ha": 371.3032,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 371.3032,
+     "data": "2002-09-22",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 371.3032,
+   "itemizacao_pendente": false,
+   "chave": "SANTA RITA DE BARREIRAS|PA"
+  },
+  {
+   "num_fonte": 28,
+   "territorio": "Santa Fé e Santo António",
+   "municipio": "Baião",
+   "uf": "PA",
+   "n_comunidades": 2,
+   "familias": 28,
+   "area_territorio_ha": 830.8776,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 830.8776,
+     "data": "2002-09-29",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 830.8776,
+   "itemizacao_pendente": false,
+   "chave": "SANTA FE E SANTO ANTONIO|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 29,
+   "territorio": "Igarapé Preto",
+   "municipio": "Oeiras do Pará, Baião, Mocajuba e Bagre",
+   "uf": "PA",
+   "n_comunidades": 12,
+   "familias": 565,
+   "area_territorio_ha": 17357.0206,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 17357.0206,
+     "data": "2002-09-29",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 17357.0206,
+   "itemizacao_pendente": false,
+   "chave": "IGARAPE PRETO|PA"
+  },
+  {
+   "num_fonte": 30,
+   "territorio": "Narcisa",
+   "municipio": "Capitão Poço",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 7,
+   "area_territorio_ha": 618.932,
+   "pct_titulado": 19.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 120.053,
+     "data": "2002-11-14",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 120.053,
+   "itemizacao_pendente": false,
+   "chave": "NARCISA|PA"
+  },
+  {
+   "num_fonte": 31,
+   "territorio": "Guajará Miri",
+   "municipio": "Acará",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 70,
+   "area_territorio_ha": 1024.1954,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 1024.1954,
+     "data": "2002-11-26",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1024.1954,
+   "itemizacao_pendente": false,
+   "chave": "GUAJARA MIRI|PA"
+  },
+  {
+   "num_fonte": 32,
+   "territorio": "São José de Icatu",
+   "municipio": "Baião",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 80,
+   "area_territorio_ha": 1636.6122,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 1636.6122,
+     "data": "2002-11-30",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1636.6122,
+   "itemizacao_pendente": false,
+   "chave": "SAO JOSE DE ICATU|PA"
+  },
+  {
+   "num_fonte": 33,
+   "territorio": "Jenipapo",
+   "municipio": "Caxias",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 74,
+   "area_territorio_ha": 558.5242,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 558.5242,
+     "data": "2002-11-01",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 558.5242,
+   "itemizacao_pendente": false,
+   "chave": "JENIPAPO|MA"
+  },
+  {
+   "num_fonte": 34,
+   "territorio": "Ivaporunduva",
+   "municipio": "Eldorado",
+   "uf": "SP",
+   "n_comunidades": 1,
+   "familias": 102,
+   "area_territorio_ha": 2707.4044,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITESP*",
+     "area_ha": 672.2844,
+     "data": "2003-03-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": true,
+     "ccdru": false
+    },
+    {
+     "orgao": "INCRA",
+     "area_ha": 2035.12,
+     "data": "2010-05-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 2707.4044,
+   "itemizacao_pendente": false,
+   "chave": "IVAPORUNDUVA|SP"
+  },
+  {
+   "num_fonte": 35,
+   "territorio": "Pedro Cubas",
+   "municipio": "Eldorado",
+   "uf": "SP",
+   "n_comunidades": 1,
+   "familias": 40,
+   "area_territorio_ha": 3795.6701,
+   "pct_titulado": 64.0,
+   "titulos": [
+    {
+     "orgao": "ITESP*",
+     "area_ha": 2443.721,
+     "data": "2003-03-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": true,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 2443.721,
+   "itemizacao_pendente": false,
+   "chave": "PEDRO CUBAS|SP"
+  },
+  {
+   "num_fonte": 36,
+   "territorio": "Santa Maria de Mirindeua",
+   "municipio": "Moju",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 85,
+   "area_territorio_ha": 1763.0618,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 1763.0618,
+     "data": "2003-08-23",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1763.0618,
+   "itemizacao_pendente": false,
+   "chave": "SANTA MARIA DE MIRINDEUA|PA"
+  },
+  {
+   "num_fonte": 37,
+   "territorio": "Santo Cristo",
+   "municipio": "Moju",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 52,
+   "area_territorio_ha": 1767.0434,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 1767.0434,
+     "data": "2003-08-23",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1767.0434,
+   "itemizacao_pendente": false,
+   "chave": "SANTO CRISTO|PA"
+  },
+  {
+   "num_fonte": 38,
+   "territorio": "Alto Trombetas",
+   "municipio": "Oriximiná",
+   "uf": "PA",
+   "n_comunidades": 5,
+   "familias": 182,
+   "area_territorio_ha": 79095.5912,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 79095.5912,
+     "data": "2003-11-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 79095.5912,
+   "itemizacao_pendente": false,
+   "chave": "ALTO TROMBETAS|PA"
+  },
+  {
+   "num_fonte": 39,
+   "territorio": "Itacoã Miri",
+   "municipio": "Acará",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 96,
+   "area_territorio_ha": 968.9932,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 968.9932,
+     "data": "2003-11-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 968.9932,
+   "itemizacao_pendente": false,
+   "chave": "ITACOA MIRI|PA"
+  },
+  {
+   "num_fonte": 40,
+   "territorio": "Bela Aurora",
+   "municipio": "Cachoeira do Piriá",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 32,
+   "area_territorio_ha": 2410.2754,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 2410.2754,
+     "data": "2004-12-14",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 2410.2754,
+   "itemizacao_pendente": false,
+   "chave": "BELA AURORA|PA"
+  },
+  {
+   "num_fonte": 41,
+   "territorio": "Paca e Aningal",
+   "municipio": "Viseu",
+   "uf": "PA",
+   "n_comunidades": 2,
+   "familias": 22,
+   "area_territorio_ha": 1284.2398,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 1284.2398,
+     "data": "2004-12-14",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1284.2398,
+   "itemizacao_pendente": false,
+   "chave": "PACA E ANINGAL|PA"
+  },
+  {
+   "num_fonte": 42,
+   "territorio": "Nossa Senhora da Conceição",
+   "municipio": "Moju",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 54,
+   "area_territorio_ha": 2393.0559,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 2393.0559,
+     "data": "2005-11-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 2393.0559,
+   "itemizacao_pendente": false,
+   "chave": "NOSSA SENHORA DA CONCEICAO|PA"
+  },
+  {
+   "num_fonte": 43,
+   "territorio": "Santa Maria do Traquateua",
+   "municipio": "Moju",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 27,
+   "area_territorio_ha": 833.3833,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 833.3833,
+     "data": "2005-11-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 833.3833,
+   "itemizacao_pendente": false,
+   "chave": "SANTA MARIA DO TRAQUATEUA|PA"
+  },
+  {
+   "num_fonte": 44,
+   "territorio": "São Manuel",
+   "municipio": "Moju",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 68,
+   "area_territorio_ha": 1163.6383,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 1163.6383,
+     "data": "2005-11-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1163.6383,
+   "itemizacao_pendente": false,
+   "chave": "SAO MANUEL|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 45,
+   "territorio": "Altamira",
+   "municipio": "Pinheiro",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 68,
+   "area_territorio_ha": 1220.9398,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA**",
+     "area_ha": 1220.9398,
+     "data": "2005-12-27",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1220.9398,
+   "itemizacao_pendente": false,
+   "chave": "ALTAMIRA|MA"
+  },
+  {
+   "num_fonte": 46,
+   "territorio": "Olho D'Água do Raposo",
+   "municipio": "Caxias",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 72,
+   "area_territorio_ha": 187.3333,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA**",
+     "area_ha": 187.3333,
+     "data": "2005-12-27",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 187.3333,
+   "itemizacao_pendente": false,
+   "chave": "OLHO D AGUA DO RAPOSO|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 47,
+   "territorio": "São Sebastião dos Pretos",
+   "municipio": "Bacabal",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 62,
+   "area_territorio_ha": 1010.2186,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA**",
+     "area_ha": 1010.2186,
+     "data": "2005-12-27",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1010.2186,
+   "itemizacao_pendente": false,
+   "chave": "SAO SEBASTIAO DOS PRETOS|MA"
+  },
+  {
+   "num_fonte": 48,
+   "territorio": "Conceição do Macacoari",
+   "municipio": "Macapá",
+   "uf": "AP",
+   "n_comunidades": 1,
+   "familias": 20,
+   "area_territorio_ha": 8475.471,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 8475.471,
+     "data": "2006-01-02",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 8475.471,
+   "itemizacao_pendente": false,
+   "chave": "CONCEICAO DO MACACOARI|AP"
+  },
+  {
+   "num_fonte": 49,
+   "territorio": "Furnas da Boa Sorte",
+   "municipio": "Corguinho",
+   "uf": "MS",
+   "n_comunidades": 1,
+   "familias": 52,
+   "area_territorio_ha": 1486.4011,
+   "pct_titulado": 5.0,
+   "titulos": [
+    {
+     "orgao": "IDATERRA",
+     "area_ha": 73.3177,
+     "data": "2006-08-02",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 73.3177,
+   "itemizacao_pendente": false,
+   "chave": "FURNAS DA BOA SORTE|MS",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 50,
+   "territorio": "Pau D'Arco e Parateca",
+   "municipio": "Malhada",
+   "uf": "BA",
+   "n_comunidades": 2,
+   "familias": 500,
+   "area_territorio_ha": 41780.0,
+   "pct_titulado": 19.0,
+   "titulos": [
+    {
+     "orgao": "SPU",
+     "area_ha": 7801.4484,
+     "data": "2006-08-08",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 7801.4484,
+   "itemizacao_pendente": false,
+   "chave": "PAU D ARCO E PARATECA|BA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 51,
+   "territorio": "Santa Izabel",
+   "municipio": "Candido Mendes",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 60,
+   "area_territorio_ha": 837.6155,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA**",
+     "area_ha": 837.6155,
+     "data": "2006-08-30",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 837.6155,
+   "itemizacao_pendente": false,
+   "chave": "SANTA IZABEL|MA"
+  },
+  {
+   "num_fonte": 52,
+   "territorio": "Promissão",
+   "municipio": "São Luis Gonzaga do Maranhão",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 85,
+   "area_territorio_ha": 179.5163,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 179.5163,
+     "data": "2006-08-09",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 179.5163,
+   "itemizacao_pendente": false,
+   "chave": "PROMISSAO|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 53,
+   "territorio": "Cipó",
+   "municipio": "São João do Soter",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 124,
+   "area_territorio_ha": 2404.9567,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA**",
+     "area_ha": 2404.9567,
+     "data": "2006-09-01",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 2404.9567,
+   "itemizacao_pendente": false,
+   "chave": "CIPO|MA"
+  },
+  {
+   "num_fonte": 54,
+   "territorio": "Rio dos Peixes",
+   "municipio": "Pinheiro",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 47,
+   "area_territorio_ha": 54.2234,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA**",
+     "area_ha": 54.2234,
+     "data": "2006-09-01",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 54.2234,
+   "itemizacao_pendente": false,
+   "chave": "RIO DOS PEIXES|MA"
+  },
+  {
+   "num_fonte": 55,
+   "territorio": "Santana",
+   "municipio": "Santa Rita",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 41,
+   "area_territorio_ha": 201.1171,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 201.1171,
+     "data": "2006-09-01",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 201.1171,
+   "itemizacao_pendente": false,
+   "chave": "SANTANA|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 56,
+   "territorio": "Santo Inácio",
+   "municipio": "Pinheiro",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 79,
+   "area_territorio_ha": 1363.4178,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA**",
+     "area_ha": 1363.4178,
+     "data": "2006-09-01",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1363.4178,
+   "itemizacao_pendente": false,
+   "chave": "SANTO INACIO|MA"
+  },
+  {
+   "num_fonte": 57,
+   "territorio": "Uzina Velha",
+   "municipio": "Caxias",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 76,
+   "area_territorio_ha": 1160.9576,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA**",
+     "area_ha": 1160.9576,
+     "data": "2006-09-01",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1160.9576,
+   "itemizacao_pendente": false,
+   "chave": "UZINA VELHA|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 58,
+   "territorio": "Bom Jesus",
+   "municipio": "Candido Mendes",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 58,
+   "area_territorio_ha": 216.3937,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA**",
+     "area_ha": 216.3937,
+     "data": "2006-11-20",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 216.3937,
+   "itemizacao_pendente": false,
+   "chave": "BOM JESUS|MA"
+  },
+  {
+   "num_fonte": 59,
+   "territorio": "Lago Grande",
+   "municipio": "Peritoró",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 44,
+   "area_territorio_ha": 906.8315,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA**",
+     "area_ha": 906.8315,
+     "data": "2006-11-20",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 906.8315,
+   "itemizacao_pendente": false,
+   "chave": "LAGO GRANDE|MA"
+  },
+  {
+   "num_fonte": 60,
+   "territorio": "Juçaral/Santa Helena",
+   "municipio": "Itapecuru-Mirim",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 30,
+   "area_territorio_ha": 345.4331,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA**",
+     "area_ha": 345.4331,
+     "data": "2006-11-20",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 345.4331,
+   "itemizacao_pendente": false,
+   "chave": "JUCARAL SANTA HELENA|MA"
+  },
+  {
+   "num_fonte": 61,
+   "territorio": "Olho D'Agua dos Pires",
+   "municipio": "Esperantina",
+   "uf": "PI",
+   "n_comunidades": 1,
+   "familias": 89,
+   "area_territorio_ha": 626.839,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INTERPI/INCRA",
+     "area_ha": 626.839,
+     "data": "2006-11-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 626.839,
+   "itemizacao_pendente": false,
+   "chave": "OLHO D AGUA DOS PIRES|PI"
+  },
+  {
+   "num_fonte": 62,
+   "territorio": "Sítio Velho",
+   "municipio": "Assunção do Piauí",
+   "uf": "PI",
+   "n_comunidades": 1,
+   "familias": 92,
+   "area_territorio_ha": 847.8211,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INTERPI/INCRA",
+     "area_ha": 847.8211,
+     "data": "2006-11-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 847.8211,
+   "itemizacao_pendente": false,
+   "chave": "SITIO VELHO|PI"
+  },
+  {
+   "num_fonte": 63,
+   "territorio": "Caranduba",
+   "municipio": "Acará",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 33,
+   "area_territorio_ha": 644.5477,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 644.5477,
+     "data": "2006-11-23",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 644.5477,
+   "itemizacao_pendente": false,
+   "chave": "CARANDUBA|PA"
+  },
+  {
+   "num_fonte": 64,
+   "territorio": "Centro Ouro",
+   "municipio": "Mojú",
+   "uf": "PA",
+   "n_comunidades": 3,
+   "familias": 123,
+   "area_territorio_ha": 5243.1409,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 5243.1409,
+     "data": "2006-11-23",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 5243.1409,
+   "itemizacao_pendente": false,
+   "chave": "CENTRO OURO|PA"
+  },
+  {
+   "num_fonte": 65,
+   "territorio": "Jacunday",
+   "municipio": "Mojú",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 60,
+   "area_territorio_ha": 1701.5887,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 1701.5887,
+     "data": "2006-11-23",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1701.5887,
+   "itemizacao_pendente": false,
+   "chave": "JACUNDAY|PA"
+  },
+  {
+   "num_fonte": 66,
+   "territorio": "Galvão",
+   "municipio": "Eldorado e Iporanga",
+   "uf": "SP",
+   "n_comunidades": 1,
+   "familias": 32,
+   "area_territorio_ha": 2177.1701,
+   "pct_titulado": 86.0,
+   "titulos": [
+    {
+     "orgao": "ITESP*",
+     "area_ha": 1869.5711,
+     "data": "2007-01-18",
+     "parceria_incra": false,
+     "clausula_suspensiva": true,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1869.5711,
+   "itemizacao_pendente": false,
+   "chave": "GALVAO|SP"
+  },
+  {
+   "num_fonte": 67,
+   "territorio": "Jatobá",
+   "municipio": "Muquém de São Francisco",
+   "uf": "BA",
+   "n_comunidades": 1,
+   "familias": 69,
+   "area_territorio_ha": 12717.262,
+   "pct_titulado": 14.0,
+   "titulos": [
+    {
+     "orgao": "SPU",
+     "area_ha": 1778.89,
+     "data": "2007-05-21",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1778.89,
+   "itemizacao_pendente": false,
+   "chave": "JATOBA|BA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 68,
+   "territorio": "Mel da Pedreira",
+   "municipio": "Macapá",
+   "uf": "AP",
+   "n_comunidades": 1,
+   "familias": 25,
+   "area_territorio_ha": 2629.0532,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 2629.0532,
+     "data": "2007-03-21",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 2629.0532,
+   "itemizacao_pendente": false,
+   "chave": "MEL DA PEDREIRA|AP"
+  },
+  {
+   "num_fonte": 69,
+   "territorio": "Volta do Campo Grande",
+   "municipio": "Campinas do Piauí",
+   "uf": "PI",
+   "n_comunidades": 8,
+   "familias": 129,
+   "area_territorio_ha": 10897.5945,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INTERPI/INCRA",
+     "area_ha": 10897.5945,
+     "data": "2007-09-25",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 10897.5945,
+   "itemizacao_pendente": false,
+   "chave": "VOLTA DO CAMPO GRANDE|PI"
+  },
+  {
+   "num_fonte": 70,
+   "territorio": "Porto Alegre",
+   "municipio": "Cametá",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 54,
+   "area_territorio_ha": 2858.7114,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA**",
+     "area_ha": 2858.7114,
+     "data": "2007-11-20",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 2858.7114,
+   "itemizacao_pendente": false,
+   "chave": "PORTO ALEGRE|PA"
+  },
+  {
+   "num_fonte": 71,
+   "territorio": "Jacarequara",
+   "municipio": "Santa Luzia do Pará",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 55,
+   "area_territorio_ha": 1236.991,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA**",
+     "area_ha": 1236.991,
+     "data": "2008-05-13",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1236.991,
+   "itemizacao_pendente": false,
+   "chave": "JACAREQUARA|PA"
+  },
+  {
+   "num_fonte": 72,
+   "territorio": "Macapazinho",
+   "municipio": "Santa Isabel do Pará",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 33,
+   "area_territorio_ha": 91.1505,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA**",
+     "area_ha": 91.1505,
+     "data": "2008-05-13",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 91.1505,
+   "itemizacao_pendente": false,
+   "chave": "MACAPAZINHO|PA"
+  },
+  {
+   "num_fonte": 73,
+   "territorio": "Matias",
+   "municipio": "Cametá",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 45,
+   "area_territorio_ha": 1424.6701,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA**",
+     "area_ha": 1424.6701,
+     "data": "2008-05-13",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1424.6701,
+   "itemizacao_pendente": false,
+   "chave": "MATIAS|PA"
+  },
+  {
+   "num_fonte": 74,
+   "territorio": "Menino Jesus",
+   "municipio": "São Miguel do Guamá",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 12,
+   "area_territorio_ha": 288.9449,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA**",
+     "area_ha": 288.9449,
+     "data": "2008-05-13",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 288.9449,
+   "itemizacao_pendente": false,
+   "chave": "MENINO JESUS|PA"
+  },
+  {
+   "num_fonte": 75,
+   "territorio": "Tipitinga",
+   "municipio": "Santa Luzia do Pará",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 27,
+   "area_territorio_ha": 633.4357,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA**",
+     "area_ha": 633.4357,
+     "data": "2008-05-13",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 633.4357,
+   "itemizacao_pendente": false,
+   "chave": "TIPITINGA|PA"
+  },
+  {
+   "num_fonte": 76,
+   "territorio": "Cotovelo",
+   "municipio": "Pinheiro",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 55,
+   "area_territorio_ha": 1220.341,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 1220.341,
+     "data": "2008-11-14",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1220.341,
+   "itemizacao_pendente": false,
+   "chave": "COTOVELO|MA"
+  },
+  {
+   "num_fonte": 77,
+   "territorio": "Pedrinhas",
+   "municipio": "Anajatuba",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 28,
+   "area_territorio_ha": 128.6363,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 128.6363,
+     "data": "2008-11-14",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 128.6363,
+   "itemizacao_pendente": false,
+   "chave": "PEDRINHAS|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 78,
+   "territorio": "Campo Redondo",
+   "municipio": "Bacabal",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 38,
+   "area_territorio_ha": 1521.1087,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 1521.1087,
+     "data": "2008-11-14",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1521.1087,
+   "itemizacao_pendente": false,
+   "chave": "CAMPO REDONDO|MA"
+  },
+  {
+   "num_fonte": 79,
+   "territorio": "Fazenda Nova",
+   "municipio": "Isaías Coelho",
+   "uf": "PI",
+   "n_comunidades": 4,
+   "familias": 168,
+   "area_territorio_ha": 5592.5036,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INTERPI/INCRA",
+     "area_ha": 5592.5036,
+     "data": "2008-11-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 5592.5036,
+   "itemizacao_pendente": false,
+   "chave": "FAZENDA NOVA|PI"
+  },
+  {
+   "num_fonte": 80,
+   "territorio": "Morrinhos",
+   "municipio": "Isaías Coelho",
+   "uf": "PI",
+   "n_comunidades": 5,
+   "familias": 146,
+   "area_territorio_ha": 2532.8489,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INTERPI/INCRA",
+     "area_ha": 2532.8489,
+     "data": "2008-11-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 2532.8489,
+   "itemizacao_pendente": false,
+   "chave": "MORRINHOS|PI",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 81,
+   "territorio": "Moju-Miri",
+   "municipio": "Moju",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 28,
+   "area_territorio_ha": 878.6388,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA**",
+     "area_ha": 878.6388,
+     "data": "2008-12-02",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 878.6388,
+   "itemizacao_pendente": false,
+   "chave": "MOJU MIRI|PA"
+  },
+  {
+   "num_fonte": 82,
+   "territorio": "Ribeira do Jambu-Açu",
+   "municipio": "Moju",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 62,
+   "area_territorio_ha": 1303.5089,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA**",
+     "area_ha": 1303.5089,
+     "data": "2008-12-02",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1303.5089,
+   "itemizacao_pendente": false,
+   "chave": "RIBEIRA DO JAMBU ACU|PA"
+  },
+  {
+   "num_fonte": 83,
+   "territorio": "Samaúma",
+   "municipio": "Abaetetuba",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 12,
+   "area_territorio_ha": 213.055,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA**",
+     "area_ha": 213.055,
+     "data": "2008-12-02",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 213.055,
+   "itemizacao_pendente": false,
+   "chave": "SAMAUMA|PA"
+  },
+  {
+   "num_fonte": 84,
+   "territorio": "2º Distrito",
+   "municipio": "Mocajuba",
+   "uf": "PA",
+   "n_comunidades": 7,
+   "familias": 400,
+   "area_territorio_ha": 15073.2371,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA**",
+     "area_ha": 15073.2371,
+     "data": "2008-12-02",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 15073.2371,
+   "itemizacao_pendente": false,
+   "chave": "2O DISTRITO|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 85,
+   "territorio": "Família Silva",
+   "municipio": "Porto Alegre",
+   "uf": "RS",
+   "n_comunidades": 1,
+   "familias": 12,
+   "area_territorio_ha": 0.6511,
+   "pct_titulado": 35.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 0.1320744,
+     "data": "2009-09-21",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "INCRA",
+     "area_ha": 0.0519088,
+     "data": "2009-09-21",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "INCRA",
+     "area_ha": 0.0462555,
+     "data": "2009-09-21",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 0.2302,
+   "itemizacao_pendente": false,
+   "chave": "FAMILIA SILVA|RS"
+  },
+  {
+   "num_fonte": 86,
+   "territorio": "Chácara das Rosas",
+   "municipio": "Canoas",
+   "uf": "RS",
+   "n_comunidades": 1,
+   "familias": 20,
+   "area_territorio_ha": 0.361944,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 0.361944,
+     "data": "2009-09-21",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 0.3619,
+   "itemizacao_pendente": false,
+   "chave": "CHACARA DAS ROSAS|RS"
+  },
+  {
+   "num_fonte": 87,
+   "territorio": "Santa Rita do Vale",
+   "municipio": "Santa Rita",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 120,
+   "area_territorio_ha": 319.4535,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 319.4535,
+     "data": "2009-10-14",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 319.4535,
+   "itemizacao_pendente": false,
+   "chave": "SANTA RITA DO VALE|MA"
+  },
+  {
+   "num_fonte": 88,
+   "territorio": "Santa Luzia do Tracuateua",
+   "municipio": "Moju",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 32,
+   "area_territorio_ha": 342.3018,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA**",
+     "area_ha": 342.3018,
+     "data": "2009-11-30",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 342.3018,
+   "itemizacao_pendente": false,
+   "chave": "SANTA LUZIA DO TRACUATEUA|PA"
+  },
+  {
+   "num_fonte": 89,
+   "territorio": "Sanat Ana de Baixo",
+   "municipio": "Moju",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 34,
+   "area_territorio_ha": 1551.1216,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA**",
+     "area_ha": 1551.1216,
+     "data": "2009-11-30",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1551.1216,
+   "itemizacao_pendente": false,
+   "chave": "SANAT ANA DE BAIXO|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 90,
+   "territorio": "São Sebastião",
+   "municipio": "Moju",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 39,
+   "area_territorio_ha": 962.0094,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA**",
+     "area_ha": 962.0094,
+     "data": "2009-11-30",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 962.0094,
+   "itemizacao_pendente": false,
+   "chave": "SAO SEBASTIAO|PA"
+  },
+  {
+   "num_fonte": 91,
+   "territorio": "Tambaí-Açú",
+   "municipio": "Mocajuba e Baião",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 66,
+   "area_territorio_ha": 1824.7852,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA**",
+     "area_ha": 1824.7852,
+     "data": "2009-11-30",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1824.7852,
+   "itemizacao_pendente": false,
+   "chave": "TAMBAI ACU|PA"
+  },
+  {
+   "num_fonte": 92,
+   "territorio": "Nossa Senhora do Livramento",
+   "municipio": "Igarapé-Açu e Nova Timboteua",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 53,
+   "area_territorio_ha": 128.9332,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA**",
+     "area_ha": 128.9332,
+     "data": "2010-05-06",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 128.9332,
+   "itemizacao_pendente": false,
+   "chave": "NOSSA SENHORA DO LIVRAMENTO|PA"
+  },
+  {
+   "num_fonte": 93,
+   "territorio": "ARQUINEC",
+   "municipio": "Concórdia do Pará",
+   "uf": "PA",
+   "n_comunidades": 4,
+   "familias": 180,
+   "area_territorio_ha": 5981.3412,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 5981.3412,
+     "data": "2010-08-25",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 5981.3412,
+   "itemizacao_pendente": false,
+   "chave": "ARQUINEC|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 94,
+   "territorio": "Casca",
+   "municipio": "Mostardas",
+   "uf": "RS",
+   "n_comunidades": 1,
+   "familias": 85,
+   "area_territorio_ha": 2387.8596,
+   "pct_titulado": 51.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 867.1367,
+     "data": "2010-10-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "INCRA",
+     "area_ha": 333.3071,
+     "data": "2010-11-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "INCRA",
+     "area_ha": 7.2976,
+     "data": "2010-11-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "INCRA",
+     "area_ha": 0.9616,
+     "data": "2010-11-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1208.703,
+   "itemizacao_pendente": false,
+   "chave": "CASCA|RS"
+  },
+  {
+   "num_fonte": 95,
+   "territorio": "Itaboca-Quatro Bocas e Cacoal",
+   "municipio": "Inhangapi",
+   "uf": "PA",
+   "n_comunidades": 2,
+   "familias": 84,
+   "area_territorio_ha": 446.6848,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 446.6848,
+     "data": "2010-12-17",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 446.6848,
+   "itemizacao_pendente": false,
+   "chave": "ITABOCA QUATRO BOCAS E CACOAL|PA"
+  },
+  {
+   "num_fonte": 96,
+   "territorio": "Ramal do Piratuba",
+   "municipio": "Abaetetuba",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 176,
+   "area_territorio_ha": 959.8167,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 959.8167,
+     "data": "2010-12-17",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 959.8167,
+   "itemizacao_pendente": false,
+   "chave": "RAMAL DO PIRATUBA|PA"
+  },
+  {
+   "num_fonte": 97,
+   "territorio": "Santa Quitéria e Itacoãzinho",
+   "municipio": "Acará",
+   "uf": "PA",
+   "n_comunidades": 2,
+   "familias": 67,
+   "area_territorio_ha": 646.5774,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 646.5774,
+     "data": "2010-12-17",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 646.5774,
+   "itemizacao_pendente": false,
+   "chave": "SANTA QUITERIA E ITACOAZINHO|PA"
+  },
+  {
+   "num_fonte": 98,
+   "territorio": "Jamari dos Pretos",
+   "municipio": "Turiaçu",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 162,
+   "area_territorio_ha": 14676.6814,
+   "pct_titulado": 45.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 6613.063,
+     "data": "2011-04-07",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 6613.063,
+   "itemizacao_pendente": false,
+   "chave": "JAMARI DOS PRETOS|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 99,
+   "territorio": "Contenda",
+   "municipio": "Viana",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 55,
+   "area_territorio_ha": 1070.0259,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 1070.0259,
+     "data": "2011-08-18",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1070.0259,
+   "itemizacao_pendente": false,
+   "chave": "CONTENDA|MA"
+  },
+  {
+   "num_fonte": 100,
+   "territorio": "Santa Rosa e Adjacencias",
+   "municipio": "Viana",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 40,
+   "area_territorio_ha": 343.5436,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 343.5436,
+     "data": "2011-08-18",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 343.5436,
+   "itemizacao_pendente": false,
+   "chave": "SANTA ROSA E ADJACENCIAS|MA"
+  },
+  {
+   "num_fonte": 101,
+   "territorio": "Santa Rosa",
+   "municipio": "Viana",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 32,
+   "area_territorio_ha": 605.6808,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 605.6808,
+     "data": "2011-08-18",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 605.6808,
+   "itemizacao_pendente": false,
+   "chave": "SANTA ROSA|MA"
+  },
+  {
+   "num_fonte": 102,
+   "territorio": "São Manoel",
+   "municipio": "Viana",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 22,
+   "area_territorio_ha": 223.3642,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 223.3642,
+     "data": "2011-08-18",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 223.3642,
+   "itemizacao_pendente": false,
+   "chave": "SAO MANOEL|MA"
+  },
+  {
+   "num_fonte": 103,
+   "territorio": "Cajueiro",
+   "municipio": "Viana",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 65,
+   "area_territorio_ha": 271.285,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 271.285,
+     "data": "2011-08-19",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 271.285,
+   "itemizacao_pendente": false,
+   "chave": "CAJUEIRO|MA"
+  },
+  {
+   "num_fonte": 104,
+   "territorio": "Aguiar",
+   "municipio": "Viana",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 50,
+   "area_territorio_ha": 906.4145,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 906.4145,
+     "data": "2011-08-22",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 906.4145,
+   "itemizacao_pendente": false,
+   "chave": "AGUIAR|MA"
+  },
+  {
+   "num_fonte": 105,
+   "territorio": "Carangueijo",
+   "municipio": "Viana",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 26,
+   "area_territorio_ha": 274.3079,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 274.3079,
+     "data": "2011-08-22",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 274.3079,
+   "itemizacao_pendente": false,
+   "chave": "CARANGUEIJO|MA"
+  },
+  {
+   "num_fonte": 106,
+   "territorio": "Ferreira",
+   "municipio": "Viana",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 50,
+   "area_territorio_ha": 309.1675,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 309.1675,
+     "data": "2011-08-22",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 309.1675,
+   "itemizacao_pendente": false,
+   "chave": "FERREIRA|MA"
+  },
+  {
+   "num_fonte": 107,
+   "territorio": "Mucambo",
+   "municipio": "Viana",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 110,
+   "area_territorio_ha": 397.0043,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 397.0043,
+     "data": "2011-08-22",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 397.0043,
+   "itemizacao_pendente": false,
+   "chave": "MUCAMBO|MA"
+  },
+  {
+   "num_fonte": 108,
+   "territorio": "Colônia de São Miguel",
+   "municipio": "Maracajú",
+   "uf": "MS",
+   "n_comunidades": 1,
+   "familias": 28,
+   "area_territorio_ha": 420.6821,
+   "pct_titulado": 79.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 333.0736,
+     "data": "2011-09-08",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 333.0736,
+   "itemizacao_pendente": false,
+   "chave": "COLONIA DE SAO MIGUEL|MS",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 109,
+   "territorio": "Preto Fôrro",
+   "municipio": "Cabo Frio",
+   "uf": "RJ",
+   "n_comunidades": 1,
+   "familias": 12,
+   "area_territorio_ha": 90.5403,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERJ",
+     "area_ha": 90.5403,
+     "data": "2011-11-04",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 90.5403,
+   "itemizacao_pendente": false,
+   "chave": "PRETO FORRO|RJ"
+  },
+  {
+   "num_fonte": 110,
+   "territorio": "Barreira",
+   "municipio": "Bacuri",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 45,
+   "area_territorio_ha": 889.0185,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 889.0185,
+     "data": "2011-12-19",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 889.0185,
+   "itemizacao_pendente": false,
+   "chave": "BARREIRA|MA"
+  },
+  {
+   "num_fonte": 111,
+   "territorio": "Bem Posta",
+   "municipio": "Presidente Sarney",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 64,
+   "area_territorio_ha": 385.1886,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 385.1886,
+     "data": "2011-12-19",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 385.1886,
+   "itemizacao_pendente": false,
+   "chave": "BEM POSTA|MA"
+  },
+  {
+   "num_fonte": 112,
+   "territorio": "Cutia e Cocal",
+   "municipio": "Presidente Sarney",
+   "uf": "MA",
+   "n_comunidades": 2,
+   "familias": 66,
+   "area_territorio_ha": 17.6973,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 17.6973,
+     "data": "2011-12-19",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 17.6973,
+   "itemizacao_pendente": false,
+   "chave": "CUTIA E COCAL|MA"
+  },
+  {
+   "num_fonte": 113,
+   "territorio": "Chácara Buriti",
+   "municipio": "Campo Grande",
+   "uf": "MS",
+   "n_comunidades": 1,
+   "familias": 19,
+   "area_territorio_ha": 43.008,
+   "pct_titulado": 28.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 12.1812,
+     "data": "2012-04-27",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 12.1812,
+   "itemizacao_pendente": false,
+   "chave": "CHACARA BURITI|MS"
+  },
+  {
+   "num_fonte": 114,
+   "territorio": "Jacuíca",
+   "municipio": "Matinha",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 45,
+   "area_territorio_ha": 317.3447,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 317.3447,
+     "data": "2012-06-26",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 317.3447,
+   "itemizacao_pendente": false,
+   "chave": "JACUICA|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 115,
+   "territorio": "Graça",
+   "municipio": "Matinha",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 51,
+   "area_territorio_ha": 356.8969,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 356.8969,
+     "data": "2012-06-26",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 356.8969,
+   "itemizacao_pendente": false,
+   "chave": "GRACA|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 116,
+   "territorio": "Mocambo-PA",
+   "municipio": "Ourém",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 102,
+   "area_territorio_ha": 657.682,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 657.682,
+     "data": "2012-11-13",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 657.682,
+   "itemizacao_pendente": false,
+   "chave": "MOCAMBO PA|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 117,
+   "territorio": "Mocambo-SE",
+   "municipio": "Porto da Folha",
+   "uf": "SE",
+   "n_comunidades": 1,
+   "familias": 113,
+   "area_territorio_ha": 2100.54,
+   "pct_titulado": 34.0,
+   "titulos": [],
+   "area_titulada_ha": null,
+   "itemizacao_pendente": true,
+   "chave": "MOCAMBO SE|SE",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 118,
+   "territorio": "Lagoa dos Campinhos",
+   "municipio": "Amparo de São Francisco e Telha",
+   "uf": "SE",
+   "n_comunidades": 1,
+   "familias": 89,
+   "area_territorio_ha": 1263.9493,
+   "pct_titulado": 43.0,
+   "titulos": [],
+   "area_titulada_ha": null,
+   "itemizacao_pendente": true,
+   "chave": "LAGOA DOS CAMPINHOS|SE"
+  },
+  {
+   "num_fonte": 119,
+   "territorio": "Porto Coris",
+   "municipio": "Leme do Prado",
+   "uf": "MG",
+   "n_comunidades": 1,
+   "familias": 21,
+   "area_territorio_ha": 1121.42,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "CEMIG",
+     "area_ha": 1121.42,
+     "data": "2013-05-24",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1121.42,
+   "itemizacao_pendente": false,
+   "chave": "PORTO CORIS|MG"
+  },
+  {
+   "num_fonte": 120,
+   "territorio": "Terra da Liberdade",
+   "municipio": "Cametá e Mocajuba",
+   "uf": "PA",
+   "n_comunidades": 8,
+   "familias": 189,
+   "area_territorio_ha": 11953.4934,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 11953.4934,
+     "data": "2013-07-02",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 11953.4934,
+   "itemizacao_pendente": false,
+   "chave": "TERRA DA LIBERDADE|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 121,
+   "territorio": "Muruteuazinho",
+   "municipio": "Santa Luzia do Pará",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 38,
+   "area_territorio_ha": 628.4249,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 628.4249,
+     "data": "2013-09-04",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 628.4249,
+   "itemizacao_pendente": false,
+   "chave": "MURUTEUAZINHO|PA"
+  },
+  {
+   "num_fonte": 122,
+   "territorio": "São José de Bruno",
+   "municipio": "Matinha",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 38,
+   "area_territorio_ha": 386.8881,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 386.8881,
+     "data": "2013-11-11",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 386.8881,
+   "itemizacao_pendente": false,
+   "chave": "SAO JOSE DE BRUNO|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 123,
+   "territorio": "Cutia II",
+   "municipio": "Matinha",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 110,
+   "area_territorio_ha": 99.2236,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 99.2236,
+     "data": "2013-11-11",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 99.2236,
+   "itemizacao_pendente": false,
+   "chave": "CUTIA II|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 124,
+   "territorio": "São Benedito dos Carneiros",
+   "municipio": "Olinda Nova do Maranhão",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 45,
+   "area_territorio_ha": 219.263,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 219.263,
+     "data": "2013-11-11",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 219.263,
+   "itemizacao_pendente": false,
+   "chave": "SAO BENEDITO DOS CARNEIROS|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 125,
+   "territorio": "Boqueirão",
+   "municipio": "Icatu",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 40,
+   "area_territorio_ha": 1637.3671,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 1637.3671,
+     "data": "2013-11-11",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1637.3671,
+   "itemizacao_pendente": false,
+   "chave": "BOQUEIRAO|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 126,
+   "territorio": "Cacoal",
+   "municipio": "Viana",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 71,
+   "area_territorio_ha": 114.0457,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 114.0457,
+     "data": "2013-11-11",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 114.0457,
+   "itemizacao_pendente": false,
+   "chave": "CACOAL|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 127,
+   "territorio": "São Raimundo da Pirativa",
+   "municipio": "Santana",
+   "uf": "AP",
+   "n_comunidades": 1,
+   "familias": 13,
+   "area_territorio_ha": 23.4184,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "SPU***",
+     "area_ha": 23.4184,
+     "data": "2013-11-13",
+     "parceria_incra": true,
+     "clausula_suspensiva": false,
+     "ccdru": true
+    }
+   ],
+   "area_titulada_ha": 23.4184,
+   "itemizacao_pendente": false,
+   "chave": "SAO RAIMUNDO DA PIRATIVA|AP"
+  },
+  {
+   "num_fonte": 128,
+   "territorio": "Pirangi",
+   "municipio": "Capela",
+   "uf": "SE",
+   "n_comunidades": 1,
+   "familias": 43,
+   "area_territorio_ha": 128.1984,
+   "pct_titulado": 56.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 71.3694,
+     "data": "2013-12-05",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 71.3694,
+   "itemizacao_pendente": false,
+   "chave": "PIRANGI|SE"
+  },
+  {
+   "num_fonte": 129,
+   "territorio": "Rincão dos Martinianos",
+   "municipio": "Restinga Seca",
+   "uf": "RS",
+   "n_comunidades": 1,
+   "familias": 55,
+   "area_territorio_ha": 98.6341,
+   "pct_titulado": 27.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 1.4354,
+     "data": "2014-06-11",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "INCRA",
+     "area_ha": 2.455,
+     "data": "2014-06-11",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "INCRA",
+     "area_ha": 7.2082,
+     "data": "2014-06-11",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "INCRA",
+     "area_ha": 15.0617,
+     "data": "2014-06-11",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 26.1603,
+   "itemizacao_pendente": false,
+   "chave": "RINCAO DOS MARTINIANOS|RS"
+  },
+  {
+   "num_fonte": 130,
+   "territorio": "Vazante",
+   "municipio": "Seabra",
+   "uf": "BA",
+   "n_comunidades": 1,
+   "familias": 45,
+   "area_territorio_ha": 2495.4825,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "CDA",
+     "area_ha": 2495.4825,
+     "data": "2014-06-27",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 2495.4825,
+   "itemizacao_pendente": false,
+   "chave": "VAZANTE|BA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 131,
+   "territorio": "Jatobá",
+   "municipio": "Patu",
+   "uf": "RN",
+   "n_comunidades": 1,
+   "familias": 45,
+   "area_territorio_ha": 219.1934,
+   "pct_titulado": 98.0,
+   "titulos": [],
+   "area_titulada_ha": null,
+   "itemizacao_pendente": true,
+   "chave": "JATOBA|RN"
+  },
+  {
+   "num_fonte": 132,
+   "territorio": "Invernada dos Negros",
+   "municipio": "Campos Novos e Abdon Batista",
+   "uf": "SC",
+   "n_comunidades": 1,
+   "familias": 84,
+   "area_territorio_ha": 7952.9067,
+   "pct_titulado": 11.0,
+   "titulos": [],
+   "area_titulada_ha": null,
+   "itemizacao_pendente": true,
+   "chave": "INVERNADA DOS NEGROS|SC"
+  },
+  {
+   "num_fonte": 133,
+   "territorio": "Conceição das Crioulas",
+   "municipio": "Salgueiro",
+   "uf": "PE",
+   "n_comunidades": 1,
+   "familias": 750,
+   "area_territorio_ha": 16865.0678,
+   "pct_titulado": 12.0,
+   "titulos": [],
+   "area_titulada_ha": null,
+   "itemizacao_pendente": true,
+   "chave": "CONCEICAO DAS CRIOULAS|PE"
+  },
+  {
+   "num_fonte": 134,
+   "territorio": "Baixão Velho",
+   "municipio": "Seabra",
+   "uf": "BA",
+   "n_comunidades": 1,
+   "familias": 95,
+   "area_territorio_ha": 3817.7706,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "CDA",
+     "area_ha": 3817.7706,
+     "data": "2014-09-27",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 3817.7706,
+   "itemizacao_pendente": false,
+   "chave": "BAIXAO VELHO|BA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 135,
+   "territorio": "Agreste",
+   "municipio": "Seabra",
+   "uf": "BA",
+   "n_comunidades": 1,
+   "familias": 72,
+   "area_territorio_ha": 2340.5536,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "CDA",
+     "area_ha": 2340.5536,
+     "data": "2014-09-27",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 2340.5536,
+   "itemizacao_pendente": false,
+   "chave": "AGRESTE|BA"
+  },
+  {
+   "num_fonte": 136,
+   "territorio": "Conceição",
+   "municipio": "Boninal",
+   "uf": "BA",
+   "n_comunidades": 1,
+   "familias": 178,
+   "area_territorio_ha": 2693.8879,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "CDA",
+     "area_ha": 2693.8879,
+     "data": "2014-09-27",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 2693.8879,
+   "itemizacao_pendente": false,
+   "chave": "CONCEICAO|BA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 137,
+   "territorio": "Lagoa Verde",
+   "municipio": "América Dourada",
+   "uf": "BA",
+   "n_comunidades": 1,
+   "familias": 75,
+   "area_territorio_ha": 1275.2692,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "CDA",
+     "area_ha": 1275.2692,
+     "data": "2014-09-27",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1275.2692,
+   "itemizacao_pendente": false,
+   "chave": "LAGOA VERDE|BA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 138,
+   "territorio": "Itaperinha",
+   "municipio": "Tutoia",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 61,
+   "area_territorio_ha": 715.1046,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 715.1046,
+     "data": "2014-10-30",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 715.1046,
+   "itemizacao_pendente": false,
+   "chave": "ITAPERINHA|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 139,
+   "territorio": "Serra do Queimadão",
+   "municipio": "Seabra",
+   "uf": "BA",
+   "n_comunidades": 1,
+   "familias": 150,
+   "area_territorio_ha": 1504.4741,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "CDA",
+     "area_ha": 1504.4741,
+     "data": "2014-11-19",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1504.4741,
+   "itemizacao_pendente": false,
+   "chave": "SERRA DO QUEIMADAO|BA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 140,
+   "territorio": "Vão das Palmeiras",
+   "municipio": "Seabra",
+   "uf": "BA",
+   "n_comunidades": 1,
+   "familias": 300,
+   "area_territorio_ha": 1022.015,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "CDA",
+     "area_ha": 1022.015,
+     "data": "2014-11-19",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1022.015,
+   "itemizacao_pendente": false,
+   "chave": "VAO DAS PALMEIRAS|BA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 141,
+   "territorio": "Mulungu",
+   "municipio": "Boninal",
+   "uf": "BA",
+   "n_comunidades": 1,
+   "familias": 258,
+   "area_territorio_ha": 2378.5163,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "CDA",
+     "area_ha": 2378.5163,
+     "data": "2014-11-19",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 2378.5163,
+   "itemizacao_pendente": false,
+   "chave": "MULUNGU|BA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 142,
+   "territorio": "Cutia",
+   "municipio": "Boninal",
+   "uf": "BA",
+   "n_comunidades": 1,
+   "familias": 258,
+   "area_territorio_ha": 1160.1228,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "CDA",
+     "area_ha": 1160.1228,
+     "data": "2014-11-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1160.1228,
+   "itemizacao_pendente": false,
+   "chave": "CUTIA|BA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 143,
+   "territorio": "Mocambo e Cachoeira",
+   "municipio": "Seabra",
+   "uf": "BA",
+   "n_comunidades": 2,
+   "familias": 200,
+   "area_territorio_ha": 3376.0633,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "CDA",
+     "area_ha": 3376.0633,
+     "data": "2014-11-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 3376.0633,
+   "itemizacao_pendente": false,
+   "chave": "MOCAMBO E CACHOEIRA|BA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 144,
+   "territorio": "Santa Maria dos Pretos",
+   "municipio": "Itapecuru Mirim",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 352,
+   "area_territorio_ha": 5584.162,
+   "pct_titulado": 11.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 401.3321,
+     "data": "2014-12-02",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "INCRA",
+     "area_ha": 206.1931,
+     "data": "2014-12-02",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 607.5252,
+   "itemizacao_pendente": false,
+   "chave": "SANTA MARIA DOS PRETOS|MA"
+  },
+  {
+   "num_fonte": 145,
+   "territorio": "Mata de São Benedito",
+   "municipio": "Itapecuru Mirim",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 35,
+   "area_territorio_ha": 1114.3978,
+   "pct_titulado": 5.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 54.788,
+     "data": "2014-12-02",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 54.788,
+   "itemizacao_pendente": false,
+   "chave": "MATA DE SAO BENEDITO|MA"
+  },
+  {
+   "num_fonte": 146,
+   "territorio": "Juçaral / São Francisco Malaquias",
+   "municipio": "Vargem Grande",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 28,
+   "area_territorio_ha": 1089.0918,
+   "pct_titulado": 57.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 625.5662,
+     "data": "2014-12-02",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 625.5662,
+   "itemizacao_pendente": false,
+   "chave": "JUCARAL SAO FRANCISCO MALAQUIAS|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 147,
+   "territorio": "Algodões",
+   "municipio": "Jussara",
+   "uf": "BA",
+   "n_comunidades": 1,
+   "familias": 102,
+   "area_territorio_ha": 4193.8079,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "CDA",
+     "area_ha": 4193.8079,
+     "data": "2014-12-12",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 4193.8079,
+   "itemizacao_pendente": false,
+   "chave": "ALGODOES|BA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 148,
+   "territorio": "Boitaraca",
+   "municipio": "Nilo Pessanha",
+   "uf": "BA",
+   "n_comunidades": 1,
+   "familias": 110,
+   "area_territorio_ha": 621.0781,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "CDA",
+     "area_ha": 621.0781,
+     "data": "2014-12-12",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 621.0781,
+   "itemizacao_pendente": false,
+   "chave": "BOITARACA|BA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 149,
+   "territorio": "Sitio Novo",
+   "municipio": "Jussara",
+   "uf": "BA",
+   "n_comunidades": 1,
+   "familias": 94,
+   "area_territorio_ha": 978.6809,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "CDA",
+     "area_ha": 978.6809,
+     "data": "2014-12-15",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 978.6809,
+   "itemizacao_pendente": false,
+   "chave": "SITIO NOVO|BA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 150,
+   "territorio": "Castanhalzinho",
+   "municipio": "Garrafão do Norte",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 62,
+   "area_territorio_ha": 291.0781,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 291.0781,
+     "data": "2015-06-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 291.0781,
+   "itemizacao_pendente": false,
+   "chave": "CASTANHALZINHO|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 151,
+   "territorio": "Cutuvelo",
+   "municipio": "Garrafão do Norte",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 47,
+   "area_territorio_ha": 497.1703,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 497.1703,
+     "data": "2015-06-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 497.1703,
+   "itemizacao_pendente": false,
+   "chave": "CUTUVELO|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 152,
+   "territorio": "Sítio Bosque",
+   "municipio": "Moju",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 85,
+   "area_territorio_ha": 1152.7029,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 1152.7029,
+     "data": "2015-07-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1152.7029,
+   "itemizacao_pendente": false,
+   "chave": "SITIO BOSQUE|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 153,
+   "territorio": "Marambaia",
+   "municipio": "Mangaratiba",
+   "uf": "RJ",
+   "n_comunidades": 1,
+   "familias": 124,
+   "area_territorio_ha": 52.9939,
+   "pct_titulado": 100.0,
+   "titulos": [],
+   "area_titulada_ha": null,
+   "itemizacao_pendente": true,
+   "chave": "MARAMBAIA|RJ"
+  },
+  {
+   "num_fonte": 154,
+   "territorio": "Castainho",
+   "municipio": "Garanhuns",
+   "uf": "PE",
+   "n_comunidades": 1,
+   "familias": 206,
+   "area_territorio_ha": 189.7738,
+   "pct_titulado": 54.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 38.2367,
+     "data": "2015-10-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "ITERPE",
+     "area_ha": 64.804,
+     "data": "2020-02-27",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 103.0407,
+   "itemizacao_pendente": false,
+   "chave": "CASTAINHO|PE"
+  },
+  {
+   "num_fonte": 155,
+   "territorio": "Kalunga",
+   "municipio": "Cavalcante, Monte Alegre e Teresinha do Goiás",
+   "uf": "GO",
+   "n_comunidades": 54,
+   "familias": 888,
+   "area_territorio_ha": 261999.6987,
+   "pct_titulado": 54.0,
+   "titulos": [],
+   "area_titulada_ha": null,
+   "itemizacao_pendente": true,
+   "chave": "KALUNGA|GO"
+  },
+  {
+   "num_fonte": 156,
+   "territorio": "Serra da Guia",
+   "municipio": "Poço Redondo",
+   "uf": "SE",
+   "n_comunidades": 1,
+   "familias": 197,
+   "area_territorio_ha": 9013.1831,
+   "pct_titulado": 22.0,
+   "titulos": [],
+   "area_titulada_ha": null,
+   "itemizacao_pendente": true,
+   "chave": "SERRA DA GUIA|SE"
+  },
+  {
+   "num_fonte": 157,
+   "territorio": "Ipiranga",
+   "municipio": "Viana",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 56,
+   "area_territorio_ha": 1124.5847,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 1124.5847,
+     "data": "2016-10-07",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1124.5847,
+   "itemizacao_pendente": false,
+   "chave": "IPIRANGA|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 158,
+   "territorio": "Carro Quebrado",
+   "municipio": "Viana",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 84,
+   "area_territorio_ha": 176.9941,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 176.9941,
+     "data": "2016-10-07",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 176.9941,
+   "itemizacao_pendente": false,
+   "chave": "CARRO QUEBRADO|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 159,
+   "territorio": "Mirinzal da Julita",
+   "municipio": "Presidente Juscelino",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 25,
+   "area_territorio_ha": 330.1586,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 330.1586,
+     "data": "2016-11-07",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 330.1586,
+   "itemizacao_pendente": false,
+   "chave": "MIRINZAL DA JULITA|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 160,
+   "territorio": "Imbiral",
+   "municipio": "Pedro do Rosário",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 44,
+   "area_territorio_ha": 44.5899,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 44.5899,
+     "data": "2016-11-16",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 44.5899,
+   "itemizacao_pendente": false,
+   "chave": "IMBIRAL|MA"
+  },
+  {
+   "num_fonte": 161,
+   "territorio": "Tabacaria",
+   "municipio": "Palmeira dos Índios",
+   "uf": "AL",
+   "n_comunidades": 1,
+   "familias": 89,
+   "area_territorio_ha": 410.0181,
+   "pct_titulado": 98.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 400.0181,
+     "data": "2016-11-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 400.0181,
+   "itemizacao_pendente": false,
+   "chave": "TABACARIA|AL"
+  },
+  {
+   "num_fonte": 162,
+   "territorio": "Santa Tereza",
+   "municipio": "Mirinzal",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 37,
+   "area_territorio_ha": 262.7899,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 262.7899,
+     "data": "2016-12-15",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 262.7899,
+   "itemizacao_pendente": false,
+   "chave": "SANTA TEREZA|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 163,
+   "territorio": "Ilha Grande do Cupijó",
+   "municipio": "Cametá",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 75,
+   "area_territorio_ha": 1922.6471,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 1922.6471,
+     "data": "2017-04-28",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1922.6471,
+   "itemizacao_pendente": false,
+   "chave": "ILHA GRANDE DO CUPIJO|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 164,
+   "territorio": "São José dos Portugueses",
+   "municipio": "Cândido Mendes",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 279,
+   "area_territorio_ha": 2119.7745,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 2119.7745,
+     "data": "2017-05-19",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 2119.7745,
+   "itemizacao_pendente": false,
+   "chave": "SAO JOSE DOS PORTUGUESES|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 165,
+   "territorio": "Pontal da Barra",
+   "municipio": "Barra dos Coqueiros",
+   "uf": "SE",
+   "n_comunidades": 1,
+   "familias": 153,
+   "area_territorio_ha": 325.6935,
+   "pct_titulado": 36.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 117.616,
+     "data": "2017-08-09",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 117.616,
+   "itemizacao_pendente": false,
+   "chave": "PONTAL DA BARRA|SE"
+  },
+  {
+   "num_fonte": 166,
+   "territorio": "Santa Fé",
+   "municipio": "Costa Marques",
+   "uf": "RO",
+   "n_comunidades": 1,
+   "familias": 41,
+   "area_territorio_ha": 1452.9224,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 1452.9224,
+     "data": "2017-08-15",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1452.9224,
+   "itemizacao_pendente": false,
+   "chave": "SANTA FE|RO"
+  },
+  {
+   "num_fonte": 167,
+   "territorio": "Queluz",
+   "municipio": "Anajatuba",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 125,
+   "area_territorio_ha": 243.4938,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 243.4938,
+     "data": "2017-09-25",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 243.4938,
+   "itemizacao_pendente": false,
+   "chave": "QUELUZ|MA"
+  },
+  {
+   "num_fonte": 168,
+   "territorio": "Tapuia",
+   "municipio": "Camamu",
+   "uf": "BA",
+   "n_comunidades": 1,
+   "familias": 193,
+   "area_territorio_ha": 2425.8297,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "CDA",
+     "area_ha": 2425.8297,
+     "data": "2018-01-31",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 2425.8297,
+   "itemizacao_pendente": false,
+   "chave": "TAPUIA|BA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 169,
+   "territorio": "Cachoeira Porteira",
+   "municipio": "Oriximiná",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 189,
+   "area_territorio_ha": 225175.942,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 225175.942,
+     "data": "2018-02-28",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 225175.942,
+   "itemizacao_pendente": false,
+   "chave": "CACHOEIRA PORTEIRA|PA"
+  },
+  {
+   "num_fonte": 170,
+   "territorio": "Espírito Santo",
+   "municipio": "Acará",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 25,
+   "area_territorio_ha": 276.1594,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 276.1594,
+     "data": "2018-02-28",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 276.1594,
+   "itemizacao_pendente": false,
+   "chave": "ESPIRITO SANTO|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 171,
+   "territorio": "Vila Caeté",
+   "municipio": "Abaetetuba e Barcarena",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 110,
+   "area_territorio_ha": 1345.3062,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 1345.3062,
+     "data": "2018-03-06",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1345.3062,
+   "itemizacao_pendente": false,
+   "chave": "VILA CAETE|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 172,
+   "territorio": "São Tome Tauçú",
+   "municipio": "Portel",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 40,
+   "area_territorio_ha": 2568.6224,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 2568.6224,
+     "data": "2018-03-12",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 2568.6224,
+   "itemizacao_pendente": false,
+   "chave": "SAO TOME TAUCU|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 173,
+   "territorio": "Acauã",
+   "municipio": "Poço Branco",
+   "uf": "RN",
+   "n_comunidades": 1,
+   "familias": 64,
+   "area_territorio_ha": 540.5138,
+   "pct_titulado": 10.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 22.9715,
+     "data": "2018-05-24",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "INCRA",
+     "area_ha": 17.7182,
+     "data": "2024-04-22",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "INCRA",
+     "area_ha": 21.2424,
+     "data": "2024-04-22",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 61.9321,
+   "itemizacao_pendente": false,
+   "chave": "ACAUA|RN"
+  },
+  {
+   "num_fonte": 174,
+   "territorio": "Ariramba",
+   "municipio": "Óbidos",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 27,
+   "area_territorio_ha": 10454.5619,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 10454.5619,
+     "data": "2018-06-18",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 10454.5619,
+   "itemizacao_pendente": false,
+   "chave": "ARIRAMBA|PA"
+  },
+  {
+   "num_fonte": 175,
+   "territorio": "Pérola do Maicá",
+   "municipio": "Santarém",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 16,
+   "area_territorio_ha": 3.1522,
+   "pct_titulado": 73.0,
+   "titulos": [
+    {
+     "orgao": "PM Santarém",
+     "area_ha": 1.3894,
+     "data": "2018-09-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "PM Santarém",
+     "area_ha": 0.325,
+     "data": "2018-09-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "PM Santarém",
+     "area_ha": 0.4501,
+     "data": "2018-09-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "PM Santarém",
+     "area_ha": 0.0296,
+     "data": "2019-10-16",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "PM Santarém",
+     "area_ha": 0.0634,
+     "data": "2019-10-16",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "PM Santarém",
+     "area_ha": 0.0356,
+     "data": "2019-10-16",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 2.2931,
+   "itemizacao_pendente": false,
+   "chave": "PEROLA DO MAICA|PA"
+  },
+  {
+   "num_fonte": 176,
+   "territorio": "Peruana",
+   "municipio": "Óbidos",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 16,
+   "area_territorio_ha": 1945.53,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 1945.53,
+     "data": "2018-10-26",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1945.53,
+   "itemizacao_pendente": false,
+   "chave": "PERUANA|PA"
+  },
+  {
+   "num_fonte": 177,
+   "territorio": "São Judas Tadeu (ARQUIOB)",
+   "municipio": "Bujaru",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 86,
+   "area_territorio_ha": 2003.6961,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 2003.6961,
+     "data": "2018-10-29",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 2003.6961,
+   "itemizacao_pendente": false,
+   "chave": "SAO JUDAS TADEU ARQUIOB|PA"
+  },
+  {
+   "num_fonte": 178,
+   "territorio": "Invernada Paiol de Telha",
+   "municipio": "Reserva do Iguaçu",
+   "uf": "PR",
+   "n_comunidades": 1,
+   "familias": 393,
+   "area_territorio_ha": 2959.2371,
+   "pct_titulado": 39.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 168.3797,
+     "data": "2019-04-04",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "INCRA",
+     "area_ha": 57.0899,
+     "data": "2019-04-04",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "INCRA",
+     "area_ha": 760.2345,
+     "data": "2022-11-10",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "INCRA",
+     "area_ha": 82.2411,
+     "data": "2022-11-10",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "INCRA",
+     "area_ha": 81.5492,
+     "data": "2022-11-10",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1149.4944,
+   "itemizacao_pendente": false,
+   "chave": "INVERNADA PAIOL DE TELHA|PR"
+  },
+  {
+   "num_fonte": 179,
+   "territorio": "Soledade",
+   "municipio": "Serrano do Maranhão",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 68,
+   "area_territorio_ha": 707.2251,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 707.2251,
+     "data": "2019-11-19",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 707.2251,
+   "itemizacao_pendente": false,
+   "chave": "SOLEDADE|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 180,
+   "territorio": "Rio dos Macacos",
+   "municipio": "Simões Filho e Salvador",
+   "uf": "BA",
+   "n_comunidades": 1,
+   "familias": 67,
+   "area_territorio_ha": 104.8787,
+   "pct_titulado": 93.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 91.2855,
+     "data": "2020-05-25",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "INCRA",
+     "area_ha": 6.5536,
+     "data": "2020-05-25",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 97.8391,
+   "itemizacao_pendente": false,
+   "chave": "RIO DOS MACACOS|BA"
+  },
+  {
+   "num_fonte": 181,
+   "territorio": "Tatituquara",
+   "municipio": "Bagre",
+   "uf": "PA",
+   "n_comunidades": 4,
+   "familias": 41,
+   "area_territorio_ha": 7662.7691,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 7662.7691,
+     "data": "2020-09-21",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 7662.7691,
+   "itemizacao_pendente": false,
+   "chave": "TATITUQUARA|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 182,
+   "territorio": "Queimadas Grande",
+   "municipio": "Isaias Coelho",
+   "uf": "PI",
+   "n_comunidades": 1,
+   "familias": 70,
+   "area_territorio_ha": 3257.6764,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INTERPI",
+     "area_ha": 3257.6764,
+     "data": "2020-11-13",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 3257.6764,
+   "itemizacao_pendente": false,
+   "chave": "QUEIMADAS GRANDE|PI",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 183,
+   "territorio": "Santo Antônio",
+   "municipio": "Serrano do Maranhão",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 183,
+   "area_territorio_ha": 277.3625,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 277.3625,
+     "data": "2020-11-18",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 277.3625,
+   "itemizacao_pendente": false,
+   "chave": "SANTO ANTONIO|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 184,
+   "territorio": "Nossa Senhora de Fátima de Crauateua",
+   "municipio": "São Miguel do Guamá",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 61,
+   "area_territorio_ha": 495.4909,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 495.4909,
+     "data": "2020-11-19",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 495.4909,
+   "itemizacao_pendente": false,
+   "chave": "NOSSA SENHORA DE FATIMA DE CRAUATEUA|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 185,
+   "territorio": "União São João",
+   "municipio": "Prainha",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 48,
+   "area_territorio_ha": 1806.8912,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 1806.8912,
+     "data": "2020-11-19",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1806.8912,
+   "itemizacao_pendente": false,
+   "chave": "UNIAO SAO JOAO|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 186,
+   "territorio": "Capoeira",
+   "municipio": "Viana",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 66,
+   "area_territorio_ha": 261.4269,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 261.4269,
+     "data": "2021-07-13",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 261.4269,
+   "itemizacao_pendente": false,
+   "chave": "CAPOEIRA|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 187,
+   "territorio": "Barra do Aroeira",
+   "municipio": "Santa Tereza do Tocantins",
+   "uf": "TO",
+   "n_comunidades": 1,
+   "familias": 174,
+   "area_territorio_ha": 62315.3819,
+   "pct_titulado": 1.0,
+   "titulos": [
+    {
+     "orgao": "ITERTINS",
+     "area_ha": 197.6504,
+     "data": "2021-07-29",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "ITERTINS",
+     "area_ha": 714.9511,
+     "data": "2021-08-05",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 912.6015,
+   "itemizacao_pendente": false,
+   "chave": "BARRA DO AROEIRA|TO"
+  },
+  {
+   "num_fonte": 188,
+   "territorio": "Marinheiro",
+   "municipio": "Piripiri",
+   "uf": "PI",
+   "n_comunidades": 1,
+   "familias": 85,
+   "area_territorio_ha": 208.1455,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INTERPI",
+     "area_ha": 208.1455,
+     "data": "2021-09-03",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 208.1455,
+   "itemizacao_pendente": false,
+   "chave": "MARINHEIRO|PI"
+  },
+  {
+   "num_fonte": 189,
+   "territorio": "Vaquejador",
+   "municipio": "Piripiri",
+   "uf": "PI",
+   "n_comunidades": 1,
+   "familias": 154,
+   "area_territorio_ha": 270.8841,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INTERPI",
+     "area_ha": 270.8841,
+     "data": "2021-09-03",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 270.8841,
+   "itemizacao_pendente": false,
+   "chave": "VAQUEJADOR|PI",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 190,
+   "territorio": "Riacho Fundo",
+   "municipio": "Isaias Coelho",
+   "uf": "PI",
+   "n_comunidades": 1,
+   "familias": 200,
+   "area_territorio_ha": 1842.7621,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INTERPI",
+     "area_ha": 1842.7621,
+     "data": "2021-09-03",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1842.7621,
+   "itemizacao_pendente": false,
+   "chave": "RIACHO FUNDO|PI",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 191,
+   "territorio": "Cuxiu",
+   "municipio": "Bonito, São Miguel do Guamá e Ourém",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 35,
+   "area_territorio_ha": 353.0204,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 353.0204,
+     "data": "2021-11-16",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 353.0204,
+   "itemizacao_pendente": false,
+   "chave": "CUXIU|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 192,
+   "territorio": "São Benedito",
+   "municipio": "Serrano do Maranhão",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 133,
+   "area_territorio_ha": 1276.8493,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 1276.8493,
+     "data": "2022-02-15",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1276.8493,
+   "itemizacao_pendente": false,
+   "chave": "SAO BENEDITO|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 193,
+   "territorio": "Achuí",
+   "municipio": "Santa Helena e Pinheiro",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 40,
+   "area_territorio_ha": 1064.2147,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 1064.2147,
+     "data": "2022-03-31",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1064.2147,
+   "itemizacao_pendente": false,
+   "chave": "ACHUI|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 194,
+   "territorio": "Sabonete",
+   "municipio": "Isaias Coelho e Campinas do Piauí",
+   "uf": "PI",
+   "n_comunidades": 1,
+   "familias": 47,
+   "area_territorio_ha": 1962.248,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INTERPI",
+     "area_ha": 1962.248,
+     "data": "2022-03-23",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1962.248,
+   "itemizacao_pendente": false,
+   "chave": "SABONETE|PI"
+  },
+  {
+   "num_fonte": 195,
+   "territorio": "Santa Maria do Muraiteua",
+   "municipio": "São Miguel do Guamá",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 60,
+   "area_territorio_ha": 398.8357,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 398.8357,
+     "data": "2022-05-10",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 398.8357,
+   "itemizacao_pendente": false,
+   "chave": "SANTA MARIA DO MURAITEUA|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 196,
+   "territorio": "Guajarauna",
+   "municipio": "Abaetetuba e Moju",
+   "uf": "PA",
+   "n_comunidades": 5,
+   "familias": 46,
+   "area_territorio_ha": 1368.3736,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 1368.3736,
+     "data": "2022-05-10",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1368.3736,
+   "itemizacao_pendente": false,
+   "chave": "GUAJARAUNA|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 197,
+   "territorio": "Boa Vista dos Negros",
+   "municipio": "Parelhas",
+   "uf": "RN",
+   "n_comunidades": 1,
+   "familias": 36,
+   "area_territorio_ha": 445.2676,
+   "pct_titulado": 15.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 65.8341,
+     "data": "2022-06-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 65.8341,
+   "itemizacao_pendente": false,
+   "chave": "BOA VISTA DOS NEGROS|RN"
+  },
+  {
+   "num_fonte": 198,
+   "territorio": "Ramal do Bacuri",
+   "municipio": "Abaetetuba",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 135,
+   "area_territorio_ha": 911.8576,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 911.8576,
+     "data": "2022-06-27",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 911.8576,
+   "itemizacao_pendente": false,
+   "chave": "RAMAL DO BACURI|PA"
+  },
+  {
+   "num_fonte": 199,
+   "territorio": "Juquiri",
+   "municipio": "Moju",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 65,
+   "area_territorio_ha": 698.2962,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 698.2962,
+     "data": "2022-06-29",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 698.2962,
+   "itemizacao_pendente": false,
+   "chave": "JUQUIRI|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 200,
+   "territorio": "Brejo dos Negros",
+   "municipio": "Brejo Grande",
+   "uf": "SE",
+   "n_comunidades": 1,
+   "familias": 486,
+   "area_territorio_ha": 8125.5558,
+   "pct_titulado": 0.24,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 19.7513,
+     "data": "2022-08-31",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 19.7513,
+   "itemizacao_pendente": false,
+   "chave": "BREJO DOS NEGROS|SE",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 201,
+   "territorio": "Vó Ernestina",
+   "municipio": "Morro Redondo",
+   "uf": "RS",
+   "n_comunidades": 1,
+   "familias": 48,
+   "area_territorio_ha": 2.8553,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "PM Morro Redondo",
+     "area_ha": 2.8553,
+     "data": "2022-08-31",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 2.8553,
+   "itemizacao_pendente": false,
+   "chave": "VO ERNESTINA|RS"
+  },
+  {
+   "num_fonte": 202,
+   "territorio": "Alto Acará",
+   "municipio": "Acará",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 102,
+   "area_territorio_ha": 12409.4,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 12409.4,
+     "data": "2022-09-13",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 12409.4,
+   "itemizacao_pendente": false,
+   "chave": "ALTO ACARA|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 203,
+   "territorio": "Rio Grande",
+   "municipio": "Bequimão",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 108,
+   "area_territorio_ha": 1032.1306,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 1032.1306,
+     "data": "2022-11-09",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1032.1306,
+   "itemizacao_pendente": false,
+   "chave": "RIO GRANDE|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 204,
+   "territorio": "Quatro Bocas",
+   "municipio": "Presidente Sarney",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 40,
+   "area_territorio_ha": 398.4774,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 398.4774,
+     "data": "2022-11-09",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 398.4774,
+   "itemizacao_pendente": false,
+   "chave": "QUATRO BOCAS|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 205,
+   "territorio": "Marques",
+   "municipio": "Carlos Chagas e Teófilo Otoni",
+   "uf": "MG",
+   "n_comunidades": 1,
+   "familias": 6,
+   "area_territorio_ha": 250.7647,
+   "pct_titulado": 60.0,
+   "titulos": [],
+   "area_titulada_ha": null,
+   "itemizacao_pendente": true,
+   "chave": "MARQUES|MG"
+  },
+  {
+   "num_fonte": 206,
+   "territorio": "Jesus",
+   "municipio": "São Miguel do Guaporé",
+   "uf": "RO",
+   "n_comunidades": 1,
+   "familias": 12,
+   "area_territorio_ha": 5567.6207,
+   "pct_titulado": 100.0,
+   "titulos": [],
+   "area_titulada_ha": null,
+   "itemizacao_pendente": true,
+   "chave": "JESUS|RO"
+  },
+  {
+   "num_fonte": 207,
+   "territorio": "Condurus",
+   "municipio": "Cururupu",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 56,
+   "area_territorio_ha": 1265.5586,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 1265.5586,
+     "data": "2022-12-30",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1265.5586,
+   "itemizacao_pendente": false,
+   "chave": "CONDURUS|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 208,
+   "territorio": "Tijuca",
+   "municipio": "Peri Mirim",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 140,
+   "area_territorio_ha": 2447.9516,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 2447.9516,
+     "data": "2022-12-30",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 2447.9516,
+   "itemizacao_pendente": false,
+   "chave": "TIJUCA|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 209,
+   "territorio": "Petimandeua",
+   "municipio": "Inhangapi",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 55,
+   "area_territorio_ha": 302.073,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 302.073,
+     "data": "2023-01-09",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 302.073,
+   "itemizacao_pendente": false,
+   "chave": "PETIMANDEUA|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 210,
+   "territorio": "Brejo dos Crioulos",
+   "municipio": "São João da Ponte, Varzelândia e Verdelândia",
+   "uf": "MG",
+   "n_comunidades": 1,
+   "familias": 387,
+   "area_territorio_ha": 17302.6057,
+   "pct_titulado": 13.0,
+   "titulos": [],
+   "area_titulada_ha": null,
+   "itemizacao_pendente": true,
+   "chave": "BREJO DOS CRIOULOS|MG"
+  },
+  {
+   "num_fonte": 211,
+   "territorio": "Rio Capim",
+   "municipio": "Ipixuna do Pará",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 85,
+   "area_territorio_ha": 8118.7137,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 8118.7137,
+     "data": "2023-06-14",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 8118.7137,
+   "itemizacao_pendente": false,
+   "chave": "RIO CAPIM|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 212,
+   "territorio": "Mimbó",
+   "municipio": "Amarante",
+   "uf": "PI",
+   "n_comunidades": 1,
+   "familias": 72,
+   "area_territorio_ha": 2873.5074,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INTERPI",
+     "area_ha": 2873.5074,
+     "data": "2023-06-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 2873.5074,
+   "itemizacao_pendente": false,
+   "chave": "MIMBO|PI",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 213,
+   "territorio": "Curral de Pedra",
+   "municipio": "Abaré",
+   "uf": "BA",
+   "n_comunidades": 1,
+   "familias": 102,
+   "area_territorio_ha": 4515.2647,
+   "pct_titulado": 53.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 2374.8485,
+     "data": "2023-08-30",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 2374.8485,
+   "itemizacao_pendente": false,
+   "chave": "CURRAL DE PEDRA|BA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 214,
+   "territorio": "PEAFU",
+   "municipio": "Monte Alegre",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 49,
+   "area_territorio_ha": 1525.9261,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 1525.9261,
+     "data": "2023-11-06",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1525.9261,
+   "itemizacao_pendente": false,
+   "chave": "PEAFU|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 215,
+   "territorio": "Vila Cardoso",
+   "municipio": "Baião",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 324,
+   "area_territorio_ha": 1121.2922,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 1121.2922,
+     "data": "2023-11-06",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1121.2922,
+   "itemizacao_pendente": false,
+   "chave": "VILA CARDOSO|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 216,
+   "territorio": "Camutá do Rio Ipixuna",
+   "municipio": "Porto de Moz",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 33,
+   "area_territorio_ha": 4879.0801,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 4879.0801,
+     "data": "2023-11-07",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 4879.0801,
+   "itemizacao_pendente": false,
+   "chave": "CAMUTA DO RIO IPIXUNA|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 217,
+   "territorio": "Engenho Novo",
+   "municipio": "Ourém",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 56,
+   "area_territorio_ha": 385.2366,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 385.2366,
+     "data": "2023-11-07",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 385.2366,
+   "itemizacao_pendente": false,
+   "chave": "ENGENHO NOVO|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 218,
+   "territorio": "Paraíso",
+   "municipio": "Inhangapi",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 22,
+   "area_territorio_ha": 135.4017,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 135.4017,
+     "data": "2023-11-08",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 135.4017,
+   "itemizacao_pendente": false,
+   "chave": "PARAISO|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 219,
+   "territorio": "Jabaquara",
+   "municipio": "Acará",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 32,
+   "area_territorio_ha": 56.196,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 56.196,
+     "data": "2023-11-08",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 56.196,
+   "itemizacao_pendente": false,
+   "chave": "JABAQUARA|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 220,
+   "territorio": "Montevidéu",
+   "municipio": "Ourém",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 29,
+   "area_territorio_ha": 49.4126,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 49.4126,
+     "data": "2023-11-08",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 49.4126,
+   "itemizacao_pendente": false,
+   "chave": "MONTEVIDEU|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 221,
+   "territorio": "Santa Luzia do Bom Prazer",
+   "municipio": "Moju",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 66,
+   "area_territorio_ha": 1024.1135,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 1024.1135,
+     "data": "2023-11-09",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1024.1135,
+   "itemizacao_pendente": false,
+   "chave": "SANTA LUZIA DO BOM PRAZER|PA"
+  },
+  {
+   "num_fonte": 222,
+   "territorio": "América",
+   "municipio": "Bragança",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 100,
+   "area_territorio_ha": 106.9587,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 106.9587,
+     "data": "2023-11-09",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 106.9587,
+   "itemizacao_pendente": false,
+   "chave": "AMERICA|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 223,
+   "territorio": "São Pedro",
+   "municipio": "Castanhal",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 52,
+   "area_territorio_ha": 13454.96,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 13454.96,
+     "data": "2023-11-16",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 13454.96,
+   "itemizacao_pendente": false,
+   "chave": "SAO PEDRO|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 224,
+   "territorio": "Boa Esperança",
+   "municipio": "Cametá",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 42,
+   "area_territorio_ha": 503.7489,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 503.7489,
+     "data": "2023-11-17",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 503.7489,
+   "itemizacao_pendente": false,
+   "chave": "BOA ESPERANCA|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 225,
+   "territorio": "Aturiá",
+   "municipio": "Ourém",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 169,
+   "area_territorio_ha": 428.3112,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 428.3112,
+     "data": "2023-11-17",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 428.3112,
+   "itemizacao_pendente": false,
+   "chave": "ATURIA|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 226,
+   "territorio": "Igarapé do Arirá",
+   "municipio": "Oeiras do Pará",
+   "uf": "PA",
+   "n_comunidades": 1,
+   "familias": 56,
+   "area_territorio_ha": 1869.7987,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERPA",
+     "area_ha": 1869.7987,
+     "data": "2023-11-17",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1869.7987,
+   "itemizacao_pendente": false,
+   "chave": "IGARAPE DO ARIRA|PA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 227,
+   "territorio": "Ilha de São Vicente",
+   "municipio": "Araguatins",
+   "uf": "TO",
+   "n_comunidades": 1,
+   "familias": 48,
+   "area_territorio_ha": 2479.2844,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INCRA",
+     "area_ha": 2479.2844,
+     "data": "2023-11-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 2479.2844,
+   "itemizacao_pendente": false,
+   "chave": "ILHA DE SAO VICENTE|TO"
+  },
+  {
+   "num_fonte": 228,
+   "territorio": "Lagoa das Pedras e Encantados de Bom Jardim",
+   "municipio": "Tamboril",
+   "uf": "CE",
+   "n_comunidades": 1,
+   "familias": 67,
+   "area_territorio_ha": 1959.7452,
+   "pct_titulado": 34.0,
+   "titulos": [],
+   "area_titulada_ha": null,
+   "itemizacao_pendente": true,
+   "chave": "LAGOA DAS PEDRAS E ENCANTADOS DE BOM JARDIM|CE"
+  },
+  {
+   "num_fonte": 229,
+   "territorio": "Sítio Arruda",
+   "municipio": "Araripe e Salitre",
+   "uf": "CE",
+   "n_comunidades": 1,
+   "familias": 34,
+   "area_territorio_ha": 334.3401,
+   "pct_titulado": 67.0,
+   "titulos": [],
+   "area_titulada_ha": null,
+   "itemizacao_pendente": true,
+   "chave": "SITIO ARRUDA|CE"
+  },
+  {
+   "num_fonte": 230,
+   "territorio": "Deus Bem Sabe",
+   "municipio": "Serrano do Maranhão",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 251,
+   "area_territorio_ha": 1717.7214,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 1717.7214,
+     "data": "2023-11-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1717.7214,
+   "itemizacao_pendente": false,
+   "chave": "DEUS BEM SABE|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 231,
+   "territorio": "Santa Cruz",
+   "municipio": "Peri Mirim",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 55,
+   "area_territorio_ha": 258.1854,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 258.1854,
+     "data": "2023-11-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 258.1854,
+   "itemizacao_pendente": false,
+   "chave": "SANTA CRUZ|MA"
+  },
+  {
+   "num_fonte": 232,
+   "territorio": "Malhada de Pretos",
+   "municipio": "Peri Mirim",
+   "uf": "MA",
+   "n_comunidades": 1,
+   "familias": 53,
+   "area_territorio_ha": 346.8973,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "ITERMA",
+     "area_ha": 346.8973,
+     "data": "2023-11-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 346.8973,
+   "itemizacao_pendente": false,
+   "chave": "MALHADA DE PRETOS|MA",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 233,
+   "territorio": "Sumidouro",
+   "municipio": "Queimada Nova",
+   "uf": "PI",
+   "n_comunidades": 1,
+   "familias": 56,
+   "area_territorio_ha": 927.3859,
+   "pct_titulado": 100.0,
+   "titulos": [],
+   "area_titulada_ha": null,
+   "itemizacao_pendente": true,
+   "chave": "SUMIDOURO|PI"
+  },
+  {
+   "num_fonte": 234,
+   "territorio": "Angical",
+   "municipio": "Colônia do Piauí",
+   "uf": "PI",
+   "n_comunidades": 1,
+   "familias": 90,
+   "area_territorio_ha": 443.986,
+   "pct_titulado": 100.0,
+   "titulos": [],
+   "area_titulada_ha": null,
+   "itemizacao_pendente": true,
+   "chave": "ANGICAL|PI"
+  },
+  {
+   "num_fonte": 235,
+   "territorio": "Aliança e Santa Joana",
+   "municipio": "Cururupu",
+   "uf": "MA",
+   "n_comunidades": 2,
+   "familias": 221,
+   "area_territorio_ha": 7626.2492,
+   "pct_titulado": 100.0,
+   "titulos": [],
+   "area_titulada_ha": null,
+   "itemizacao_pendente": true,
+   "chave": "ALIANCA E SANTA JOANA|MA"
+  },
+  {
+   "num_fonte": 236,
+   "territorio": "Caiana dos Crioulos",
+   "municipio": "Alagoa Grande, Matinhas e Massaranduba",
+   "uf": "PB",
+   "n_comunidades": 1,
+   "familias": 98,
+   "area_territorio_ha": 646.5873,
+   "pct_titulado": 69.0,
+   "titulos": [],
+   "area_titulada_ha": null,
+   "itemizacao_pendente": true,
+   "chave": "CAIANA DOS CRIOULOS|PB"
+  },
+  {
+   "num_fonte": 237,
+   "territorio": "Macacos",
+   "municipio": "São Miguel do Tapuio",
+   "uf": "PI",
+   "n_comunidades": 1,
+   "familias": 65,
+   "area_territorio_ha": 2780.3576,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INTERPI",
+     "area_ha": 2780.3576,
+     "data": "2024-05-23",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 2780.3576,
+   "itemizacao_pendente": false,
+   "chave": "MACACOS|PI"
+  },
+  {
+   "num_fonte": 238,
+   "territorio": "Pitombeira",
+   "municipio": "Queimada Nova",
+   "uf": "PI",
+   "n_comunidades": 1,
+   "familias": 95,
+   "area_territorio_ha": 1266.1976,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INTERPI",
+     "area_ha": 1266.1976,
+     "data": "2024-05-23",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 1266.1976,
+   "itemizacao_pendente": false,
+   "chave": "PITOMBEIRA|PI"
+  },
+  {
+   "num_fonte": 239,
+   "territorio": "Vila São João",
+   "municipio": "Matias Olímpio e Campo Largo",
+   "uf": "PI",
+   "n_comunidades": 1,
+   "familias": 53,
+   "area_territorio_ha": 2346.8503,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INTERPI",
+     "area_ha": 1514.9075,
+     "data": "2024-06-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    },
+    {
+     "orgao": "INTERPI",
+     "area_ha": 831.9428,
+     "data": "2024-06-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 2346.8503,
+   "itemizacao_pendente": false,
+   "chave": "VILA SAO JOAO|PI"
+  },
+  {
+   "num_fonte": 240,
+   "territorio": "Escondido",
+   "municipio": "Acauã",
+   "uf": "PI",
+   "n_comunidades": 1,
+   "familias": 10,
+   "area_territorio_ha": 277.8421,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INTERPI",
+     "area_ha": 277.8421,
+     "data": "2024-06-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 277.8421,
+   "itemizacao_pendente": false,
+   "chave": "ESCONDIDO|PI",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 241,
+   "territorio": "São Martins",
+   "municipio": "Paulistana",
+   "uf": "PI",
+   "n_comunidades": 1,
+   "familias": 108,
+   "area_territorio_ha": 2042.4504,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INTERPI",
+     "area_ha": 2042.4504,
+     "data": "2024-06-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 2042.4504,
+   "itemizacao_pendente": false,
+   "chave": "SAO MARTINS|PI",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 242,
+   "territorio": "Sussuarana",
+   "municipio": "Piripiri",
+   "uf": "PI",
+   "n_comunidades": 1,
+   "familias": 170,
+   "area_territorio_ha": 1164.7046,
+   "pct_titulado": 32.0,
+   "titulos": [
+    {
+     "orgao": "INTERPI",
+     "area_ha": 373.806,
+     "data": "2024-06-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 373.806,
+   "itemizacao_pendente": false,
+   "chave": "SUSSUARANA|PI"
+  },
+  {
+   "num_fonte": 243,
+   "territorio": "Volta do Riacho",
+   "municipio": "Queimada Nova",
+   "uf": "PI",
+   "n_comunidades": 1,
+   "familias": 62,
+   "area_territorio_ha": 521.7395,
+   "pct_titulado": 100.0,
+   "titulos": [
+    {
+     "orgao": "INTERPI",
+     "area_ha": 521.7395,
+     "data": "2024-06-20",
+     "parceria_incra": false,
+     "clausula_suspensiva": false,
+     "ccdru": false
+    }
+   ],
+   "area_titulada_ha": 521.7395,
+   "itemizacao_pendente": false,
+   "chave": "VOLTA DO RIACHO|PI",
+   "sem_correspondencia": true
+  },
+  {
+   "num_fonte": 244,
+   "territorio": "Rosa",
+   "municipio": "Macapá",
+   "uf": "AP",
+   "n_comunidades": 1,
+   "familias": 17,
+   "area_territorio_ha": 4984.4857,
+   "pct_titulado": 84.0,
+   "titulos": [],
+   "area_titulada_ha": null,
+   "itemizacao_pendente": true,
+   "chave": "ROSA|AP"
+  },
+  {
+   "num_fonte": 245,
+   "territorio": "Cafundó",
+   "municipio": "Salto do Pirapora",
+   "uf": "SP",
+   "n_comunidades": 1,
+   "familias": 18,
+   "area_territorio_ha": 219.4462,
+   "pct_titulado": 35.0,
+   "titulos": [],
+   "area_titulada_ha": null,
+   "itemizacao_pendente": true,
+   "chave": "CAFUNDO|SP"
+  }
+ ]
+}
