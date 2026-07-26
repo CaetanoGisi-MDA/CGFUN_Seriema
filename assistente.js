@@ -19,6 +19,95 @@ const K_BUSCA = 'seriema.chave.busca';
 const K_GH = 'seriema.chave.github';
 const K_END = 'seriema.endpoint';
 const K_MOD = 'seriema.modelo';
+const K_BEND = 'seriema.busca.endpoint';
+const K_BPROV = 'seriema.busca.provedor';
+
+function buscaProvedor() { return S.cofre.get(K_BPROV) || CFG.busca.provedor; }
+function buscaEndpoint() { return S.cofre.get(K_BEND) || CFG.busca.endpoint; }
+
+/* Cada provedor de busca tem formato próprio de requisição e de resposta.
+   Adicionar um novo é acrescentar uma entrada aqui. */
+const PROVEDORES_BUSCA = {
+  firecrawl: {
+    rotulo: 'Firecrawl', endpoint: 'https://api.firecrawl.dev/v2/search',
+    req: (chave, q, n) => ({
+      headers: { Authorization: 'Bearer ' + chave, 'Content-Type': 'application/json' },
+      body: { query: q, limit: n, sources: ['web'] },
+    }),
+    lê: d => (d.data && d.data.web) || d.web || (d.data && Array.isArray(d.data) ? d.data : null) || [],
+    campos: r => ({ titulo: r.title, url: r.url, trecho: r.description || r.markdown || '' }),
+  },
+  tavily: {
+    rotulo: 'Tavily', endpoint: 'https://api.tavily.com/search',
+    req: (chave, q, n) => ({
+      headers: { 'Content-Type': 'application/json' },
+      body: { api_key: chave, query: q, max_results: n, search_depth: 'basic' },
+    }),
+    lê: d => d.results || [],
+    campos: r => ({ titulo: r.title, url: r.url, trecho: r.content || '' }),
+  },
+  serper: {
+    rotulo: 'Serper', endpoint: 'https://google.serper.dev/search',
+    req: (chave, q, n) => ({
+      headers: { 'X-API-KEY': chave, 'Content-Type': 'application/json' },
+      body: { q, gl: 'br', hl: 'pt-br', num: n },
+    }),
+    lê: d => d.organic || [],
+    campos: r => ({ titulo: r.title, url: r.link, trecho: r.snippet || '' }),
+  },
+  brave: {
+    rotulo: 'Brave Search', endpoint: 'https://api.search.brave.com/res/v1/web/search',
+    req: null,   // GET
+    lê: d => (d.web && d.web.results) || [],
+    campos: r => ({ titulo: r.title, url: r.url, trecho: r.description || '' }),
+  },
+};
+
+function dialogoBusca() {
+  return new Promise(resolve => {
+    const p = buscaProvedor();
+    const v = document.createElement('div');
+    v.className = 'veu';
+    v.innerHTML = `<div class="dialogo">
+      <h3>Serviço de busca na web</h3>
+      <p>Independente do serviço de linguagem. É usado quando o assistente precisa de
+         informação posterior ao corte da base — atos publicados, notícias, decisões recentes.</p>
+      <label for="b-prov">Provedor</label>
+      <select id="b-prov" style="width:100%;padding:8px 10px;border:1px solid var(--linha-forte);border-radius:4px;background:var(--papel);font-family:'IBM Plex Mono';font-size:12px">
+        ${Object.entries(PROVEDORES_BUSCA).map(([k, x]) =>
+          `<option value="${k}"${k === p ? ' selected' : ''}>${x.rotulo}</option>`).join('')}
+      </select>
+      <label for="b-end">Endereço da API</label>
+      <input id="b-end" type="text" spellcheck="false" value="${S.esc(buscaEndpoint())}">
+      <label for="b-key">Chave</label>
+      <input id="b-key" type="password" autocomplete="off" spellcheck="false"
+             placeholder="${S.cofre.get(K_BUSCA) ? 'já guardada — deixe em branco para manter' : 'cole aqui'}">
+      <div class="aviso">Fica apenas no seu navegador. Trocar o provedor ajusta o endereço
+        automaticamente — confira antes de salvar.</div>
+      <div class="acoes">
+        ${S.cofre.get(K_BUSCA) ? '<button class="bt vazado" data-esq>Esquecer chave</button>' : ''}
+        <button class="bt vazado" data-x>Cancelar</button>
+        <button class="bt" data-ok>Salvar</button>
+      </div></div>`;
+    document.body.appendChild(v);
+    const sel = v.querySelector('#b-prov'), end = v.querySelector('#b-end');
+    sel.onchange = () => { end.value = PROVEDORES_BUSCA[sel.value].endpoint; };
+    v.querySelector('#b-key').focus();
+    const fim = ok => { v.remove(); resolve(ok); };
+    v.querySelector('[data-x]').onclick = () => fim(false);
+    const esq = v.querySelector('[data-esq]');
+    if (esq) esq.onclick = () => { S.cofre.del(K_BUSCA); fim(false); };
+    v.querySelector('[data-ok]').onclick = () => {
+      S.cofre.set(K_BPROV, sel.value);
+      if (end.value.trim()) S.cofre.set(K_BEND, end.value.trim());
+      const k = v.querySelector('#b-key').value.trim();
+      if (k) S.cofre.set(K_BUSCA, k);
+      if (!S.cofre.get(K_BUSCA)) { v.querySelector('#b-key').focus(); return; }
+      fim(true);
+    };
+    v.onclick = e => { if (e.target === v) fim(false); };
+  });
+}
 
 function endpointAtual() { return S.cofre.get(K_END) || CFG.llm.endpoint; }
 function modeloAtual()   { return S.cofre.get(K_MOD) || CFG.llm.modelo; }
@@ -32,11 +121,17 @@ function dialogoServico() {
     v.innerHTML = `<div class="dialogo">
       <h3>Serviço de linguagem</h3>
       <p>O painel conversa com qualquer serviço que use a interface padrão de mensagens
-         (compatível com OpenAI). Endereço e modelo são editáveis — troque para usar outro provedor.</p>
+         (compatível com OpenAI). <b>Os três campos precisam ser do mesmo serviço</b>: chave do
+         OpenRouter exige endereço do OpenRouter, e assim por diante.</p>
       <label for="d-end">Endereço da API</label>
       <input id="d-end" type="text" spellcheck="false" value="${S.esc(endpointAtual())}">
+      <div class="nota" style="font-size:11px;margin-top:4px">Precisa terminar em
+        <span class="mono">/chat/completions</span></div>
       <label for="d-mod">Modelo</label>
       <input id="d-mod" type="text" spellcheck="false" value="${S.esc(modeloAtual())}">
+      <div class="nota" style="font-size:11px;margin-top:4px">No OpenRouter, o formato é
+        <span class="mono">fornecedor/modelo</span>. Escolha um que tenha suporte a
+        <i>tool calling</i> — sem isso o assistente não consegue consultar a base.</div>
       <label for="d-key">Chave</label>
       <input id="d-key" type="password" autocomplete="off" spellcheck="false"
              placeholder="${S.cofre.get(K_LLM) ? 'já guardada — deixe em branco para manter' : 'cole aqui'}">
@@ -213,31 +308,40 @@ function enxugarFicha(f) {
 
 async function buscarWeb(consulta) {
   if (!CFG.busca.ativa) return { erro: 'busca na web desativada na configuração' };
-  let chave = S.cofre.get(K_BUSCA);
-  if (!chave) {
-    chave = await pedirChave(K_BUSCA, 'Chave do serviço de busca',
-      'Para consultar a internet, o painel precisa de uma chave de um serviço de busca. É separada da chave do modelo.',
-      'Serviços com camada gratuita: Tavily, Serper ou Brave Search. Configure qual em <span class="mono">config.js</span>.');
-    if (!chave) return { erro: 'busca cancelada pela pessoa' };
+  if (!S.cofre.get(K_BUSCA)) {
+    const ok = await dialogoBusca();
+    if (!ok) return { erro: 'busca cancelada pela pessoa' };
   }
+  const chave = S.cofre.get(K_BUSCA);
+  const prov = PROVEDORES_BUSCA[buscaProvedor()] || PROVEDORES_BUSCA.firecrawl;
+  const url = buscaEndpoint();
+  const n = CFG.busca.maxResultados || 5;
   try {
-    let req;
-    if (CFG.busca.provedor === 'tavily') {
-      req = fetch(CFG.busca.endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ api_key: chave, query: consulta, max_results: CFG.busca.maxResultados, search_depth: 'basic' }) });
-    } else if (CFG.busca.provedor === 'serper') {
-      req = fetch(CFG.busca.endpoint, { method: 'POST', headers: { 'X-API-KEY': chave, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ q: consulta, gl: 'br', hl: 'pt-br' }) });
-    } else {
-      req = fetch(CFG.busca.endpoint + '?q=' + encodeURIComponent(consulta),
+    let r;
+    if (prov.req) {
+      const { headers, body } = prov.req(chave, consulta, n);
+      r = await fetch(url, { method: 'POST', headers, body: JSON.stringify(body) });
+    } else {   // Brave usa GET
+      r = await fetch(url + '?q=' + encodeURIComponent(consulta) + '&count=' + n,
         { headers: { 'X-Subscription-Token': chave, Accept: 'application/json' } });
     }
-    const d = await (await req).json();
-    const lista = d.results || d.organic || (d.web && d.web.results) || [];
-    return { consulta, resultados: lista.slice(0, CFG.busca.maxResultados).map(r => ({
-      titulo: r.title, url: r.url || r.link, trecho: (r.content || r.snippet || r.description || '').slice(0, 400) })) };
+    if (!r.ok) {
+      const t = await r.text();
+      return { erro: `o serviço de busca (${prov.rotulo}) respondeu ${r.status}. ` +
+                     `Endereço: ${url}. ${t.slice(0, 160)}` };
+    }
+    const d = await r.json();
+    const lista = prov.lê(d) || [];
+    return {
+      provedor: prov.rotulo, consulta,
+      resultados: lista.slice(0, n).map(x => {
+        const c = prov.campos(x);
+        return { titulo: c.titulo, url: c.url, trecho: String(c.trecho || '').slice(0, 500) };
+      }),
+    };
   } catch (e) {
-    return { erro: 'não foi possível buscar: ' + e.message + '. Pode ser bloqueio de CORS do provedor — nesse caso use um proxy.' };
+    return { erro: `não foi possível buscar em ${prov.rotulo}: ${e.message}. ` +
+                   'Se for bloqueio de CORS, o provedor não aceita chamada direta do navegador.' };
   }
 }
 
@@ -447,8 +551,20 @@ async function chamar(mensagens) {
       tool_choice: 'auto', temperature: CFG.llm.temperatura, max_tokens: CFG.llm.maxTokens }) });
   if (!r.ok) {
     const t = await r.text();
-    if (r.status === 401 || r.status === 403) { S.cofre.del(K_LLM); throw new Error('chave recusada pelo serviço. Ela foi esquecida; tente de novo.'); }
-    throw new Error(`o serviço respondeu ${r.status}. ${t.slice(0, 180)}`);
+    const onde = `\n\nEndereço usado: ${endpointAtual()}\nModelo: ${modeloAtual()}`;
+    // A chave NÃO é apagada: quase sempre o problema é endereço ou modelo,
+    // e apagá-la fazia parecer que ela não estava sendo salva.
+    if (r.status === 401 || r.status === 403) {
+      throw new Error('o serviço recusou a autenticação (' + r.status + ').' + onde +
+        '\n\nConfira se a chave é DESTE serviço: uma chave do OpenRouter não funciona ' +
+        'no endereço da DeepSeek, e vice-versa. Use o botão "Serviço e chave" para ajustar.');
+    }
+    if (r.status === 404) {
+      throw new Error('endereço ou modelo não encontrado (404).' + onde +
+        '\n\nO endereço precisa terminar em /chat/completions, e o identificador do modelo ' +
+        'costuma ter o formato fornecedor/modelo.');
+    }
+    throw new Error(`o serviço respondeu ${r.status}.` + onde + `\n\n${t.slice(0, 200)}`);
   }
   return (await r.json()).choices[0].message;
 }
@@ -498,7 +614,11 @@ async function enviar() {
     }
   } catch (e) {
     p.remove();
-    falar('sis', 'Não deu para consultar: ' + e.message);
+    const m = falar('sis', 'Não deu para consultar: ' + e.message);
+    const b = document.createElement('button');
+    b.className = 'bt p vazado'; b.textContent = 'Ajustar serviço e chave';
+    b.style.marginTop = '8px'; b.onclick = dialogoServico;
+    m.appendChild(document.createElement('br')); m.appendChild(b);
   } finally {
     ocupado = false; $('#ia-enviar').disabled = false; rolar();
   }
@@ -525,9 +645,11 @@ Exemplos:
   $('#ia-enviar').onclick = enviar;
   const barra = document.createElement('div');
   barra.style.cssText = 'display:flex;gap:6px;padding:6px 10px 0;justify-content:flex-end';
-  barra.innerHTML = '<button class="bt p vazado" id="bt-config">Serviço e chave</button>';
+  barra.innerHTML = '<button class="bt p vazado" id="bt-config">Modelo e chave</button>' +
+                  '<button class="bt p vazado" id="bt-config-busca">Busca na web</button>';
   $('#ia-txt').closest('.ia-entrada').before(barra);
   $('#bt-config').onclick = dialogoServico;
+  $('#bt-config-busca').onclick = dialogoBusca;
   const cx = $('#ia-txt');
   cx.onkeydown = e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); enviar(); } };
   cx.oninput = () => { cx.style.height = 'auto'; cx.style.height = Math.min(cx.scrollHeight, 120) + 'px'; };
