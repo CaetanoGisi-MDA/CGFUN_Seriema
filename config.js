@@ -28,8 +28,8 @@ window.SERIEMA_CONFIG = {
   /* ---- busca na web (opcional, independente do provedor do modelo) -- */
   busca: {
     ativa: true,
-    provedor: 'tavily',                       // 'tavily' | 'serper' | 'brave'
-    endpoint: 'https://api.tavily.com/search',
+    provedor: 'firecrawl',
+    endpoint: 'https://api.firecrawl.dev/v2/search',
     maxResultados: 5,
   },
 
