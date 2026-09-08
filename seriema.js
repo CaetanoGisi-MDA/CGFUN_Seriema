@@ -264,21 +264,43 @@ function geojsonCert(lista) {
 }
 
 function montarMapa() {
+  // Estilo vetorial do CARTO — recomendado por eles próprios, sem previsão
+  // de descontinuação (ao contrário do raster/PNG). Se não houver chave
+  // configurada, cai para o raster padrão do OpenStreetMap, sem quebrar.
+  const estiloVetorial = CFG.mapa.chave
+    ? `${CFG.mapa.estilo}?key=${CFG.mapa.chave}`
+    : null;
+  const style = estiloVetorial || {
+    version: 8,
+    sources: { base: { type: 'raster', tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
+               tileSize: 256, attribution: CFG.mapa.atribuicao } },
+    layers: [{ id: 'base', type: 'raster', source: 'base' }],
+  };
   const m = new maplibregl.Map({
-    container: 'mapa',
-    style: {
-      version: 8,
-      sources: { base: { type: 'raster', tiles: [CFG.mapa.tiles], tileSize: 256, attribution: CFG.mapa.atribuicao } },
-      layers: [{ id: 'base', type: 'raster', source: 'base' }],
-    },
+    container: 'mapa', style,
     center: CFG.mapa.centro, zoom: CFG.mapa.zoom, maxZoom: 15, attributionControl: { compact: true },
   });
   E.mapa = m;
   m.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'bottom-right');
   m.addControl(new maplibregl.ScaleControl({ maxWidth: 90, unit: 'metric' }), 'bottom-left');
+  m.on('error', e => {
+    // Estilo do CARTO recusado (chave inválida/expirada) — cai para o
+    // OpenStreetMap na hora, em vez de deixar o mapa em branco.
+    if (estiloVetorial && !m._fallbackAplicado && /style|401|403/i.test(String(e && e.error && e.error.message))) {
+      m._fallbackAplicado = true;
+      console.warn('Estilo do CARTO falhou; usando OpenStreetMap como alternativa.', e.error);
+      m.setStyle({
+        version: 8,
+        sources: { base: { type: 'raster', tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
+                   tileSize: 256, attribution: '© OpenStreetMap contributors' } },
+        layers: [{ id: 'base', type: 'raster', source: 'base' }],
+      });
+    }
+  });
 
   m.on('load', () => {
     m.addSource('terr', { type: 'geojson', data: geojson(E.indice), cluster: true, clusterRadius: 38, clusterMaxZoom: 7 });
+
 
     m.addLayer({ id: 'clusters', type: 'circle', source: 'terr', filter: ['has', 'point_count'],
       paint: {
@@ -393,7 +415,10 @@ function montarUniverso() {
     // filtrava em silêncio com os chips visualmente desmarcados.
     E.filtros.fases.clear();
     E.filtros.protocolo = E.filtros.poligono = E.filtros.estadual = false;
+    E.filtros.uf = '';        // a UF pode não existir no novo universo
+    E.grupo = null;           // agrupamento do mapa não vale para outro universo
     document.querySelectorAll('#chips-extra .chip').forEach(x => x.setAttribute('aria-pressed', 'false'));
+    const selUf = $('#filtro-uf'); if (selUf) selUf.value = '';
     montarUniverso(); montarChips(); atualizarIndicadores(); render();
   };
 }
@@ -447,8 +472,21 @@ function renderLista() {
     const g = new Set(E.grupo);
     r = r.filter(i => g.has(i.id));
   }
-  if (!r.length) { alvo.innerHTML = `<div class="vazio">Nenhum território com esses filtros.<br>Desmarque alguma camada.</div>`; return; }
+  // o contador é atualizado ANTES de qualquer retorno antecipado, senão
+  // congela no valor da renderização anterior e passa a mentir
   $('#contador').textContent = num(r.length) + (r.length === 1 ? ' território' : ' territórios');
+  if (!r.length) {
+    alvo.innerHTML = `<div class="vazio">Nenhum território com esses filtros.<br>
+      Desmarque alguma camada${E.grupo ? ', ou clique em <b>ver todos</b> para sair do agrupamento' : ''}.</div>`;
+    if (E.grupo) {
+      alvo.insertAdjacentHTML('afterbegin',
+        `<div style="padding:7px 12px;font-size:11px;background:var(--bico-claro);border-bottom:1px solid var(--linha);display:flex;align-items:center;gap:8px">
+           agrupamento selecionado
+           <button class="bt p vazado" id="bt-limpar-grupo" style="margin-left:auto;padding:2px 8px">ver todos</button></div>`);
+      alvo.onclick = e => { if (e.target.id === 'bt-limpar-grupo') { E.grupo = null; render(); } };
+    }
+    return;
+  }
   const c = contagemUniverso();
   const rot = { federal: 'federais', estadual: 'estaduais', todos: 'no total' }[E.universo] || '';
   const topo = E.grupo && E.grupo.length
@@ -486,7 +524,7 @@ function renderLista() {
 function renderListaCert() {
   const r = certFiltradas(), alvo = $('#painel-lista');
   $('#contador').textContent = num(r.length) + ' certidões';
-  if (!r.length) { alvo.innerHTML = `<div class="vazio">Nenhuma certidão com esses filtros.</div>`; return; }
+  if (!r.length) { alvo.innerHTML = `<div class="vazio">Nenhuma certidão com esses filtros.<br>Limpe a busca ou a UF.</div>`; return; }
   alvo.innerHTML = `<div style="padding:7px 12px;font-size:11px;color:var(--tinta-2);border-bottom:1px solid var(--linha)">
       <b class="mono">${num(r.length)}</b> de ${num(E.certidoes.length)} certidões sem processo aberto</div>` +
     r.slice(0, 400).map(c => `<button class="item crq" data-crq="${c.id}">
