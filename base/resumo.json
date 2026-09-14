@@ -1,16 +1,16 @@
 {
- "gerado_em": "2026-07-26",
- "n_territorios": 799,
+ "gerado_em": "2026-09-14",
+ "n_territorios": 800,
  "por_uf": {
   "MA": 143,
   "PA": 141,
   "BA": 90,
   "MG": 62,
   "RS": 37,
+  "SE": 30,
   "SP": 30,
   "AP": 29,
   "PI": 29,
-  "SE": 29,
   "RJ": 27,
   "PE": 24,
   "PR": 19,
@@ -28,27 +28,26 @@
   "AM": 4
  },
  "por_fase": {
-  "EM_ELABORACAO": 231,
+  "EM_ELABORACAO": 230,
   "TITULADO": 215,
   "DECRETO": 117,
-  "RTID": 103,
+  "RTID": 105,
   "PORTARIA": 80,
   "TITULO_PARCIAL": 48,
-  "SEM_INFO": 2,
+  "SEM_INFO": 3,
   "CCDRU": 1,
-  "IDENTIFICACAO": 1,
   "TITULO_ANULADO": 1
  },
  "por_esfera": {
-  "FEDERAL": 616,
+  "FEDERAL": 615,
   "ESTADUAL": 76,
-  "SEM_INFO": 10
+  "SEM_INFO": 13
  },
  "por_orgao": {
-  "INCRA": 606,
+  "INCRA": 603,
   "ITERPA": 42,
   "ITERMA": 31,
-  "—": 11,
+  "—": 16,
   "ITESP": 3,
   "FCP": 2,
   "CDA / FCP": 1,
@@ -58,67 +57,67 @@
   "INCRA/INTERPI": 1,
   "INTERPI/INCRA": 1
  },
- "com_poligono": 429,
- "com_coordenada": 674,
+ "com_poligono": 434,
+ "com_coordenada": 676,
  "com_certificacao_fcp": 636,
- "com_localidades_ibge": 645,
- "com_protocolo": 64,
- "area_total_ha": 2934149.85,
- "familias_total": 109505,
+ "com_localidades_ibge": 646,
+ "com_protocolo": 63,
+ "area_total_ha": 3002543.46,
+ "familias_total": 111045,
  "moradores_fcp_total": 37679,
- "localidades_ibge_total": 1478,
+ "localidades_ibge_total": 1498,
  "certidoes_total": 760,
  "vinculos": {
   "poligono": {
-   "confirmado": 301,
-   "nao_localizado": 273,
-   "proprio": 90,
-   "provavel": 38
+   "confirmado": 303,
+   "nao_localizado": 270,
+   "proprio": 92,
+   "provavel": 39
   },
   "fcp": {
    "confirmado": 563,
-   "nao_localizado": 66,
+   "nao_localizado": 68,
    "provavel": 73
   },
   "ibge": {
    "confirmado": 618,
-   "nao_localizado": 57,
-   "provavel": 27
+   "nao_localizado": 58,
+   "provavel": 28
   }
  },
  "por_regime": {
   "federal-4887": 624,
-  "estadual": 166,
+  "estadual": 165,
   "federal-pre2003": 7,
-  "indefinido": 2
+  "indefinido": 4
  },
- "registros_totais": 809,
+ "registros_totais": 810,
  "fragmentos": 5,
  "duplicatas": 5,
  "certidoes_sem_processo": {
-  "n": 1570,
-  "comunidades": 1975,
-  "moradores": 48914,
+  "n": 1613,
+  "comunidades": 2019,
+  "moradores": 53490,
   "por_uf": {
-   "BA": 380,
-   "MA": 380,
-   "MG": 237,
+   "BA": 394,
+   "MA": 390,
+   "MG": 246,
    "PA": 166,
+   "PE": 63,
    "AL": 62,
-   "PE": 60,
-   "PI": 46,
-   "RS": 44,
-   "CE": 40,
+   "PI": 47,
+   "RS": 45,
+   "CE": 41,
    "ES": 29,
-   "RJ": 19,
-   "GO": 19,
-   "RN": 18,
+   "RJ": 20,
+   "GO": 20,
+   "RN": 19,
    "TO": 14,
    "AM": 13,
    "PB": 11,
    "PR": 7,
+   "SP": 6,
    "AP": 6,
-   "SP": 5,
    "MT": 5,
    "MS": 4,
    "SC": 3,
@@ -126,8 +125,8 @@
    "SE": 1
   },
   "por_precisao": {
-   "censo": 1074,
-   "aproximada": 496
+   "censo": 1073,
+   "aproximada": 540
   },
   "por_ano": {
    "2004": 12,
@@ -145,54 +144,45 @@
    "2016": 101,
    "2017": 64,
    "2018": 127,
-   "2019": 53,
+   "2019": 52,
    "2020": 24,
    "2021": 33,
    "2022": 52,
    "2023": 95,
    "2024": 143,
    "2025": 148,
-   "2026": 141
+   "2026": 185
   }
  },
  "por_fase_federal": {
-  "EM_ELABORACAO": 235,
+  "EM_ELABORACAO": 234,
   "DECRETO": 121,
-  "RTID": 104,
+  "RTID": 106,
   "PORTARIA": 82,
   "TITULADO": 40,
   "TITULO_PARCIAL": 36,
   "CCDRU": 1,
-  "SEM_INFO": 1,
-  "IDENTIFICACAO": 1
+  "SEM_INFO": 1
  },
  "por_fase_estadual": {
   "TITULADO": 69,
   "TITULO_ANULADO": 1
  },
  "divergencias": {
-  "fase_corrigida": 11,
+  "fase_corrigida": 12,
   "titulado_ausente_da_tabela": 27,
   "fase_divergente": 5
  },
- "indicadores": {
+ "titulacao": {
+  "fonte": "INCRA/DFQ — Títulos expedidos às comunidades quilombolas (1995 até a atualidade)",
   "federal": {
-   "titulados": 97,
-   "area_titulada_ha": 366438.56,
-   "em_curso": 579,
-   "area_em_curso_ha": 2540463.7
+   "territorios": 97,
+   "area_titulada_ha": 531976.54
   },
   "estadual": {
-   "titulados": 165,
-   "area_titulada_ha": 572236.92,
-   "em_curso": 3,
-   "area_em_curso_ha": 17284.5
+   "territorios": 164,
+   "area_titulada_ha": 341748.04
   },
-  "todos": {
-   "titulados": 263,
-   "area_titulada_ha": 938675.48,
-   "em_curso": 584,
-   "area_em_curso_ha": 2559878.53
-  }
+  "itemizacao_pendente": 19
  }
 }

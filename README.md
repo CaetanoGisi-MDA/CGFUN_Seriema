@@ -328,22 +328,47 @@ Se o repositório for público — o caso previsto — **tudo que for digitado n
 
 ---
 
+## Monitoramento prioritário
+
+A partir da v2.0, o painel tem um segundo módulo, acessível pelo botão **Monitoramento** no cabeçalho, ao lado de **Territórios**. Ele acompanha processos administrativos do MDA (SEI) sob atenção prioritária da CFU — ações judiciais, prazos, conflitos.
+
+**A unidade é o processo MDA**, que pode ou não estar vinculado a um território da base. Um mesmo território pode ter vários processos; um processo pode existir sem território correspondente (quando a comunidade ainda não tem RTID nem certidão). Cada processo tem três blocos: **A** (identificação — nº MDA, link SEI, ação judicial, processo INCRA), **B** (status estruturado — nível de atenção, fase, prazo judicial sim/não, conflito, DEMCA) e **C** (inserções ad hoc datadas, para tudo que é narrativo e muda com o tempo, como multas).
+
+**O timer de verificação** é o coração do módulo. Cada processo pode ter uma data de próxima verificação; ao abrir o módulo, processos vencidos disparam um aviso que não se dispensa sem resposta (verificar agora, adiar, ou abrir o processo para conferir). Qualquer edição de um processo que já tenha timer pergunta se a data deve ser mantida ou redefinida.
+
+**Sincronização com a base.** Quando a fase de um processo vinculado a um território muda, o painel oferece atualizar também a ficha do território — pedindo a data (e número opcional) do ato. Isso grava em `curadoria/edicoes.json`, exatamente como qualquer outra correção de curadoria.
+
+**Onde os dados vivem:**
+
+- `base/monitoramento_seed.json` — os processos iniciais, parte da base (regenerável)
+- `curadoria/monitoramento.json` — tudo que a CFU insere ou edita pelo painel
+
+Como no resto do sistema, a curadoria é uma camada sobre a semente, e o pipeline nunca toca em `curadoria/`. As edições são publicadas no GitHub pelo mesmo botão **Publicar** — que agora grava os dois arquivos de curadoria (base e monitoramento) numa só operação.
+
+---
+
 ## Estrutura
 
 ```
-index.html                      estrutura
-estilo.css                      estilo
-config.js                       endpoints, repositório, flags
-seriema.js                      dados, mapa, lista, ficha
-assistente.js                   ferramentas, conversa, edição, publicação
-base/                           dados derivados      ← só o pipeline escreve
-curadoria/edicoes.json          camada da CFU        ← só o painel escreve
-pipeline/etl_01_fontes.py       normaliza as 4 fontes
-pipeline/etl_02_fusao.py        cruza e monta as fichas
-pipeline/etl_03_protocolos.py   catálogo de protocolos
-pipeline/etl_04_publicar.py     grava base/
-entrada/                        arquivos-fonte baixados (não versionar)
-interim/                        temporários do pipeline (não versionar)
+index.html                       estrutura, dois módulos (mapa e monitoramento)
+estilo.css                       estilo
+config.js                        endpoints, repositório, flags   ← seu, preservar ao atualizar
+seriema.js                       dados, mapa, lista, ficha, navegação entre módulos
+monitoramento.js                 módulo de monitoramento prioritário
+assistente.js                    ferramentas, conversa, edição, publicação
+base/                            dados derivados      ← só o pipeline escreve
+  monitoramento_seed.json        processos iniciais de monitoramento
+curadoria/edicoes.json           camada da CFU sobre a base       ← só o painel escreve
+curadoria/monitoramento.json     camada da CFU sobre o monitoramento ← só o painel escreve
+pipeline/etl_01_fontes.py        normaliza as 4 fontes
+pipeline/etl_02_fusao.py         cruza e monta as fichas
+pipeline/etl_03_protocolos.py    catálogo de protocolos
+pipeline/etl_04_publicar.py      grava base/
+pipeline/etl_05_regime.py        regime jurídico, fragmentos, certidões sem processo
+pipeline/etl_06_titulos.py       títulos expedidos; regenera índice e resumo
+pipeline/apoio/                  tabelas de apoio (centroides, títulos, IBGE)
+entrada/                         arquivos-fonte baixados (não versionar)
+interim/                         temporários do pipeline (não versionar)
 ```
 
 Sugestão de `.gitignore`:
@@ -355,4 +380,4 @@ interim/
 
 
 
-Mapa com MapLibre GL sobre tiles do CARTO/OpenStreetMap. Sem framework, sem build, sem dependência de servidor.
+Mapa com MapLibre GL sobre estilo vetorial do CARTO (com fallback para OpenStreetMap). Sem framework, sem build, sem dependência de servidor.

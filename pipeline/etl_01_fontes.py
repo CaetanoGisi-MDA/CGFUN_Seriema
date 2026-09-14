@@ -209,9 +209,16 @@ print(f'[2] processos no PDF ............. {len(pdf_df):>5}  ({pdf_df.pk.ne("").
 # 3. FCP — certidões
 # =========================================================
 fcp = pd.read_excel(f'{UP}/TABELA_DE_CRQ_CERTIFICADAS.xlsx', 'CERTIFICADAS', header=0)
+# ATENÇÃO — colunas lidas por POSIÇÃO, não pelo nome do cabeçalho: a FCP já
+# renomeou colunas mantendo a mesma posição (jul/2026: "Nº DE COMUNIDADES" e
+# "URBANA/RURAL"  →  set/2026: "Nº DE CRQ" e "POPULAÇÃO IBGE"). Verificado
+# que "Nº DE CRQ" preserva a mesma semântica de contagem (ex.: Brejo dos
+# Crioulos = 6, um por povoado listado no nome). "POPULAÇÃO IBGE" ainda está
+# quase vazia (18 de 3.478 linhas em set/2026) — não é substituto funcional
+# de nada ainda, só um campo novo em preenchimento gradual pela FCP.
 fcp.columns = ['regiao','uf','municipio','cd_ibge','comunidade','proc_fcp','dt_abertura',
                'livro','registro','folha','portaria','dt_portaria','retificacao',
-               'proc_incra','etapa','n_comunidades','n_moradores','urb_rural',
+               'proc_incra','etapa','n_comunidades','n_moradores','urb_rural_ou_populacao',
                'ano_cert','porta','cont']
 fcp['uf'] = fcp.uf.astype(str).str.strip().str.upper()
 fcp['comunidade'] = fcp.comunidade.astype(str).str.strip()

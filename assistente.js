@@ -447,7 +447,8 @@ function b64(str) {
 
 async function publicar() {
   const G = CFG.github;
-  if (!S.E.pendentes.length) return;
+  const temMon = window.Monitoramento && window.Monitoramento.operacoes.length;
+  if (!S.E.pendentes.length && !temMon) return;
   if (G.dono === 'SEU-USUARIO') {
     return alerta('Configure o repositório', 'Edite <span class="mono">config.js</span> e preencha <span class="mono">github.dono</span> e <span class="mono">github.repo</span> antes de publicar.');
   }
@@ -460,10 +461,22 @@ async function publicar() {
   }
   const cab = { Authorization: 'Bearer ' + tok, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' };
   const api = `https://api.github.com/repos/${G.dono}/${G.repo}`;
-  const msg = `curadoria: ${S.E.pendentes.length} edição(ões) via Observatório Seriema`;
-  const conteudo = b64(JSON.stringify({ versao: 1, atualizado_em: new Date().toISOString(),
-                                        edicoes: S.E.curadoria.edicoes }, null, 1));
+  const nEdicoes = S.E.pendentes.length, nMon = temMon ? window.Monitoramento.operacoes.length : 0;
+  const msg = `curadoria: ${nEdicoes} edição(ões)${nMon ? ' + ' + nMon + ' de monitoramento' : ''} via Observatório Seriema`;
+  const caminhoMon = G.caminhoCuradoria.replace('edicoes.json', 'monitoramento.json');
   falar('sis', 'Publicando…');
+
+  // grava um arquivo por vez, lendo o sha atual de cada
+  async function gravarArquivo(caminho, objeto, branch) {
+    let sha = null;
+    const at = await fetch(`${api}/contents/${caminho}?ref=${branch}`, { headers: cab });
+    if (at.ok) sha = (await at.json()).sha;
+    const put = await fetch(`${api}/contents/${caminho}`, { method: 'PUT', headers: cab,
+      body: JSON.stringify({ message: msg, content: b64(JSON.stringify(objeto, null, 1)), branch, ...(sha ? { sha } : {}) }) });
+    if (put.status === 409) throw new Error(`o arquivo ${caminho} mudou desde que você carregou a página. Recarregue e refaça, para não sobrescrever o trabalho de outra pessoa.`);
+    if (!put.ok) throw new Error((await put.text()).slice(0, 200));
+  }
+
   try {
     let branch = G.branch;
     if (G.exigirRevisao) {
@@ -473,22 +486,31 @@ async function publicar() {
         body: JSON.stringify({ ref: 'refs/heads/' + branch, sha: ref.object.sha }) });
       if (!cr.ok) throw new Error('não foi possível criar a proposta: ' + (await cr.text()).slice(0, 160));
     }
-    let sha = null;
-    const at = await fetch(`${api}/contents/${G.caminhoCuradoria}?ref=${branch}`, { headers: cab });
-    if (at.ok) sha = (await at.json()).sha;
-    const put = await fetch(`${api}/contents/${G.caminhoCuradoria}`, { method: 'PUT', headers: cab,
-      body: JSON.stringify({ message: msg, content: conteudo, branch, ...(sha ? { sha } : {}) }) });
-    if (put.status === 409) throw new Error('a base de curadoria mudou desde que você carregou a página. Recarregue e refaça a edição, para não sobrescrever o trabalho de outra pessoa.');
-    if (!put.ok) throw new Error((await put.text()).slice(0, 200));
+
+    if (nEdicoes) {
+      await gravarArquivo(G.caminhoCuradoria,
+        { versao: 1, atualizado_em: new Date().toISOString(), edicoes: S.E.curadoria.edicoes }, branch);
+    }
+    if (nMon) {
+      const curMon = S.E.curadoriaMon || { versao: 1, operacoes: [] };
+      curMon.operacoes = (curMon.operacoes || []).concat(window.Monitoramento.operacoes);
+      curMon.atualizado_em = new Date().toISOString();
+      S.E.curadoriaMon = curMon;
+      await gravarArquivo(caminhoMon, curMon, branch);
+    }
+
     let extra = '';
     if (G.exigirRevisao) {
+      const linhas = S.E.pendentes.map(e => `- **${e.id}** · ${e.acao} ${e.campo || ''} — ${e.motivo || ''}`)
+        .concat(nMon ? window.Monitoramento.operacoes.map(o => `- monitoramento · ${o.acao} ${o.id || (o.processo && o.processo.id) || ''}`) : []);
       const pr = await fetch(`${api}/pulls`, { method: 'POST', headers: cab,
-        body: JSON.stringify({ title: msg, head: branch, base: G.branch,
-          body: S.E.pendentes.map(e => `- **${e.id}** · ${e.acao} ${e.campo || ''} — ${e.motivo}`).join('\n') }) });
+        body: JSON.stringify({ title: msg, head: branch, base: G.branch, body: linhas.join('\n') }) });
       const d = await pr.json();
       extra = d.html_url ? ` Proposta aberta para revisão: ${d.html_url}` : '';
     }
     S.E.pendentes = [];
+    if (nMon) window.Monitoramento.limparPendentes();
+    if (S.marcarPendentesMonitoramento) S.marcarPendentesMonitoramento(0);
     S.atualizarPendentes();
     falar('sis', `Publicado.${extra}`);
   } catch (e) {

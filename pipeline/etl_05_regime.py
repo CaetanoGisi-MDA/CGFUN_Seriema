@@ -246,7 +246,7 @@ def certidoes_sem_processo():
             'dou': r.dt_portaria_iso if isinstance(r.dt_portaria_iso, str) else None,
             'ano': to_int(r.ano_cert),
             'moradores': to_int(r.n_moradores),
-            'urb_rural': str(r.urb_rural or '').strip() or None,
+            'urb_rural': str(r.urb_rural_ou_populacao or '').strip() or None,
             'lat': lat, 'lon': lon, 'precisao': precisao, 'origem_ponto': origem,
             'localidades_censo': ls[:20],
             'n_localidades_censo': len(ls),

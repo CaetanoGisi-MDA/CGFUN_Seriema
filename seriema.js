@@ -507,6 +507,7 @@ function renderLista() {
           ${i.reg === 'estadual' ? '<span class="marca-mini m-est">EST</span>' : ''}
           ${i.lat == null ? '<span class="marca-mini m-aprox">SEM LOCAL.</span>' : ''}
           ${i.div ? '<span class="marca-mini m-div">!</span>' : ''}
+          ${(window.Monitoramento && window.Monitoramento.processosDoTerritorio(i.id).length) ? '<span class="marca-mini m-mon" title="tem monitoramento prioritário">MON</span>' : ''}
         </span>
       </div>
       <div class="l2" style="margin-top:5px">
@@ -790,6 +791,8 @@ function renderFicha(f) {
       <div class="nota mt6">⌕ abre já filtrado por este território · ↗ abre o portal</div>
     </div>
 
+    ${blocoMonitoramento(f)}
+
     <div class="bloco">
       <h3>Corrigir ou complementar</h3>
       <div class="nota">Descreva a correção em linguagem natural no assistente — ela será mostrada
@@ -804,6 +807,43 @@ function renderFicha(f) {
     $('#ia-txt').value = `No território ${f.nome} (${f.uf}, ${f.id}), `;
     $('#ia-txt').focus();
   };
+  // botões do bloco de monitoramento
+  document.querySelectorAll('#painel-lista [data-mon-ficha]').forEach(b => {
+    b.onclick = () => {
+      const acao = b.dataset.monFicha;
+      if (acao === 'ver') { irParaModulo('mon'); if (window.Monitoramento) window.Monitoramento.filtrarPorTerritorio(f.id); }
+      else if (acao === 'novo') {
+        irParaModulo('mon');
+        if (window.Monitoramento) window.Monitoramento.abrirNovo({ nome: f.nome, loc: (f.municipios || []).join(', ') + '/' + f.uf, srm: f.id });
+      }
+    };
+  });
+}
+
+function blocoMonitoramento(f) {
+  const procs = (window.Monitoramento ? window.Monitoramento.processosDoTerritorio(f.id) : []);
+  const linhas = procs.map(p => {
+    const cor = { critico: 'var(--critico,#8C2E23)', atencao: 'var(--atencao,#8A6712)', rotina: 'var(--rotina,#3A5A48)' }[p.nivel] || 'var(--tinta-2)';
+    const rotN = { critico: 'Crítico', atencao: 'Atenção', rotina: 'Rotina' }[p.nivel];
+    return `<div class="cartao" style="border-left:3px solid ${cor}">
+        <div class="linha-flex entre">
+          ${p.link ? `<a href="${esc(p.link)}" target="_blank" rel="noopener" class="mono" style="font-weight:600">${p.proc}</a>`
+                   : `<span class="mono" style="font-weight:600;color:var(--tinta-2)">${p.proc}</span>`}
+          <span class="mono" style="font-size:10px;color:${cor}">${rotN}</span>
+        </div>
+        <div class="m mt6">${p.fase ? (NOME_FASE[({certidao:'certidao',rtid:'RTID',portaria:'PORTARIA',decreto:'DECRETO',titulo:'TITULADO'}[p.fase])] || p.fase) : 'sem fase registrada'}</div>
+      </div>`;
+  }).join('');
+
+  return `<div class="bloco">
+      <h3>Monitoramento prioritário</h3>
+      ${procs.length ? `<div class="pilha">${linhas}</div>
+        <div class="linkrow mt10">
+          <a href="#" data-mon-ficha="ver">ver no módulo de monitoramento →</a>
+        </div>`
+       : `<div class="nota">Nenhum processo de monitoramento vinculado a este território.</div>`}
+      <button class="bt vazado p mt10" data-mon-ficha="novo">+ Registrar processo de monitoramento</button>
+    </div>`;
 }
 
 function selecionar(id, doPainel) {
@@ -1026,8 +1066,47 @@ function render() {
 
 function atualizarPendentes() {
   const p = $('#pendentes');
-  p.classList.toggle('oculto', !E.pendentes.length);
-  $('#pend-n').textContent = E.pendentes.length;
+  const nBase = E.pendentes.length;
+  const nMon = E.pendentesMon || 0;
+  const total = nBase + nMon;
+  p.classList.toggle('oculto', !total);
+  $('#pend-n').textContent = total;
+  const rot = p.querySelector('span');
+  if (rot) rot.textContent = nMon && nBase
+    ? `edições e registros de monitoramento não publicados`
+    : nMon ? `registro(s) de monitoramento não publicado(s)`
+    : `edições confirmadas, ainda não publicadas`;
+}
+
+/* ================================================================
+   NAVEGAÇÃO ENTRE MÓDULOS (mapa / monitoramento)
+   ================================================================ */
+function irParaModulo(m) {
+  document.querySelectorAll('[data-modulo]').forEach(s =>
+    s.style.display = s.dataset.modulo === m ? '' : 'none');
+  const nm = document.getElementById('nav-mapa'), nn = document.getElementById('nav-mon');
+  if (nm) nm.setAttribute('aria-pressed', String(m === 'mapa'));
+  if (nn) nn.setAttribute('aria-pressed', String(m === 'mon'));
+  E.moduloAtivo = m;
+  if (m === 'mon' && window.Monitoramento) window.Monitoramento.aoExibir();
+  if (m === 'mapa' && E.mapa) setTimeout(() => E.mapa.resize(), 60);
+}
+
+/* Registra uma edição na curadoria da BASE (edicoes.json) — usado pela
+   sincronização de fase vinda do monitoramento. Reaproveita o mesmo
+   caminho que o assistente já usa (aplicar + pendentes). */
+function registrarEdicaoBase(ed) {
+  ed.em = ed.em || new Date().toISOString().slice(0, 19).replace('T', ' ');
+  ed.por = ed.por || (cofre.get('seriema.autor') || 'CFU');
+  E.curadoria.edicoes = E.curadoria.edicoes || [];
+  E.curadoria.edicoes.push(ed);
+  E.pendentes.push(ed);
+  atualizarPendentes();
+}
+
+function marcarPendentesMonitoramento(n) {
+  E.pendentesMon = n;
+  atualizarPendentes();
 }
 
 /* ================================================================
@@ -1070,9 +1149,20 @@ async function iniciar() {
       e.preventDefault(); trocarAba('lista'); $('#busca').focus();
     }
   });
-  if (window.Assistente) window.Assistente.iniciar({ E, cofre, consultar, agregar, lerCampo, esc, num, data, render, selecionar, atualizarPendentes });
+  if (window.Assistente) window.Assistente.iniciar({ E, cofre, consultar, agregar, lerCampo, esc, num, data, render, selecionar, atualizarPendentes, marcarPendentesMonitoramento });
+
+  // módulo de monitoramento — recebe o contexto compartilhado
+  if (window.Monitoramento) {
+    await window.Monitoramento.iniciar({
+      E, cofre, CFG, esc, num, data, consultar, render,
+      selecionar, irParaModulo, registrarEdicaoBase,
+      marcarPendentesMonitoramento,
+    });
+  }
+  irParaModulo('mapa');
 }
 
 return { iniciar, E, cofre, consultar, agregar, certFiltradas, render, selecionar, selecionarCert,
-         trocarAba, esc, num, data, lerCampo, trilhaHTML, NOME_FASE };
+         trocarAba, esc, num, data, lerCampo, trilhaHTML, NOME_FASE,
+         irParaModulo, registrarEdicaoBase, marcarPendentesMonitoramento, porId: () => E.porId };
 })();

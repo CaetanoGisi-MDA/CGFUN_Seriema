@@ -244,3 +244,43 @@ if __name__ == '__main__':
               open(f'{BASE}/titulos_expedidos.json', 'w', encoding='utf-8'),
               ensure_ascii=False, allow_nan=False, indent=1)
     print(f'\n>> base/titulos_expedidos.json gravado')
+
+    # -----------------------------------------------------------------
+    # Esta etapa final PRECISA rodar sempre, por isso vive aqui dentro do
+    # script — não como célula solta rodada à parte, que é como aconteceu
+    # na atualização de julho/2026 e fez o resumo.json ficar sem os campos
+    # de titulação até alguém notar e recalcular manualmente. Regenera o
+    # índice (agora com os territórios incorporados por este script) e os
+    # campos derivados do resumo, incluindo os de titulação.
+    # -----------------------------------------------------------------
+    Ativos = [x for x in fichas if x['situacao_registro'] == 'ativo']
+    idx = [{'id': x['id'], 'nome': x['nome'], 'uf': x['uf'], 'mun': '; '.join(x['municipios'][:3]),
+            'fase': x['fase'], 'lat': x['geo'].get('lat'), 'lon': x['geo'].get('lon'),
+            'pol': bool(x['geo'].get('tem_poligono')), 'area': x['area_ha'], 'fam': x['familias'],
+            'prot': x['protocolo_consulta']['tem'], 'cert': x['certificacao']['n_certidoes'],
+            'loc': x['ibge']['n_localidades'], 'esf': x['esfera'], 'reg': x['regime'],
+            'sit': x['situacao_registro'], 'div': len(x.get('divergencias') or [])} for x in fichas]
+    json.dump(idx, open(f'{BASE}/territorios_indice.json', 'w', encoding='utf-8'),
+              ensure_ascii=False, allow_nan=False)
+
+    r = json.load(open(f'{BASE}/resumo.json', encoding='utf-8'))
+    r['registros_totais'] = len(fichas)
+    r['n_territorios'] = len(Ativos)
+    r['por_regime'] = dict(Counter(x['regime'] for x in Ativos).most_common())
+    r['por_fase'] = dict(Counter(x['fase'] for x in Ativos).most_common())
+    r['por_uf'] = dict(Counter(x['uf'] for x in Ativos).most_common())
+    r['divergencias'] = dict(Counter(d['tipo'] for x in Ativos for d in (x.get('divergencias') or [])))
+    fed_ = [x for x in Ativos if x['regime'].startswith('federal')]
+    est_ = [x for x in Ativos if x['regime'] == 'estadual']
+    def _area_tit(g): return round(sum((x.get('titulacao') or {}).get('area_titulada_ha') or 0 for x in g), 2)
+    r['titulacao'] = {
+        'fonte': FONTE['nome'],
+        'federal': {'territorios': sum(1 for x in fed_ if x['fase'] in ('TITULADO', 'TITULO_PARCIAL')),
+                    'area_titulada_ha': _area_tit(fed_)},
+        'estadual': {'territorios': sum(1 for x in est_ if x['fase'] in ('TITULADO', 'TITULO_PARCIAL')),
+                     'area_titulada_ha': _area_tit(est_)},
+        'itemizacao_pendente': sum(1 for x in Ativos if (x.get('titulacao') or {}).get('itemizacao_pendente')),
+    }
+    json.dump(r, open(f'{BASE}/resumo.json', 'w', encoding='utf-8'),
+              ensure_ascii=False, allow_nan=False, indent=1)
+    print('>> índice e resumo regenerados (agora inclui os territórios incorporados por este script)')

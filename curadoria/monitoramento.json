@@ -1,0 +1,5 @@
+{
+ "versao": 1,
+ "nota": "Camada de curadoria do monitoramento. O painel grava aqui as edições e novos processos. Prevalece sobre monitoramento_seed.json na leitura.",
+ "operacoes": []
+}

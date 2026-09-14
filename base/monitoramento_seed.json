@@ -1,0 +1,178 @@
+{
+ "versao": 1,
+ "nota": "Dados iniciais (seed) de monitoramento prioritário — 6 processos MDA reais fornecidos pela CFU. Editável pelo painel; edições vão para curadoria/monitoramento.json.",
+ "processos": [
+  {
+   "id": "MON-0001",
+   "proc": "55000.000448/2026-62",
+   "nivel": "critico",
+   "territorio": "Canto do Lago",
+   "loc": "Paulino Neves/MA",
+   "fase": "rtid",
+   "link": "https://sei.agro.gov.br/sei/controlador.php?acao=procedimento_trabalhar&id_procedimento=63821332",
+   "vinculo": "sem",
+   "srm": null,
+   "timer": null,
+   "editadoEm": "2026-09-09",
+   "criadoEm": "2026-09-09",
+   "resumo": "Iniciado a partir de ofício da Presidência da República (SNDSAPP/SG/PR) relatando ameaças de morte à liderança Sr. Inaldo, coação policial, disputas possessórias e interesse fundiário de agentes políticos locais na área. A comunidade possui certificação de autodefinição da Fundação Cultural Palmares desde 27/09/2010, e o RTID encontra-se em elaboração pelo INCRA (Processo 54230.007875/2011-19), com abertura dos trabalhos em 14/04/2026. Há Ação Civil Pública do MPF com tutela antecipada exigindo a conclusão do RTID.",
+   "acao": "ACP MPF nº 1034238-44.2025.4.01.3700; Reintegração de Posse nº 1036033-85.2025.4.01.3700",
+   "incra": "54230.007875/2011-19",
+   "prazoAtivo": true,
+   "conflito": "Sim",
+   "demca": "Sim — Despacho-MDA 120/2026/CFUN (SEI 51747865)",
+   "blocoC": [
+    {
+     "t": "Prazo judicial em curso",
+     "d": "—",
+     "x": "180 dias (RTID) + 1 ano (processo administrativo), sob tutela antecipada."
+    },
+    {
+     "t": "Reunião INCRA/Sociedade Maranhense de DH",
+     "d": "15/05/2026",
+     "x": "Ofício nº 68806/2026/DQ-INCRA registra reunião com vistas à inclusão de lideranças no PEPDDH-MA."
+    }
+   ]
+  },
+  {
+   "id": "MON-0002",
+   "proc": "55000.017522/2026-80",
+   "nivel": "rotina",
+   "territorio": "Tiningu",
+   "loc": "Santarém/PA",
+   "fase": "decreto",
+   "link": null,
+   "vinculo": "confirmado",
+   "srm": "SRM-0462",
+   "timer": "2026-11-28",
+   "editadoEm": "2026-09-09",
+   "criadoEm": "2026-08-01",
+   "resumo": "O processo de regularização (INCRA nº 54105.002172/2003-20) teve o Decreto de Interesse Social publicado em 11/06/2026, concluindo a decretação para desapropriação dos imóveis particulares. Acompanhado pelo MPF junto com Bom Jardim, Murumuru e Murumurutuba. A CGPROT respondeu nova requisição do MPF informando que o decreto já havia sido publicado.",
+   "acao": "Procedimento Administrativo MPF nº 1.23.002.000392/2020-99",
+   "incra": "54105.002172/2003-20",
+   "prazoAtivo": false,
+   "conflito": "Não verificado",
+   "demca": "Não aplicável",
+   "blocoC": [
+    {
+     "t": "Resposta a nova requisição do MPF",
+     "d": "set/2026",
+     "x": "A pergunta do MPF estava desatualizada — decreto já havia sido publicado."
+    }
+   ]
+  },
+  {
+   "id": "MON-0003",
+   "proc": "00741.000291/2026-18",
+   "nivel": "critico",
+   "territorio": "Campo Crioulo + 4 comunidades",
+   "loc": "Lagarto/SE",
+   "fase": "rtid",
+   "link": null,
+   "vinculo": "sem",
+   "srm": null,
+   "timer": "2026-09-18",
+   "editadoEm": "2026-09-09",
+   "criadoEm": "2026-08-25",
+   "resumo": "Regularização das comunidades Campo Crioulo, Crioulo, Madalena, Pindoba e Saco do Tigre (INCRA nº 54370.001787/2016-13). ACP do MPF impõe 6 meses para RTID sob multa diária, e prazos subsequentes para decreto. CGPROT elaborou pedido técnico sobre estágio de cada peça do RTID, cronograma e óbices.",
+   "acao": "0800349-87.2023.4.05.8503",
+   "incra": "54370.001787/2016-13",
+   "prazoAtivo": true,
+   "conflito": "Não verificado",
+   "demca": "Não verificado",
+   "blocoC": [
+    {
+     "t": "Prazo judicial em curso",
+     "d": "—",
+     "x": "6 meses para RTID (a contar 25/08/2026); 120 dias subsequentes para decreto."
+    },
+    {
+     "t": "Multa diária ativa",
+     "d": "25/08/2026",
+     "x": "R$ 5.000,00/dia por descumprimento do prazo de RTID, fixada pela ACP."
+    }
+   ]
+  },
+  {
+   "id": "MON-0004",
+   "proc": "00741.000178/2026-XX",
+   "nivel": "atencao",
+   "territorio": "Mata de São Benedito III + Sumaúma",
+   "loc": "Itapecuru-Mirim/MA",
+   "fase": "rtid",
+   "link": null,
+   "vinculo": "confirmado",
+   "srm": "SRM-0222",
+   "timer": null,
+   "editadoEm": "2026-07-20",
+   "criadoEm": "2026-07-20",
+   "resumo": "ACP do MPF com tutela de urgência exige relatório em 60 dias sobre estágio do processo, diligências, conflitos e óbices. Resposta inicial da CGPROT, com base em informações da Divisão de Territórios Quilombolas do INCRA-MA, cobriu o RTID mas não os itens de conflito e cronograma exigidos — complementação solicitada diretamente ao INCRA-MA.",
+   "acao": "1010709-59.2026.4.01.3700",
+   "incra": "54230.000413/2007-94",
+   "prazoAtivo": true,
+   "conflito": "Não verificado",
+   "demca": "Não verificado",
+   "blocoC": [
+    {
+     "t": "Prazo judicial em curso",
+     "d": "—",
+     "x": "60 dias para relatório sobre estágio, diligências, conflitos e óbices (a contar 17/07/2026)."
+    }
+   ]
+  },
+  {
+   "id": "MON-0005",
+   "proc": "55000.016687/2026-34",
+   "nivel": "rotina",
+   "territorio": "Cafundó",
+   "loc": "Salto de Pirapora/SP",
+   "fase": "titulo",
+   "tituloTipo": "parcial",
+   "link": "https://sei.agro.gov.br/sei/controlador.php?acao=procedimento_trabalhar&id_procedimento=70007232",
+   "vinculo": "confirmado",
+   "srm": "SRM-0665",
+   "timer": "2027-01-15",
+   "editadoEm": "2026-09-09",
+   "criadoEm": "2026-01-10",
+   "resumo": "Inquérito Civil do MPF sobre risco de queda de eucaliptos plantados há mais de 15 anos. A resposta de mérito foi prestada pela SR-INCRA/SP, amparada em parecer da PFE. A CGPROT registra para acompanhamento futuro a pendência de titulação da Gleba D e a existência de processo sobre atividade minerária em expansão.",
+   "acao": "Inquérito Civil MPF nº 1.34.003.000214/2024-06",
+   "incra": "54000.049168/2025-17; 54000.070804/2026-42; 54190.001397/2012-38 (CDRU)",
+   "prazoAtivo": false,
+   "conflito": "Não verificado — mineração, não disputa possessória",
+   "demca": "Não aplicável",
+   "blocoC": []
+  },
+  {
+   "id": "MON-0006",
+   "proc": "00741.000260/2023-14",
+   "nivel": "critico",
+   "territorio": "Água Branca",
+   "loc": "Conceição do Tocantins/TO",
+   "fase": "rtid",
+   "link": "https://sei.agro.gov.br/sei/controlador.php?acao=procedimento_trabalhar&id_procedimento=45431013",
+   "vinculo": "confirmado",
+   "srm": "SRM-0704",
+   "timer": "2026-07-01",
+   "editadoEm": "2026-09-12",
+   "criadoEm": "2023-05-01",
+   "resumo": "Cumprimento de sentença exige RTID em 360 dias úteis, multa diária de R$1.000,00. Em 2024, a CGPROT informou que o processo, aberto desde 2008, ainda não havia sequer iniciado os trabalhos de campo, por limitação de pessoal técnico no INCRA-TO. TRF1 negou conversão da multa em indenização.",
+   "acao": "Cumprimento de sentença nº 1006467-76.2021.4.01.4300",
+   "incra": "Não informado nos autos (aberto em fev/2008)",
+   "prazoAtivo": true,
+   "conflito": "Não verificado",
+   "demca": "Não aplicável",
+   "blocoC": [
+    {
+     "t": "Prazo judicial em curso",
+     "d": "—",
+     "x": "360 dias úteis para RTID, sob cumprimento de sentença."
+    },
+    {
+     "t": "Multa diária ativa",
+     "d": "2024",
+     "x": "R$ 1.000,00/dia. TRF1 manteve a obrigação por entender incompatível com a natureza territorial e cultural do direito quilombola."
+    }
+   ]
+  }
+ ]
+}

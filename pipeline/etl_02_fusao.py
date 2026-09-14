@@ -146,7 +146,7 @@ for _, r in fcp.iterrows():
         'portaria': r.portaria, 'dou': r.dt_portaria_iso,
         'ano': int(r.ano_cert) if pd.notna(r.ano_cert) else None,
         'moradores': int(r.n_moradores) if pd.notna(r.n_moradores) else None,
-        'urb_rural': r.urb_rural, 'etapa_fcp': r.etapa,
+        'urb_rural': r.urb_rural_ou_populacao, 'etapa_fcp': r.etapa,
     })
     if via == 'confirmado' or c['via'] is None: c['via'] = via
     if r.fk: fk_to_terr[r.fk] = k

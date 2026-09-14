@@ -30,6 +30,10 @@
         <h1>Observatório Seriema</h1>
         <div class="sub">Governança fundiária quilombola · CFU / SETEQ / MDA</div>
       </div>
+      <div class="nav-modulos" style="margin-left:18px">
+        <button id="nav-mapa" aria-pressed="true" onclick="Seriema.irParaModulo('mapa')">Territórios</button>
+        <button id="nav-mon" aria-pressed="false" onclick="Seriema.irParaModulo('mon')">Monitoramento<span id="nav-mon-alerta" style="display:none"></span></button>
+      </div>
     </div>
     <div class="contagem">
       <div class="bloco-n">
@@ -48,7 +52,7 @@
   </header>
 
   <main>
-    <section id="mapa">
+    <section id="mapa" data-modulo="mapa">
       <div class="camadas">
         <button class="recolher" id="bt-recolher" aria-expanded="true" title="Recolher painel de camadas">−</button>
       <div class="titulo">Universo</div>
@@ -66,6 +70,41 @@
           <button class="chip" data-filtro="poligono" aria-pressed="false"><span class="pt" style="background:var(--tinta-2)"></span>Com polígono <span class="n" id="n-pol"></span></button>
           <button class="chip" data-filtro="estadual" aria-pressed="false"><span class="pt" style="background:var(--fx)"></span>Esfera estadual <span class="n" id="n-est"></span></button>
         </div>
+      </div>
+    </section>
+
+    <section id="tela-mon" data-modulo="mon" style="display:none">
+      <div class="mon-topo">
+        <h2>Monitoramento prioritário</h2>
+        <span class="sub" id="mon-contagem">—</span>
+        <button class="bt laranja" id="mon-novo" style="margin-left:auto">+ Novo processo</button>
+      </div>
+      <div class="mon-controle">
+        <input type="search" id="mon-busca" placeholder="Buscar por processo, território ou município…">
+        <select id="mon-ordenar">
+          <option value="urgencia" selected>Mais urgente primeiro</option>
+          <option value="nivel">Nível de atenção</option>
+          <option value="atualizacao">Atualizado recentemente</option>
+          <option value="nome">Território (A–Z)</option>
+        </select>
+        <span class="mon-contfiltro" id="mon-contfiltro"></span>
+        <span id="mon-filtro-terr"></span>
+      </div>
+      <table class="mon-tabela">
+        <thead><tr>
+          <th style="width:178px">Processo MDA</th>
+          <th>Território / Local</th>
+          <th style="width:140px">Fase</th>
+          <th style="width:132px">Próxima verificação</th>
+          <th style="width:28px"></th>
+        </tr></thead>
+        <tbody id="mon-corpo"></tbody>
+      </table>
+      <div class="mon-legenda">
+        <span><span class="mon-vinc" data-t="confirmado">●</span> vínculo confirmado</span>
+        <span><span class="mon-vinc" data-t="pendente">●</span> não verificado</span>
+        <span><span class="mon-vinc" data-t="sem">●</span> sem território na base</span>
+        <span style="margin-left:auto">clique na linha para abrir o processo</span>
       </div>
     </section>
 
@@ -108,9 +147,102 @@
   </main>
 </div>
 
+<!-- ============ DIÁLOGOS DO MONITORAMENTO ============ -->
+<div class="mon-veu" id="mon-veu-novo">
+  <div class="mon-dialogo">
+    <h3>Novo processo de monitoramento</h3>
+    <p>Blocos A e B são preenchidos manualmente. O vínculo com um território pode ser buscado depois de salvar.</p>
+    <input type="hidden" id="mon-f-srm">
+    <label>Nº processo MDA</label><input id="mon-f-proc" placeholder="00000.000000/2026-00">
+    <label>Link SEI (opcional)</label><input id="mon-f-link" placeholder="https://sei.agro.gov.br/…">
+    <div class="linha2">
+      <div><label>Território / comunidade</label><input id="mon-f-terr"></div>
+      <div><label>UF / Município</label><input id="mon-f-loc" placeholder="Cidade/UF"></div>
+    </div>
+    <label>Nº ação judicial (opcional)</label><input id="mon-f-acao">
+    <label>Nº processo(s) INCRA (opcional)</label><input id="mon-f-incra">
+    <div class="linha2">
+      <div><label>Nível de atenção</label>
+        <select id="mon-f-nivel"><option value="critico">Crítico</option><option value="atencao" selected>Atenção</option><option value="rotina">Rotina</option></select></div>
+      <div><label>Fase (opcional)</label>
+        <select id="mon-f-fase"><option value="">— ainda não sei —</option><option value="certidao">Certidão FCP</option><option value="rtid">RTID</option><option value="portaria">Portaria</option><option value="decreto">Decreto</option><option value="titulo">Título</option></select></div>
+    </div>
+    <label>Resumo</label><textarea id="mon-f-resumo" placeholder="Texto corrido descrevendo o processo…"></textarea>
+    <label>Próxima verificação (opcional)</label><input type="date" id="mon-f-timer">
+    <div class="acoes">
+      <button class="bt vazado" data-mon-fechar="mon-veu-novo">Cancelar</button>
+      <button class="bt laranja" id="mon-novo-salvar">Salvar processo</button>
+    </div>
+  </div>
+</div>
+
+<div class="mon-veu" id="mon-veu-timer">
+  <div class="mon-dialogo">
+    <h3>Campo atualizado</h3>
+    <p id="mon-te-texto">Este processo já tem uma verificação programada.</p>
+    <label>O que fazer com a próxima verificação?</label>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-top:6px">
+      <label class="mon-radio"><input type="radio" name="mon-topc" value="manter" checked> Manter a data que já estava</label>
+      <label class="mon-radio"><input type="radio" name="mon-topc" value="nova"> Definir uma nova data</label>
+    </div>
+    <input type="date" id="mon-te-data" style="margin-top:8px;display:none">
+    <div class="acoes"><button class="bt laranja" id="mon-te-confirmar">Confirmar</button></div>
+  </div>
+</div>
+
+<div class="mon-veu" id="mon-veu-deftimer">
+  <div class="mon-dialogo">
+    <h3>Próxima verificação</h3>
+    <p id="mon-dt-texto">Defina a data da próxima verificação.</p>
+    <label>Data</label><input type="date" id="mon-dt-data">
+    <div class="nota" style="margin-top:4px">Deixe em branco para remover a verificação programada.</div>
+    <div class="acoes"><button class="bt vazado" data-mon-fechar="mon-veu-deftimer">Cancelar</button><button class="bt laranja" id="mon-dt-confirmar">Salvar</button></div>
+  </div>
+</div>
+
+<div class="mon-veu critica" id="mon-veu-vencido">
+  <div class="mon-dialogo critica">
+    <div class="cab-critica"><span class="bolinha"></span><h3>Verificação vencida</h3></div>
+    <p id="mon-venc-texto">…</p>
+    <div class="aviso" style="background:var(--superficie-2);border-left-color:var(--linha-forte)">
+      Abra o processo para conferir o que está acontecendo antes de decidir a próxima data.</div>
+    <label>Já verificou? Defina a próxima data (opcional)</label>
+    <input type="date" id="mon-venc-data">
+    <div class="nota" style="margin-top:4px">Deixe em branco para marcar como verificado sem programar nova data.</div>
+    <div class="acoes" style="flex-wrap:wrap">
+      <span class="mon-fila" id="mon-venc-fila" style="margin-right:auto;align-self:center"></span>
+      <button class="bt vazado" id="mon-venc-adiar">Verificar mais tarde</button>
+      <button class="bt vazado" id="mon-venc-abrir">Abrir processo</button>
+      <button class="bt laranja" id="mon-venc-confirmar">Marque como verificado</button>
+    </div>
+  </div>
+</div>
+
+<div class="mon-veu" id="mon-veu-vincular">
+  <div class="mon-dialogo">
+    <h3>Vincular a um território da base</h3>
+    <p id="mon-vinc-texto">Buscando…</p>
+    <div class="busca-territorio" id="mon-vinc-lista"></div>
+    <div class="acoes"><button class="bt vazado" data-mon-fechar="mon-veu-vincular">Deixar sem vínculo por enquanto</button></div>
+  </div>
+</div>
+
+<div class="mon-veu" id="mon-veu-sincfase">
+  <div class="mon-dialogo">
+    <h3>Sincronizar fase com o território</h3>
+    <p id="mon-sf-texto">…</p>
+    <div id="mon-sf-campos"></div>
+    <div class="acoes">
+      <button class="bt vazado" id="mon-sf-cancelar">Só no monitoramento</button>
+      <button class="bt laranja" id="mon-sf-confirmar">Atualizar também o território</button>
+    </div>
+  </div>
+</div>
+
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script src="config.js"></script>
 <script src="seriema.js"></script>
+<script src="monitoramento.js"></script>
 <script src="assistente.js"></script>
 <script>Seriema.iniciar();</script>
 </body>
