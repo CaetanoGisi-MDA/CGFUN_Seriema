@@ -301,7 +301,13 @@ function enxugarFicha(f) {
                     moradores: f.certificacao.moradores_fcp },
     ibge: { territorio: f.ibge.nm_tq, localidades: f.ibge.n_localidades },
     protocolos: (f.protocolo_consulta.itens || []).map(p => ({ titulo: p.titulo, ano: p.ano, url: p.url, fonte: p.fonte })),
-    vinculos: f.vinculos, fontes: f.fontes,
+    vinculos: f.vinculos, fontes: f.fontes, regime: f.regime, situacao: f.situacao_registro,
+    titulacao: f.titulacao ? { area_titulada_ha: f.titulacao.area_titulada_ha, pct: f.titulacao.pct_titulado,
+      n_titulos: f.titulacao.n_titulos, vinculo: f.titulacao.vinculo, fonte: f.titulacao.fonte } : undefined,
+    iterpa: f.iterpa ? { vinculo: f.iterpa.vinculo, registros: f.iterpa.registros.map(g => ({
+      processo: g.processo, data_titulo: g.data_titulo, area_decreto_ha: g.area_decreto_ha,
+      portaria: g.portaria, matricula: g.matricula, livro: g.livro, folha: g.folha })) } : undefined,
+    divergencias: (f.divergencias || []).length ? f.divergencias.map(d => d.texto) : undefined,
     inativo: f._inativo || undefined, editado: f._editado || undefined,
   };
 }

@@ -649,6 +649,49 @@ function notaRegime(f) {
   return '';
 }
 
+// Bloco "Registro no ITERPA" — só para territórios casados com a camada do
+// Instituto de Terras do Pará (etapa 7 do pipeline). Mostra os dados de
+// cartório (matrícula, livro, folha), que nenhuma outra fonte traz.
+function blocoIterpa(f) {
+  const it = f.iterpa;
+  if (!it) return '';
+  const v = it.vinculo;
+  const cls = v === 'confirmado' ? 's-conf' : v === 'provavel' ? 's-prov' : 's-conf';
+  const txtV = v === 'confirmado' ? 'vínculo confirmado (nº de processo)'
+             : v === 'provavel' ? 'vínculo provável' : 'registro próprio do ITERPA';
+  const lin = (rot, val) => val != null && val !== '' ? `<dt>${rot}</dt><dd>${val}</dd>` : '';
+  const PREENCHE = { coordenada: 'coordenada', area_ha: 'área', familias: 'famílias', data_titulo: 'data do título' };
+  return `<div class="bloco">
+    <h3>Registro no ITERPA</h3>
+    <div class="selos"><span class="selo ${cls}">${txtV}</span></div>
+    ${it.criterio ? `<div class="nota mt6">Casamento por ${esc(it.criterio)}.</div>` : ''}
+    ${it.nota ? `<div class="nota mt6">${esc(it.nota)}</div>` : ''}
+    <div class="pilha mt10">${it.registros.map(g => `
+      <div class="cartao">
+        <div class="t">${esc(g.territorio || g.comunidade || '—')}</div>
+        ${g.comunidade && g.comunidade !== g.territorio ? `<div class="m">${esc(g.comunidade)}</div>` : ''}
+        <dl class="kv mt6">
+          ${lin('Processo ITERPA', esc(g.processo || '') + (g.ano_processo ? ` (${esc(g.ano_processo)})` : ''))}
+          ${lin('Data do título', g.data_titulo ? data(g.data_titulo) : (g.data_titulo_ausente ? '<i>não informada</i>' : null))}
+          ${lin('Área decretada', g.area_decreto_ha != null ? num(g.area_decreto_ha, 4) + ' ha' : null)}
+          ${lin('Área líquida', g.area_liquida_ha != null ? num(g.area_liquida_ha, 4) + ' ha' : null)}
+          ${lin('Área do polígono', g.area_geom_ha != null ? num(g.area_geom_ha, 2) + ' ha' : null)}
+          ${lin('Famílias', g.familias != null ? num(g.familias) : null)}
+          ${lin('Portaria', g.portaria ? esc(g.portaria) : null)}
+          ${lin('Matrícula', g.matricula ? esc(g.matricula) : null)}
+          ${lin('Livro', g.livro ? esc(g.livro) : null)}
+          ${lin('Folha', g.folha ? esc(g.folha) : null)}
+          ${lin('Observação', g.complemento ? esc(g.complemento) : null)}
+        </dl>
+        ${!g.matricula && !g.livro && !g.folha ? '<div class="m">Registro em cartório não informado pelo ITERPA.</div>' : ''}
+      </div>`).join('')}</div>
+    ${(it.preencheu || []).length ? `<div class="nota mt6">Preenchido a partir do ITERPA, por faltar nas
+      demais fontes: ${it.preencheu.map(k => PREENCHE[k] || k).join(', ')}.</div>` : ''}
+    <div class="nota mt6">Fonte: ${esc(it.fonte)}, registros editados até ${data(it.atualizacao_fonte)}.
+      Área do polígono calculada em SIRGAS 2000 / Policônica.</div>
+  </div>`;
+}
+
 function renderFicha(f) {
   if (!f) return;
   const c = f.certificacao || {}, ib = f.ibge || {}, pc = f.protocolo_consulta || { itens: [] };
@@ -661,10 +704,12 @@ function renderFicha(f) {
     ${(f.divergencias || []).map(d => `<div class="divergencia ${d.tipo === 'fase_corrigida' ? 'corrigida' : ''}">
         <b>${({fase_corrigida: 'Fase corrigida pela tabela oficial de títulos.',
                fase_divergente: 'Divergência entre fontes — não resolvida.',
-               titulado_ausente_da_tabela: 'Titulado, mas ausente da tabela oficial de títulos.'
+               titulado_ausente_da_tabela: 'Titulado, mas ausente da tabela oficial de títulos.',
+               divergencia_iterpa: 'Divergência com o registro do ITERPA.'
               }[d.tipo] || 'Divergência.')}</b> ${esc(d.texto)}</div>`).join('')}
     ${f.nota_registro ? `<div class="nota-registro"><b>${
-        f.situacao_registro === 'fragmento' ? 'Recorte cartográfico.' : 'Duplicata provável.'
+        f.situacao_registro === 'fragmento' ? 'Recorte cartográfico.'
+          : f.situacao_registro === 'duplicata_provavel' ? 'Duplicata provável.' : 'Origem do registro.'
       }</b> ${esc(f.nota_registro)}</div>` : ''}
     ${f._inativo ? `<div class="aviso"><b>Registro inativado.</b> ${esc(f._inativo.motivo || '')}
         <br><span class="mono" style="font-size:10px">${esc(f._inativo.em || '')}</span></div>` : ''}
@@ -689,15 +734,18 @@ function renderFicha(f) {
           'federal-pre2003': 'federal — anterior a 2003 (FCP)',
           'estadual': 'estadual',
           'indefinido': 'a definir (curadoria)' }[f.regime] || f.regime || '—')}</dd>
-        <dt>Processo INCRA</dt><dd>${esc(f.processo_incra || '—')}</dd>
+        <dt>${/^\d{4}\/[\d.]+$/.test(f.processo_incra || '')
+          ? 'Processo ' + esc(f.orgao_responsavel && f.orgao_responsavel !== '—' ? f.orgao_responsavel : 'estadual')
+          : 'Processo INCRA'}</dt><dd>${esc(f.processo_incra || '—')}</dd>
         <dt>Esfera</dt><dd>${esc(f.esfera || '—')}</dd>
         <dt>Órgão</dt><dd>${esc(f.orgao_responsavel || '—')}</dd>
-        <dt>Área (edital)</dt><dd>${f.area_ha ? num(f.area_ha, 2) + ' ha' : '—'}</dd>
+        <dt>${f.regime === 'estadual' ? 'Área do território' : 'Área (edital)'}</dt><dd>${f.area_ha ? num(f.area_ha, 2) + ' ha' : '—'}</dd>
         ${f.geo && f.geo.area_geom_ha ? `<dt>Área (polígono)</dt><dd>${num(f.geo.area_geom_ha, 2)} ha</dd>` : ''}
         <dt>Famílias</dt><dd>${f.familias != null ? num(f.familias) : '—'}</dd>
         <dt>Coordenada</dt><dd>${f.geo && f.geo.lat ? `${f.geo.lat}, ${f.geo.lon}` : '—'}</dd>
         <dt>Origem do ponto</dt><dd style="font-size:10.5px">${
           ({ centroide_poligono_incra: 'centroide do polígono INCRA',
+             centroide_poligono_iterpa: 'ponto interno do polígono ITERPA',
              media_localidades_ibge: 'média das localidades IBGE',
              sem_coordenada: 'sem coordenada' }[f.geo_origem] || '—')}</dd>
       </dl>
@@ -709,18 +757,23 @@ function renderFicha(f) {
         <dt>Área do território</dt><dd>${num(f.titulacao.area_territorio_ha, 2)} ha</dd>
         <dt>Área titulada</dt><dd>${f.titulacao.area_titulada_ha != null
             ? num(f.titulacao.area_titulada_ha, 2) + ' ha' : '<i>não itemizada</i>'}</dd>
-        <dt>% do território</dt><dd>${f.titulacao.pct_titulado}%</dd>
+        <dt>% do território</dt><dd>${f.titulacao.pct_titulado != null ? f.titulacao.pct_titulado + '%' : '—'}</dd>
         <dt>Nº de títulos</dt><dd>${f.titulacao.n_titulos || '—'}</dd>
       </dl>
       <div class="selos mt6">
         <span class="selo ${f.titulacao.vinculo === 'confirmado' ? 's-conf'
                           : f.titulacao.vinculo === 'provavel' ? 's-prov' : 's-conf'}">
-          vínculo com a tabela: ${f.titulacao.vinculo === 'registro próprio' ? 'registro próprio da tabela'
-            : f.titulacao.vinculo === 'confirmado' ? 'confirmado' : 'provável'}</span>
+          ${f.titulacao.origem === 'ITERPA' ? 'fonte: registro do ITERPA' :
+            'vínculo com a tabela: ' + (f.titulacao.vinculo === 'registro próprio' ? 'registro próprio da tabela'
+            : f.titulacao.vinculo === 'confirmado' ? 'confirmado' : 'provável')}</span>
       </div>
-      ${f.titulacao.criterio_vinculo ? `<div class="nota mt6">Casamento por ${esc(f.titulacao.criterio_vinculo)}.
-        A tabela de títulos não traz número de processo, então o vínculo é sempre por nome —
-        nunca por código.${f.titulacao.nome_na_fonte && f.titulacao.nome_na_fonte !== f.nome
+      ${f.titulacao.origem === 'ITERPA' ? `<div class="nota mt6">Este território não tem linha
+        correspondente na tabela de títulos do INCRA; a titulação vem do registro do próprio órgão
+        expedidor. O ITERPA informa a área de cada título, não a área total do território — por isso
+        o percentual titulado fica em branco.</div>`
+      : f.titulacao.criterio_vinculo ? `<div class="nota mt6">Casamento por ${esc(f.titulacao.criterio_vinculo)}.
+        A tabela de títulos não traz número de processo, então o vínculo é feito por nome
+        ou por área — nunca por código.${f.titulacao.nome_na_fonte && f.titulacao.nome_na_fonte !== f.nome
           ? ` Nome na fonte: <i>${esc(f.titulacao.nome_na_fonte)}</i>.` : ''}</div>` : ''}
       ${f.titulacao.titulos.length ? `<div class="pilha mt10">${f.titulacao.titulos.map(t => `
         <div class="cartao"><div class="t">${esc(t.orgao.replace(/\*/g, ''))} — ${num(t.area_ha, 4)} ha</div>
@@ -733,6 +786,8 @@ function renderFicha(f) {
             território não consta — não foi estimada.</div>`}
       <div class="nota mt6">Fonte: ${esc(f.titulacao.fonte)}, atualizada em ${data(f.titulacao.atualizacao_fonte)}.</div>
     </div>` : ''}
+
+    ${blocoIterpa(f)}
 
     <div class="bloco">
       <h3>Protocolo de consulta prévia</h3>
@@ -775,7 +830,10 @@ function renderFicha(f) {
     <div class="bloco">
       <h3>Confiança dos vínculos</h3>
       <div class="selos">
-        <span class="selo ${selo(f.vinculos.poligono)}">polígono: ${rot(f.vinculos.poligono)}</span>
+        <span class="selo ${selo(f.vinculos.poligono)}">${f.geo_origem === 'centroide_poligono_iterpa'
+          ? 'polígono ITERPA: ' + (f.iterpa && f.iterpa.vinculo === 'confirmado' ? 'confirmado por processo'
+              : f.iterpa && f.iterpa.vinculo === 'provavel' ? 'provável' : 'registro próprio')
+          : 'polígono: ' + rot(f.vinculos.poligono)}</span>
         <span class="selo ${selo(f.vinculos.fcp)}">FCP: ${rot(f.vinculos.fcp)}</span>
         <span class="selo ${selo(f.vinculos.ibge)}">IBGE: ${rot(f.vinculos.ibge)}</span>
       </div>
@@ -921,7 +979,10 @@ function renderSobre() {
         remetidas pelos órgãos de terra dos estados, e essa consolidação tem <b>defasagem
         conhecida</b>: títulos estaduais expedidos nos últimos anos podem ainda não constar.
         Os números do universo estadual — e do total, que o inclui — devem ser lidos como
-        <b>piso</b>, nunca como contagem final. O universo federal não tem essa limitação.</div>
+        <b>piso</b>, nunca como contagem final. O universo federal não tem essa limitação.
+        ${r.iterpa ? `<br>No <b>Pará</b>, a base incorpora também a camada de títulos do próprio
+        ITERPA (${num(r.iterpa.titulos)} títulos, ${num(r.iterpa.territorios)} territórios), que
+        cobre títulos recentes ainda ausentes da consolidação do INCRA.` : ''}</div>
       <div class="nota mt6"><b>Sobre os indicadores do topo.</b> Os territórios com
         <b>titulação parcial</b> aparecem nos dois blocos: em <i>titulados</i>, porque já receberam
         título; em <i>em curso</i>, porque parte da área segue pendente. A contagem de territórios,
@@ -957,7 +1018,9 @@ function renderSobre() {
         Não existe cadastro único de territórios quilombolas no Estado brasileiro. Quatro registros
         parciais, mantidos por instituições diferentes, foram reconciliados aqui:
         os <b>polígonos</b> e o <b>quadro de andamento</b> do INCRA, o <b>cadastro de certificação</b>
-        da Fundação Cultural Palmares e as <b>localidades do Censo 2022</b> do IBGE.<br><br>
+        da Fundação Cultural Palmares e as <b>localidades do Censo 2022</b> do IBGE. Completam a
+        base a <b>tabela de títulos expedidos</b> do INCRA e, no Pará, a <b>camada de territórios
+        titulados do ITERPA</b>, com polígono, processo estadual e registro em cartório.<br><br>
         O cruzamento é feito por <b>número de processo</b>, nunca por semelhança de nome — existem
         territórios homônimos em municípios diferentes, e o mesmo território escrito de várias formas.
         Quando não há código, o vínculo é marcado como <i>provável</i> e aparece assim na ficha.<br><br>
@@ -989,7 +1052,7 @@ function renderSobre() {
     <div class="bloco"><h3>Atualização</h3>
       <div class="nota">Dados de ${esc(CFG.dados.dataCorte)}. Para atualizar, baixe os arquivos-fonte
         novos para a pasta <span class="mono">entrada/</span> e rode os scripts
-        <span class="mono">etl_01</span> → <span class="mono">etl_05</span> na ordem.
+        <span class="mono">etl_01</span> → <span class="mono">etl_07</span> na ordem.
         A pasta <span class="mono">curadoria/</span> não é tocada pelo pipeline.<br><br>
         <b>As instruções completas</b> — onde baixar cada fonte, com que nome salvar e como conferir
         o resultado — estão no README do projeto.</div>

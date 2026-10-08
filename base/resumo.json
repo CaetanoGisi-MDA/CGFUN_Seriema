@@ -1,9 +1,9 @@
 {
- "gerado_em": "2026-09-14",
- "n_territorios": 800,
+ "gerado_em": "2026-10-08",
+ "n_territorios": 823,
  "por_uf": {
+  "PA": 164,
   "MA": 143,
-  "PA": 141,
   "BA": 90,
   "MG": 62,
   "RS": 37,
@@ -28,8 +28,8 @@
   "AM": 4
  },
  "por_fase": {
+  "TITULADO": 238,
   "EM_ELABORACAO": 230,
-  "TITULADO": 215,
   "DECRETO": 117,
   "RTID": 105,
   "PORTARIA": 80,
@@ -39,61 +39,61 @@
   "TITULO_ANULADO": 1
  },
  "por_esfera": {
-  "FEDERAL": 615,
-  "ESTADUAL": 76,
-  "SEM_INFO": 13
+  "FEDERAL": 623,
+  "ESTADUAL": 192,
+  "SEM_INFO": 8
  },
  "por_orgao": {
-  "INCRA": 603,
-  "ITERPA": 42,
-  "ITERMA": 31,
-  "—": 16,
+  "INCRA": 607,
+  "ITERPA": 104,
+  "ITERMA": 61,
+  "CDA": 13,
+  "—": 12,
+  "INTERPI": 7,
+  "FCP": 3,
   "ITESP": 3,
-  "FCP": 2,
+  "INTERPI/INCRA": 2,
+  "SPU": 2,
   "CDA / FCP": 1,
-  "SPU/INCRA": 1,
-  "SPU/INVTS/INCRA": 1,
-  "CEMIG": 1,
-  "INCRA/INTERPI": 1,
-  "INTERPI/INCRA": 1
+  "SPU/INCRA": 1
  },
- "com_poligono": 434,
- "com_coordenada": 676,
- "com_certificacao_fcp": 636,
- "com_localidades_ibge": 646,
- "com_protocolo": 63,
- "area_total_ha": 3002543.46,
- "familias_total": 111045,
- "moradores_fcp_total": 37679,
- "localidades_ibge_total": 1498,
- "certidoes_total": 760,
+ "com_poligono": 487,
+ "com_coordenada": 728,
+ "com_certificacao_fcp": 633,
+ "com_localidades_ibge": 643,
+ "com_protocolo": 62,
+ "area_total_ha": 3592399.43,
+ "familias_total": 120835,
+ "moradores_fcp_total": 37563,
+ "localidades_ibge_total": 1492,
+ "certidoes_total": 755,
  "vinculos": {
   "poligono": {
    "confirmado": 303,
-   "nao_localizado": 270,
-   "proprio": 92,
-   "provavel": 39
+   "nao_localizado": 336,
+   "proprio": 113,
+   "provavel": 71
   },
   "fcp": {
-   "confirmado": 563,
-   "nao_localizado": 68,
-   "provavel": 73
+   "confirmado": 561,
+   "nao_localizado": 190,
+   "provavel": 72
   },
   "ibge": {
-   "confirmado": 618,
-   "nao_localizado": 58,
+   "confirmado": 615,
+   "nao_localizado": 180,
    "provavel": 28
   }
  },
  "por_regime": {
   "federal-4887": 624,
-  "estadual": 165,
+  "estadual": 188,
   "federal-pre2003": 7,
   "indefinido": 4
  },
- "registros_totais": 810,
+ "registros_totais": 839,
  "fragmentos": 5,
- "duplicatas": 5,
+ "duplicatas": 11,
  "certidoes_sem_processo": {
   "n": 1613,
   "comunidades": 2019,
@@ -155,34 +155,47 @@
   }
  },
  "por_fase_federal": {
-  "EM_ELABORACAO": 234,
-  "DECRETO": 121,
-  "RTID": 106,
-  "PORTARIA": 82,
-  "TITULADO": 40,
-  "TITULO_PARCIAL": 36,
+  "EM_ELABORACAO": 230,
+  "DECRETO": 117,
+  "RTID": 105,
+  "PORTARIA": 80,
+  "TITULADO": 52,
+  "TITULO_PARCIAL": 45,
   "CCDRU": 1,
   "SEM_INFO": 1
  },
  "por_fase_estadual": {
-  "TITULADO": 69,
+  "TITULADO": 185,
+  "TITULO_PARCIAL": 2,
   "TITULO_ANULADO": 1
  },
  "divergencias": {
   "fase_corrigida": 12,
-  "titulado_ausente_da_tabela": 27,
-  "fase_divergente": 5
+  "titulado_ausente_da_tabela": 21,
+  "fase_divergente": 6,
+  "divergencia_iterpa": 34
  },
  "titulacao": {
-  "fonte": "INCRA/DFQ — Títulos expedidos às comunidades quilombolas (1995 até a atualidade)",
+  "fonte": "INCRA/DFQ — Títulos expedidos às comunidades quilombolas (1995 até a atualidade); no Pará, também ITERPA",
   "federal": {
    "territorios": 97,
-   "area_titulada_ha": 531976.54
+   "area_titulada_ha": 369443.82
   },
   "estadual": {
-   "territorios": 164,
-   "area_titulada_ha": 341748.04
+   "territorios": 187,
+   "area_titulada_ha": 535050.72
   },
   "itemizacao_pendente": 19
+ },
+ "iterpa": {
+  "territorios": 107,
+  "titulos": 110,
+  "area_decretada_ha": 810508.9671,
+  "com_dados_cartoriais": 41,
+  "por_vinculo": {
+   "provavel": 44,
+   "confirmado": 34,
+   "registro próprio": 29
+  }
  }
 }

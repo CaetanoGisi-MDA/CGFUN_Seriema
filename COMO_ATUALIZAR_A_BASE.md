@@ -16,7 +16,7 @@ Tudo o que você corrigir pelo assistente do painel — protocolos registrados, 
 ## Visão geral das três etapas
 
 1. **Buscar** — baixar os arquivos-fonte atualizados
-2. **Processar** — rodar os seis scripts do pipeline, na ordem
+2. **Processar** — rodar os sete scripts do pipeline, na ordem
 3. **Conferir e publicar** — checar os números e subir para o GitHub
 
 ---
@@ -113,6 +113,18 @@ Baixe `BR_Municipios_2024.zip` (≈199 MB). Salve em `entrada/` — o pipeline d
 
 ---
 
+### 8. Territórios titulados no Pará — ITERPA (quando houver versão nova)
+
+Não há download público. A camada vem do próprio ITERPA, a pedido da Coordenação, como shapefile (banco `iterpa_quilombos_estaduais`). A versão em uso foi recebida em outubro de 2026, com edições até 27/01/2026.
+
+Diferentemente dos itens 1 a 7, este arquivo **fica versionado no repositório**, porque não pode ser baixado de novo:
+
+Salvar em: `pipeline/apoio/iterpa/`, substituindo os arquivos existentes, com o nome-base `quilomobos_estaduais` (assim mesmo, como o ITERPA o nomeou) — `.shp`, `.dbf`, `.shx`, `.prj` e `.cpg` no mínimo.
+
+Se o ITERPA mudar os nomes das colunas, o `etl_07` para com erro apontando a coluna; leve a mensagem ao Claude.
+
+---
+
 ## Etapa 2 — Processar
 
 Com os arquivos em `entrada/`, abra o terminal na pasta `pipeline/` e rode, **nesta ordem**:
@@ -126,7 +138,10 @@ python3 etl_03_protocolos.py  # cataloga e vincula os protocolos
 python3 etl_04_publicar.py    # grava os arquivos finais em base/
 python3 etl_05_regime.py      # separa federal / estadual / pré-2003, marca fragmentos e duplicatas
 python3 etl_06_titulos.py     # integra a tabela de títulos expedidos, expõe divergências
+python3 etl_07_iterpa.py      # integra a camada do ITERPA (Pará), expõe divergências
 ```
+
+A etapa 7 recusa rodar sobre uma base que já passou por ela. Se precisar repeti-la, rode tudo desde a etapa 1.
 
 Cada script imprime um resumo do que fez — quantos registros, quantos casaram por código, quantos por nome. Não é preciso decorar; basta rodar em sequência e observar se algum termina com erro.
 
@@ -138,11 +153,13 @@ Antes de subir para o GitHub, dois pontos merecem atenção:
 
 **O total de territórios ativos mudou de forma coerente?** Se caiu ou disparou de repente, alguma fonte provavelmente mudou de formato e a extração falhou silenciosamente em algum trecho. Compare com a última rodada.
 
-**Apareceram divergências novas?** O `etl_06` expõe, nas próprias fichas, casos em que as fontes discordam entre si sobre a fase de um território. Vale abrir algumas para checar se fazem sentido.
+**Apareceram divergências novas?** O `etl_06` e o `etl_07` expõem, nas próprias fichas, casos em que as fontes discordam entre si — fase, área, data do título. Vale abrir algumas para checar se fazem sentido.
+
+**O cruzamento com o ITERPA está coerente?** O `etl_07` grava `pipeline/apoio/iterpa/cruzamento_iterpa_x_base.csv`, uma linha por título do ITERPA, com a ficha a que foi ligado e o critério. Abra no Excel (separador `;`) e confira sobretudo as linhas `novo` e `provavel`. Se um vínculo estiver errado ou faltar, ele se corrige na tabela `VINCULOS_MANUAIS`, no início do `etl_07_iterpa.py`, sempre com a justificativa escrita.
 
 Estando tudo certo:
 
-1. Suba o **conteúdo** da pasta `base/` para o repositório no GitHub, substituindo os arquivos existentes (o GitHub troca sozinho os de mesmo nome)
+1. Suba o **conteúdo** da pasta `base/` para o repositório no GitHub, substituindo os arquivos existentes (o GitHub troca sozinho os de mesmo nome). Se recebeu nova camada do ITERPA, suba também `pipeline/apoio/iterpa/`
 2. **Não toque em `curadoria/`** — nunca faz parte deste processo
 3. Espere um ou dois minutos e recarregue o painel com **Ctrl+Shift+R**
 
@@ -159,6 +176,7 @@ Estando tudo certo:
 | 5 | Títulos expedidos (se voltar) | mesma página do item 2 |
 | 6 | Protocolos de consulta | https://observatorio.direitosocioambiental.org/category/quilombolas/ |
 | 7 | Malha municipal oficial | https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2024/Brasil/ |
+| 8 | Títulos estaduais do Pará (ITERPA) | sem link — solicitar ao ITERPA |
 
 ---
 

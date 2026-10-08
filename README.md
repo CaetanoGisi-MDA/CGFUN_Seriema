@@ -34,6 +34,8 @@ O painel funde as duas ao carregar, com a curadoria prevalecendo. A função de 
 - `territorios_fichas.json` — base completa (1,1 MB)
 - `resumo.json` — agregados pré-calculados
 - `protocolos.json` — catálogo de protocolos de consulta prévia
+- `titulos_expedidos.json` — tabela de títulos expedidos do INCRA, como integrada
+- `iterpa.json` — os 110 títulos da camada do ITERPA (Pará) e a ficha a que cada um foi ligado
 
 ---
 
@@ -91,7 +93,7 @@ Territórios quilombolas não seguem um único rito jurídico. Tratá-los como s
 
 **2. Federal anterior a 2003** — cerca de 8 territórios titulados pela própria Fundação Cultural Palmares, quando a competência ainda era dela. Reconhecíveis pelo prefixo `01420` ou por formatos antigos de processo. Curiaú (AP) e Campinho (RJ) são exemplos. Não têm RTID nem portaria porque o rito era outro — não estão incompletos.
 
-**3. Estadual** — cerca de 76 territórios titulados por ITERPA (PA), ITERMA (MA), ITESP (SP), INTERPI (PI) e CDA (BA). Rito próprio de cada estado, sem correspondência com as etapas federais. Entram na base pelo valor informativo, mas o painel não exibe trilha federal para eles.
+**3. Estadual** — 188 territórios ativos (outubro de 2026) titulados por ITERPA (PA), ITERMA (MA), ITESP (SP), INTERPI (PI) e CDA (BA). Rito próprio de cada estado, sem correspondência com as etapas federais. Entram na base pelo valor informativo, mas o painel não exibe trilha federal para eles.
 
 O regime é inferido automaticamente pelo **formato do número de processo** somado ao campo de esfera e órgão responsável.
 
@@ -143,12 +145,34 @@ As duplicatas merecem menção por serem instrutivas. Lagoa das Pedras (CE) apar
 
 A auditoria também estabeleceu um resultado positivo relevante: dos 91 territórios presentes apenas na base cartográfica, só **10 são federais**, e destes apenas 4 têm processo em formato moderno — sendo 3 duplicatas comprovadas. **O quadro federal de andamento é, portanto, uma fonte completa**, não uma amostra. É o que permite fechar o núcleo federal com confiança.
 
+### Integração da camada do ITERPA (outubro de 2026)
+
+O Instituto de Terras do Pará forneceu à Coordenação a sua camada de territórios quilombolas titulados: 110 títulos com polígono, número do processo estadual, área decretada, famílias, portaria e — em 41 casos — **matrícula, livro e folha** do registro em cartório, dado que nenhuma outra fonte da base traz. A etapa `etl_07_iterpa.py` cruza essa camada com a base:
+
+| Resultado | Títulos |
+|---|---|
+| Ligados por **nº de processo** (vínculo confirmado) | 35 |
+| Ligados por **área idêntica** (quatro casas decimais) ou nome no mesmo município (vínculo provável) | 42 |
+| Ligados por **vínculo manual** documentado no código (PEAFU, Erepecuru, Trombetas) | 3 |
+| **Territórios novos**, ausentes de todas as outras fontes | 30 títulos, 29 territórios |
+
+O que mudou na base por causa dela:
+
+- **29 territórios titulados entraram** (31.696 ha, 1.742 famílias) — 26 deles com título de 2022 a 2025, 24 só em 2024–2025, ainda fora da tabela consolidada do INCRA.
+- **32 territórios ganharam coordenada e polígono** — quase todos vinham só da tabela de títulos, sem localização.
+- **7 duplicatas foram identificadas.** A etapa 6 criava um registro novo sempre que o nome na tabela de títulos não era idêntico ao da base (ex.: "Bailique" × "BAILIQUE BEIRA, BAILINQUE CENTRO, POCAO"). Com o ITERPA ligando os dois ao mesmo título, e com área idêntica, o registro da tabela é marcado `duplicata_provavel` e a sua titulação passa ao registro principal.
+- **1 registro foi reativado.** Santa Fé e Santo Antônio (Baião) havia sido marcado como duplicata de Igarapé Preto por ter a mesma área (830,8776 ha). O ITERPA mostra que essa é a área de Santa Fé, com processo próprio; a área de Igarapé Preto é 17.357,0206 ha. O erro está na área do polígono do INCRA para Igarapé Preto, exposto como divergência.
+- **5 titulações estavam na ficha errada** e foram transferidas: a etapa 6 casava por prefixo de nome, e "Santa Luzia do **Bom Prazer**" caiu em Santa Luzia do **Tracuateua**; "Ramal do **Bacuri**" em Ramal do **Piratuba**; Jacarequara de Santa Luzia do Pará em Jacarequara de Santa Isabel; e os títulos estaduais "Alto Trombetas" e "Gurupá" (162.532,72 ha somados) estavam em fichas de processos federais — o que inflava a área titulada federal.
+- **35 divergências novas** ficam expostas nas fichas, sem correção automática: 15 de área, 9 de data do título, 5 de geometria, 1 de fase, e 5 avisos nas fichas de onde uma titulação foi retirada. Exemplo: a camada do ITERPA repete em PEAFU o município e a área de Camutá do Rio Ipixuna, e grava datas ausentes como 01/01/1900.
+
+A etapa 6 também foi corrigida: uma linha da tabela de títulos não sobrescreve mais outra na mesma ficha.
+
 ### O que a base não cobre
 
 - Comunidades **apenas certificadas** pela FCP, sem processo aberto no INCRA, não aparecem como território. São milhares.
 - **Povos e comunidades tradicionais não quilombolas** dependem de acordo de compartilhamento com o MPF e não integram esta versão.
 - Ausência de protocolo de consulta significa **não localizado nas fontes públicas consultadas** — nunca "não existe".
-- Territórios estaduais têm dados menos completos por limitação das fontes, não por opção.
+- Territórios estaduais têm dados menos completos por limitação das fontes, não por opção. A exceção parcial é o Pará, com a camada do ITERPA; os demais órgãos estaduais (ITERMA, ITESP, INTERPI, CDA) ainda dependem da consolidação do INCRA.
 
 ---
 
@@ -166,7 +190,12 @@ python3 pipeline/etl_01_fontes.py      # normaliza as fontes
 python3 pipeline/etl_02_fusao.py       # cruza por nº de processo, monta as fichas
 python3 pipeline/etl_03_protocolos.py  # cataloga e vincula os protocolos
 python3 pipeline/etl_04_publicar.py    # grava base/
+python3 pipeline/etl_05_regime.py      # regime jurídico, fragmentos, duplicatas
+python3 pipeline/etl_06_titulos.py     # tabela de títulos expedidos
+python3 pipeline/etl_07_iterpa.py      # camada do ITERPA (Pará)
 ```
+
+As etapas 6 e 7 regeneram índice e resumo ao final, por meio de `pipeline/regenerar.py`. A etapa 7 recusa rodar duas vezes sobre a mesma base (duplicaria registros): para reprocessá-la, rode o pipeline desde a etapa 1.
 
 O primeiro script confere se está tudo em `entrada/` e, se faltar algo, diz exatamente o quê. Os nomes dos arquivos precisam bater — renomeie se o download vier com outro nome.
 
@@ -365,18 +394,16 @@ pipeline/etl_02_fusao.py         cruza e monta as fichas
 pipeline/etl_03_protocolos.py    catálogo de protocolos
 pipeline/etl_04_publicar.py      grava base/
 pipeline/etl_05_regime.py        regime jurídico, fragmentos, certidões sem processo
-pipeline/etl_06_titulos.py       títulos expedidos; regenera índice e resumo
+pipeline/etl_06_titulos.py       títulos expedidos
+pipeline/etl_07_iterpa.py        camada ITERPA (Pará): cruza, enriquece, expõe divergências
+pipeline/regenerar.py            índice e resumo — chamado pelas etapas 6 e 7
 pipeline/apoio/                  tabelas de apoio (centroides, títulos, IBGE)
+pipeline/apoio/iterpa/           shapefile do ITERPA + relatório do cruzamento (CSV)
 entrada/                         arquivos-fonte baixados (não versionar)
 interim/                         temporários do pipeline (não versionar)
 ```
 
-Sugestão de `.gitignore`:
-
-```
-entrada/
-interim/
-```
+O `.gitignore` do repositório exclui `entrada/`, `interim/` e os caches do Python.
 
 
 

@@ -96,6 +96,8 @@ if __name__ == '__main__':
         idx[norm(f['nome']) + '|' + str(f['uf'])].append(f)
 
     casados = orfaos = 0
+    # 1ª passada: alvo e força do vínculo de cada linha da tabela
+    plano = []
     for r in regs:
         alvos = idx.get(r['chave'])
         if not alvos:
@@ -103,8 +105,9 @@ if __name__ == '__main__':
             alvos = [f for f in fichas if f['uf'] == r['uf'] and f['situacao_registro'] == 'ativo'
                      and any(norm(r['municipio']).startswith(norm(m)[:8]) for m in f['municipios'])
                      and norm(f['nome'])[:9] == norm(r['territorio'])[:9]]
-        if alvos:
-            f = alvos[0]
+        f = alvos[0] if alvos else None
+        forte = False
+        if f is not None:
             # Força do vínculo: a tabela de títulos não traz nº de processo, então
             # o casamento é por nome. Só consideramos FORTE quando o nome
             # normalizado é idêntico E ao menos um município coincide. Só o
@@ -114,6 +117,16 @@ if __name__ == '__main__':
                             norm(r['municipio']).startswith(norm(m)[:8])
                             for m in f['municipios'] if m)
             forte = nome_igual and mun_igual
+        plano.append((r, f, forte))
+
+    # 2ª passada: vínculos fortes primeiro, e cada ficha recebe no máximo UMA
+    # linha. Até out/2026 a segunda linha sobrescrevia a primeira — a linha
+    # "Ramal do Bacuri" apagava a de "Ramal do Piratuba", porque ambas
+    # começam por "RAMAL DO " no mesmo município. A linha que sobra entra
+    # como território próprio, adiante.
+    plano.sort(key=lambda x: not x[2])          # sort estável: mantém a ordem da tabela
+    for r, f, forte in plano:
+        if f is not None and not f.get('titulacao'):
             f['titulacao'] = {
                 'fonte': FONTE['nome'], 'atualizacao_fonte': FONTE['atualizacao_fonte'],
                 'num_fonte': r['num_fonte'],
@@ -246,41 +259,11 @@ if __name__ == '__main__':
     print(f'\n>> base/titulos_expedidos.json gravado')
 
     # -----------------------------------------------------------------
-    # Esta etapa final PRECISA rodar sempre, por isso vive aqui dentro do
-    # script — não como célula solta rodada à parte, que é como aconteceu
-    # na atualização de julho/2026 e fez o resumo.json ficar sem os campos
-    # de titulação até alguém notar e recalcular manualmente. Regenera o
-    # índice (agora com os territórios incorporados por este script) e os
-    # campos derivados do resumo, incluindo os de titulação.
+    # Regenera índice e resumo (agora com os territórios incorporados por
+    # este script). O cálculo vive em pipeline/regenerar.py, compartilhado
+    # com a etapa 7 — não rode isso como célula solta.
     # -----------------------------------------------------------------
-    Ativos = [x for x in fichas if x['situacao_registro'] == 'ativo']
-    idx = [{'id': x['id'], 'nome': x['nome'], 'uf': x['uf'], 'mun': '; '.join(x['municipios'][:3]),
-            'fase': x['fase'], 'lat': x['geo'].get('lat'), 'lon': x['geo'].get('lon'),
-            'pol': bool(x['geo'].get('tem_poligono')), 'area': x['area_ha'], 'fam': x['familias'],
-            'prot': x['protocolo_consulta']['tem'], 'cert': x['certificacao']['n_certidoes'],
-            'loc': x['ibge']['n_localidades'], 'esf': x['esfera'], 'reg': x['regime'],
-            'sit': x['situacao_registro'], 'div': len(x.get('divergencias') or [])} for x in fichas]
-    json.dump(idx, open(f'{BASE}/territorios_indice.json', 'w', encoding='utf-8'),
-              ensure_ascii=False, allow_nan=False)
-
-    r = json.load(open(f'{BASE}/resumo.json', encoding='utf-8'))
-    r['registros_totais'] = len(fichas)
-    r['n_territorios'] = len(Ativos)
-    r['por_regime'] = dict(Counter(x['regime'] for x in Ativos).most_common())
-    r['por_fase'] = dict(Counter(x['fase'] for x in Ativos).most_common())
-    r['por_uf'] = dict(Counter(x['uf'] for x in Ativos).most_common())
-    r['divergencias'] = dict(Counter(d['tipo'] for x in Ativos for d in (x.get('divergencias') or [])))
-    fed_ = [x for x in Ativos if x['regime'].startswith('federal')]
-    est_ = [x for x in Ativos if x['regime'] == 'estadual']
-    def _area_tit(g): return round(sum((x.get('titulacao') or {}).get('area_titulada_ha') or 0 for x in g), 2)
-    r['titulacao'] = {
-        'fonte': FONTE['nome'],
-        'federal': {'territorios': sum(1 for x in fed_ if x['fase'] in ('TITULADO', 'TITULO_PARCIAL')),
-                    'area_titulada_ha': _area_tit(fed_)},
-        'estadual': {'territorios': sum(1 for x in est_ if x['fase'] in ('TITULADO', 'TITULO_PARCIAL')),
-                     'area_titulada_ha': _area_tit(est_)},
-        'itemizacao_pendente': sum(1 for x in Ativos if (x.get('titulacao') or {}).get('itemizacao_pendente')),
-    }
-    json.dump(r, open(f'{BASE}/resumo.json', 'w', encoding='utf-8'),
-              ensure_ascii=False, allow_nan=False, indent=1)
+    import sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from regenerar import regenerar
+    regenerar(fichas, BASE, FONTE['nome'])
     print('>> índice e resumo regenerados (agora inclui os territórios incorporados por este script)')
